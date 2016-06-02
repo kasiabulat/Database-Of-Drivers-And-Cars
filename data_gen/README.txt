@@ -1,11 +1,11 @@
-Sprawdzane (kompilowane) z c++11 w clionie i codeblocksie. Prezentuje tragiczne techniki programistyczne (chocbby wszystko w plikach .h, ale przy .cpp rzucal sie o podwojne deklaracje i ola³em walkê z tym :P), mo¿e siê coœ zmieni...
-Alpha, stawia na sensownoœæ danych, natomiast w bardzo losowy (œrednia szansa na logiczne po³¹czenie) sposób ³¹czy dane w tabelach
-Bêdzie rozwijane
+Sprawdzane (kompilowane) z c++11 w clionie i codeblocksie. Prezentuje tragiczne techniki programistyczne (choÄ‡by wszystko w plikach .h, ale przy .cpp rzucaÅ‚ sie o podwÃ³jne deklaracje i olaÅ‚em walkÄ™ z tym :P), moÅ¼e siÄ™ coÅ› zmieni...
+Alpha, stawia na sensownoÅ›Ä‡ danych, natomiast w bardzo losowy (Å›rednia szansa na logiczne poÅ‚Ä…czenie) sposÃ³b Å‚Ä…czy dane w tabelach
+BÄ™dzie rozwijane
 
 potrzebuje danych z stdin (gen_in_data.in), wypluwa query na stdout
-Na ten moment w zapytaniu bêd¹ jeszcze b³êdy w stylu próby naruszenia _fkey, ale w ka¿dej tabeli coœ bêdzie
+Na ten moment w zapytaniu bÄ™dÄ… jeszcze bÅ‚Ä™dy w stylu prÃ³by naruszenia _fkey, ale w kaÅ¼dej tabeli coÅ› bÄ™dzie
 
-pozostale pliki .in/.txt to pomocnicze dane, potem wrzucone do gen_in_data, niech sobie tu leza
+PozostaÅ‚e pliki .in/.txt to pomocnicze dane, potem wrzucone do gen_in_data, niech sobie tu leÅ¼Ä…
 
-jak coœ sobie przypomnê to dopiszê
-teraz idê spaæ
+Jak coÅ› sobie przypomnÄ™ to dopiszÄ™
+Teraz idÄ™ spaÄ‡

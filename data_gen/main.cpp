@@ -94,14 +94,14 @@ int main()
     }
 
     // Generuj pojazdy
-    const int ile_pojazdow = 1000;
+    const int ile_pojazdow = 100;
     for (int i = 0; i < ile_pojazdow; ++i) {
         Pojazdy nowy;
         pojazdy.push_back(nowy);
     }
 
     // Generuj kierowcow
-    const int ilu_kierowcow = 1024;
+    const int ilu_kierowcow = 100;
     for (int i = 0; i < ilu_kierowcow; ++i) {
         Kierowca nowy;
         kierowcy.push_back(nowy);
@@ -136,7 +136,7 @@ int main()
     }
 
     // Generuj tabele prawa_jazdy
-    const int ile_praw_jazdy = 2*ilu_kierowcow;
+    const int ile_praw_jazdy = 1.5*ilu_kierowcow;
     for (int i = 0; i < ile_praw_jazdy; ++i) {
         Prawa_jazdy nowy;
         prawa_jazdy.push_back(nowy);
