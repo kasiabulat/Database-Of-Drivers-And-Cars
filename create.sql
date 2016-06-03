@@ -113,6 +113,40 @@ CREATE TABLE mandaty(
 	id_wystawiającego INT REFERENCES mandaty_wystawiający(id_wstawiającego) NOT NULL ,
 	id_wykroczenia INT REFERENCES wykroczenia NOT NULL
 );
+
+
+--Sprawdzanie poprawnosci wprowadzanego peselu
+CREATE OR REPLACE FUNCTION pesel_check() RETURNS trigger AS $$
+BEGIN
+      IF LENGTH(NEW.pesel) < 11 THEN
+              RAISE EXCEPTION 'Niepoprawny PESEL';
+      END IF;
+      IF(((CAST(substring(NEW.pesel,1,1) AS INT)) * 1 +
+         (CAST(substring(NEW.pesel,2,1) AS INT)) * 3 +
+         (CAST(substring(NEW.pesel,3,1) AS INT)) * 7 +
+         (CAST(substring(NEW.pesel,4,1) AS INT)) * 9 +
+         (CAST(substring(NEW.pesel,5,1) AS INT)) * 1 +
+         (CAST(substring(NEW.pesel,6,1) AS INT)) * 3 +
+         (CAST(substring(NEW.pesel,7,1) AS INT)) * 7 +
+         (CAST(substring(NEW.pesel,8,1) AS INT)) * 9 +
+         (CAST(substring(NEW.pesel,9,1) AS INT)) * 1 +
+         (CAST(substring(NEW.pesel,10,1) AS INT)) * 3 +
+         (CAST(substring(NEW.pesel,11,1) AS INT)) * 1) % 10 <> 0)
+      THEN
+              RAISE EXCEPTION 'Niepoprawny PESEL';
+      END IF;
+      RETURN NEW;
+
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS pesel_check ON kierowcy;
+
+CREATE TRIGGER pesel_check BEFORE INSERT OR UPDATE ON kierowcy
+FOR EACH ROW EXECUTE PROCEDURE pesel_check();
+
+
+
 INSERT INTO kierowcy VALUES (1, '72041483630', 'Miłosz', 'Sokołowski', 'atyeaveht@gmail.com', '702547963', 'Piaski 38/95');
 INSERT INTO kierowcy VALUES (2, '72122819152', 'Oskar', 'Grabowski', 'hracyjvo@interia.pl', '729890640', 'Dębowa 21/54');
 INSERT INTO kierowcy VALUES (3, '46031861920', 'Nadia', 'Bąk', 'cev@gmail.com', '760102213', 'Urodzaju 77/47');
