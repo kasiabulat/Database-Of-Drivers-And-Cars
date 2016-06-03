@@ -1,5 +1,7 @@
 package controllers;
 
+import database.Database;
+import database.Offence;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +16,7 @@ import java.io.IOException;
 public class OffencesController {
 	//TODO: add fields
 	@FXML
-	private TableView tableView;
+	private TableView<?> tableView;
 	@FXML
 	private Button addButton;
 	@FXML
@@ -22,6 +24,10 @@ public class OffencesController {
 	@FXML
 	private Button statisticsButton;
 	@FXML
+	public void initialize()
+	{
+		Database.instance.getOffenceTable((TableView<Offence>)tableView);
+	}
 	public void addOffence (final ActionEvent event) {
 		// TODO: adding offence to database
 	}

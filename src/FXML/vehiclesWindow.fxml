@@ -27,16 +27,7 @@
                   <Font name="Georgia Bold" size="18.0" />
                </font>
             </Label>
-            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn prefWidth="75.0" text="id_pojazdu" />
-                <TableColumn prefWidth="144.0" text="nr_rejestracyjny" />
-                  <TableColumn prefWidth="103.0" text="data_rejestracji" />
-                  <TableColumn prefWidth="56.0" text="marka" />
-                  <TableColumn prefWidth="51.0" text="model" />
-                  <TableColumn prefWidth="50.0" text="typ" />
-              </columns>
-            </TableView>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
             <GridPane GridPane.rowIndex="2">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

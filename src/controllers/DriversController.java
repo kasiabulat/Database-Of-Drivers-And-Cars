@@ -1,6 +1,7 @@
 package controllers;
 
-import Database.Database;
+import database.Database;
+import database.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +32,7 @@ public class DriversController {
 		assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'driversWindow.fxml'.";
 		assert addButton != null : "fx:id=\"addButton\" was not injected: check your FXML file 'driversWindow.fxml'.";
 
-		Database.instance.getDriversTable(tableView);
+		Database.instance.getDriversTable((TableView<Driver>)tableView);
 	}
 
 	@FXML

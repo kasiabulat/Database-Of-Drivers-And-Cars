@@ -28,11 +28,6 @@
                </font>
             </Label>
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-              <columns>
-                <TableColumn prefWidth="75.0" text="id_egzaminu" />
-                <TableColumn prefWidth="120.0" text="id_kierowcy" />
-                  <TableColumn prefWidth="122.0" text="wynik" />
-              </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>

@@ -52,7 +52,7 @@
               </rowConstraints>
                <children>
                   <Label text="Pojazdy: " />
-                  <TextArea editable="false" promptText="Lista id pojazdów, których właścicielem jest dany kierowca" GridPane.columnIndex="1">
+                  <TextArea fx:id="pojazdy" editable="false" promptText="Lista id pojazdów, których właścicielem jest dany kierowca" GridPane.columnIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -62,7 +62,7 @@
                   </TextArea>
                   <Label GridPane.rowIndex="1" />
                   <Label text="Prawo jazdy:" GridPane.rowIndex="1" />
-                  <TextArea editable="false" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextArea fx:id="prawa_jazdy" editable="false" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -71,7 +71,7 @@
                      </GridPane.margin>
                   </TextArea>
                   <Label prefHeight="34.0" prefWidth="102.0" text="Międzynarodowe prawo jazdy:" wrapText="true" GridPane.rowIndex="2" />
-                  <TextArea editable="false" maxHeight="25.0" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <TextArea fx:id="międzynarodowe_prawa_jazdy" editable="false" maxHeight="25.0" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -80,7 +80,7 @@
                      </GridPane.margin>
                   </TextArea>
                   <Label text="Podejścia do egzaminu:" GridPane.rowIndex="5" />
-                  <TextArea editable="false" maxHeight="25.0" promptText="Ilość podejść do egazminu na prawo jazdy" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <TextArea fx:id="ilość_podejść_do_egzaminu" editable="false" maxHeight="25.0" promptText="Ilość podejść do egazminu na prawo jazdy" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -89,7 +89,7 @@
                      </GridPane.margin>
                   </TextArea>
                   <Label text="Ilość mandatów:" GridPane.rowIndex="3" />
-                  <TextArea editable="false" maxHeight="25.0" promptText="Ilość mandatów" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextArea fx:id="ilość_mandatów" editable="false" maxHeight="25.0" promptText="Ilość mandatów" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -98,7 +98,7 @@
                      </GridPane.margin>
                   </TextArea>
                   <Label text="Ilość punktów karnych:" GridPane.rowIndex="4" />
-                  <TextArea editable="false" maxHeight="25.0" promptText="Ilość punktów karnych " GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextArea fx:id="ilość_punktów_karnych" editable="false" maxHeight="25.0" promptText="Ilość punktów karnych " GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -107,7 +107,7 @@
                      </GridPane.margin>
                   </TextArea>
                   <Label text="Ostatni egzamin:" GridPane.rowIndex="6" />
-                  <TextArea editable="false" maxHeight="25.0" promptText="Id ostatniego egzaminu" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <TextArea fx:id="ostatni_egzamin" editable="false" maxHeight="25.0" promptText="Id ostatniego egzaminu" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

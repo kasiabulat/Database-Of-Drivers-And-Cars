@@ -1,16 +1,16 @@
-package Database;
+package database;
 
 /**
  Created by Kamil Rajtar on 02.06.16. */
 public class Driver
 {
-	int id_kierowcy;
-	String PESEL;
-	String imię;
-	String nazwisko;
-	String email; /*CHECK*/
-	String nr_telefonu; /*CHAR(9)?*/
-	String adres;
+	private int id_kierowcy;
+	private String PESEL;
+	private String imię;
+	private String nazwisko;
+	private String email; /*CHECK*/
+	private String nr_telefonu; /*CHAR(9)?*/
+	private String adres;
 
 	public Driver(final int id_kierowcy,final String PESEL,final String imię,final String nazwisko,final String email,final String nr_telefonu,final String adres)
 	{

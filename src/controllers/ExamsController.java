@@ -1,5 +1,7 @@
 package controllers;
 
+import database.Database;
+import database.Exam;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,13 +10,18 @@ import javafx.scene.control.TableView;
 public class ExamsController {
 	//TODO: add fields
 	@FXML
-	private TableView tableView;
+	private TableView<?> tableView;
 	@FXML
 	private Button addButton;
 	@FXML
 	private Button moreInfoButton;
 	@FXML
 	private Button statisticsButton;
+	@FXML
+	public void initialize()
+	{
+		Database.instance.getExamsTable((TableView<Exam>)tableView);
+	}
 	@FXML
 	public void addResult (final ActionEvent event) {
 		// TODO: adding result of the exam to database
