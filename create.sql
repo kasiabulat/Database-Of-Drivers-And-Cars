@@ -114,8 +114,7 @@ CREATE TABLE mandaty(
 	id_wykroczenia INT REFERENCES wykroczenia NOT NULL
 );
 
-
---Sprawdzanie poprawnosci wprowadzanego peselu
+--Sprawdzanie poprawnosci wprowadzanego numeru pesel
 CREATE OR REPLACE FUNCTION pesel_check() RETURNS trigger AS $$
 BEGIN
       IF LENGTH(NEW.pesel) < 11 THEN
@@ -145,8 +144,163 @@ DROP TRIGGER IF EXISTS pesel_check ON kierowcy;
 CREATE TRIGGER pesel_check BEFORE INSERT OR UPDATE ON kierowcy
 FOR EACH ROW EXECUTE PROCEDURE pesel_check();
 
+--wypis id pojazdow ktorych wlascicielem jest kierowca o id_k
+DROP FUNCTION IF EXISTS pojazdy(integer);
 
+CREATE OR REPLACE FUNCTION pojazdy(id_k INT)
+RETURNS SETOF INT AS
+$$
+SELECT id_pojazdu 
+FROM kierowcy_pojazdy
+WHERE id_kierowcy = id_k;
+$$ LANGUAGE sql;
 
+--wypis numeru prawa jazdy kierowcy o id_k
+DROP FUNCTION IF EXISTS nr_prawa_jazdy(integer);
+
+CREATE OR REPLACE FUNCTION nr_prawa_jazdy(id_k INT)
+RETURNS text AS
+$$
+DECLARE 
+	nr text;
+BEGIN
+	nr = (SELECT numer_prawa_jazdy FROM prawa_jazdy
+	WHERE id_właściciela = id_k
+	LIMIT 1);
+
+	RETURN nr;
+END;
+$$ LANGUAGE plpgsql;
+
+--id miedzynarodowego prawa jazdy kierowcy o id_k
+DROP FUNCTION IF EXISTS nr_prawa_jazdy_M(integer);
+
+CREATE OR REPLACE FUNCTION nr_prawa_jazdy_M(id_k INT)
+RETURNS text AS
+$$
+DECLARE 
+	nr text;
+BEGIN
+	nr = (SELECT numer_prawa_jazdy FROM prawa_jazdy
+	WHERE id_właściciela = id_k AND międzynarodowe IS TRUE
+	LIMIT 1);
+
+	RETURN nr;
+END;
+$$ LANGUAGE plpgsql;
+
+--ilosc mandatow kierowcy o id_k
+DROP FUNCTION IF EXISTS ilosc_mandatow(integer);
+
+CREATE OR REPLACE FUNCTION ilosc_mandatow(id_k INT)
+RETURNS INTEGER AS
+$$
+DECLARE 
+	nr INTEGER;
+BEGIN
+	nr = (
+	SELECT COUNT(id_mandatu) 
+	FROM mandaty
+	WHERE id_kierowcy = id_k);
+
+	RETURN nr;
+END;
+$$ LANGUAGE plpgsql;
+
+--sprawdzenie dla danego kierowcy o id_k ile zdobyl punktow karnych
+DROP FUNCTION IF EXISTS ile_punktow(integer);
+
+CREATE OR REPLACE FUNCTION ile_punktow(id_k INT)
+RETURNS NUMERIC AS
+$$
+SELECT SUM(punkty_karne) 
+FROM (
+      SELECT punkty_karne
+      FROM mandaty INNER JOIN wykroczenia ON mandaty.id_wykroczenia = wykroczenia.id_wykroczenia
+      WHERE mandaty.id_kierowcy = id_k) AS tab;
+$$ LANGUAGE sql;
+
+--ilosc podejsc do egzaminu na prawo jazdy kierowcy o id_k
+DROP FUNCTION IF EXISTS ilosc_egzaminow(integer);
+
+CREATE OR REPLACE FUNCTION ilosc_egzaminow(id_k INT)
+RETURNS INTEGER AS
+$$
+DECLARE 
+	nr INTEGER;
+BEGIN
+	nr = (
+	SELECT COUNT(id_egzaminu) 
+	FROM wyniki_egzaminów
+	WHERE id_kierowcy = id_k);
+
+	RETURN nr;
+END;
+$$ LANGUAGE plpgsql;
+
+--id ostatniego egzaminu danego kierowcy o id_k
+DROP FUNCTION IF EXISTS ostatni_egzamin(integer);
+
+CREATE OR REPLACE FUNCTION ostatni_egzamin(id_k INT)
+RETURNS INTEGER AS
+$$
+DECLARE 
+	nr INTEGER;
+BEGIN
+	nr = (
+	SELECT egzaminy.id_egzaminu
+	FROM wyniki_egzaminów
+	INNER JOIN egzaminy ON wyniki_egzaminów.id_egzaminu = egzaminy.id_egzaminu
+	WHERE id_kierowcy = id_k
+	ORDER BY data_przeprowadzenia DESC
+	LIMIT 1);
+
+	RETURN nr;
+END;
+$$ LANGUAGE plpgsql;
+
+--dla danego numeru rejestracji wypisuje imiona_i_naziwska_osob_z_bazy_ktorego maja go przypisanego
+DROP FUNCTION IF EXISTS imie_i_nazwisko_wlasciciela_samochodu(char(7));
+
+CREATE OR REPLACE FUNCTION imie_i_nazwisko_wlasciciela_samochodu(id_p char(7))
+RETURNS SETOF text AS
+$$
+SELECT CONCAT(imię, ' ', nazwisko)
+FROM pojazdy NATURAL JOIN kierowcy_pojazdy
+NATURAL JOIN kierowcy
+WHERE nr_rejestracyjny = id_p
+$$ LANGUAGE sql;
+
+--statystki ile jest w bazie pojazdow jakiej marki i modelu
+DROP VIEW IF EXISTS statystyki_pojazdow_markaModel;
+
+CREATE OR REPLACE VIEW statystyki_pojazdow_markaModel
+AS
+SELECT marka, model, COUNT(id_pojazdu)
+FROM pojazdy
+GROUP BY marka, model;
+
+--statystyki pojazdow po roku rejestracji 
+DROP VIEW IF EXISTS statystyki_pojazdow_rokRejestracji;
+
+CREATE OR REPLACE VIEW statystyki_pojazdow_rokRejestracji
+AS
+SELECT EXTRACT(YEAR FROM data_rejestracji) AS rok, COUNT(id_pojazdu) AS ilosc
+FROM pojazdy
+GROUP BY rok
+ORDER BY rok;
+
+--statystyki zdawalnosci egzaminow
+DROP VIEW IF EXISTS statystyki_zdawalnosci_egzaminow;
+
+CREATE OR REPLACE VIEW statystyki_zdawalnosci_egzaminow
+AS
+SELECT wynik, typ, COUNT(id_egzaminu)
+FROM egzaminy
+NATURAL JOIN wyniki_egzaminów
+GROUP BY wynik, typ;
+
+--dodawanie danych do bazy
 INSERT INTO kierowcy VALUES (1, '72041483630', 'Miłosz', 'Sokołowski', 'atyeaveht@gmail.com', '702547963', 'Piaski 38/95');
 INSERT INTO kierowcy VALUES (2, '72122819152', 'Oskar', 'Grabowski', 'hracyjvo@interia.pl', '729890640', 'Dębowa 21/54');
 INSERT INTO kierowcy VALUES (3, '46031861920', 'Nadia', 'Bąk', 'cev@gmail.com', '760102213', 'Urodzaju 77/47');

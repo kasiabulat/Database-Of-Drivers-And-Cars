@@ -10,3 +10,16 @@ DROP TABLE IF EXISTS ośrodki CASCADE;
 DROP TABLE IF EXISTS mandaty CASCADE;
 DROP TABLE IF EXISTS mandaty_wystawiający CASCADE;
 DROP TABLE IF EXISTS wykroczenia CASCADE ;
+DROP TRIGGER IF EXISTS pesel_check ON kierowcy;
+DROP FUNCTION IF EXISTS pojazdy(integer);
+DROP FUNCTION IF EXISTS nr_prawa_jazdy(integer);
+DROP FUNCTION IF EXISTS nr_prawa_jazdy_M(integer);
+DROP FUNCTION IF EXISTS ilosc_mandatow(integer);
+DROP FUNCTION IF EXISTS ile_punktow(integer);
+DROP FUNCTION IF EXISTS ilosc_egzaminow(integer);
+DROP FUNCTION IF EXISTS ostatni_egzamin(integer);
+DROP FUNCTION IF EXISTS imie_i_nazwisko_wlasciciela_samochodu(char(7));
+DROP VIEW IF EXISTS statystyki_pojazdow_markaModel;
+DROP VIEW IF EXISTS statystyki_pojazdow_rokRejestracji;
+DROP VIEW IF EXISTS statystyki_zdawalnosci_egzaminow;
+
