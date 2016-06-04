@@ -144,6 +144,59 @@ DROP TRIGGER IF EXISTS pesel_check ON kierowcy;
 CREATE TRIGGER pesel_check BEFORE INSERT OR UPDATE ON kierowcy
 FOR EACH ROW EXECUTE PROCEDURE pesel_check();
 
+--sprawdzanie poprawnosci wprowadzonych punktow karnych
+CREATE OR REPLACE FUNCTION wykroczenia_check() RETURNS trigger AS $$
+BEGIN
+	IF(NEW.punkty_karne > 24 OR NEW.punkty_karne < 0)
+	THEN
+		RAISE EXCEPTION 'niepoprawna liczba punktow karnych';
+	END IF;
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS wykroczenia_check ON wykroczenia;
+
+CREATE TRIGGER wykroczenia_check BEFORE INSERT OR UPDATE ON wykroczenia
+FOR EACH ROW EXECUTE PROCEDURE wykroczenia_check();
+
+--sprawdzanie poprawnosci wprowadzonego prawa jazdy
+CREATE OR REPLACE FUNCTION prawa_jazdy_check() RETURNS trigger AS $$
+BEGIN
+	IF EXISTS(SELECT numer_prawa_jazdy
+	FROM prawa_jazdy
+	WHERE id_właściciela = NEW.id_właściciela
+	AND międzynarodowe != NEW.międzynarodowe)
+	THEN 
+		RAISE EXCEPTION 'Ten kierowca juz ma prawo jazdy';
+	END IF;
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS prawa_jazdy_check ON prawa_jazdy;
+
+CREATE TRIGGER prawa_jazdy_check BEFORE INSERT OR UPDATE ON prawa_jazdy
+FOR EACH ROW EXECUTE PROCEDURE prawa_jazdy_check();
+
+--sprawdzanie czy jak dodajemy do tabeli prawa_jazdy_kategorie jakies prawo jazdy to czy jest ono w tabeli prawa jazdy
+CREATE OR REPLACE FUNCTION pj_kategorie() RETURNS trigger AS $$
+BEGIN
+	IF NOT EXISTS(SELECT *
+	FROM prawa_jazdy 
+	WHERE numer_prawa_jazdy = NEW.numer_prawa_jazdy)
+	THEN 
+		RAISE EXCEPTION 'Brak tego prawa jazdy w tabeli prawa jazdy';
+	END IF;
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie;
+
+CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie
+FOR EACH ROW EXECUTE PROCEDURE pj_kategorie();
+
 --wypis id pojazdow ktorych wlascicielem jest kierowca o id_k
 DROP FUNCTION IF EXISTS pojazdy(integer);
 
@@ -403,8 +456,15 @@ NATURAL JOIN kierowcy
 GROUP BY imię, nazwisko
 ORDER BY suma_grzywn DESC, nazwisko, imię;
 
+--statystyki praw jazdy ze wzgledu na kategorie
+DROP VIEW IF EXISTS statystyki_praw_jazdy;
 
-
+CREATE OR REPLACE VIEW statystyki_praw_jazdy
+AS
+SELECT kategoria, COUNT(numer_prawa_jazdy) ilosc
+FROM prawa_jazdy_kategorie
+GROUP BY kategoria
+ORDER BY ilosc DESC, kategoria;
 
 INSERT INTO kierowcy VALUES ('1', '93071089612', 'Leon', 'Sawicki', 'dkhepesin@o2.pl', '823826048', 'Dąbrowska 3/76');
 INSERT INTO kierowcy VALUES ('2', '92012458531', 'Oskar', 'Laskowski', 'lngxtsolf@interia.eu', '735934899', 'Smołki 9/7');
