@@ -197,6 +197,27 @@ DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie;
 CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie
 FOR EACH ROW EXECUTE PROCEDURE pj_kategorie();
 
+--sprawdzenie czy jak dodajemy kogos do tabeli prawa jazdy to czy on wczesniej zdal egzamin wogole
+CREATE OR REPLACE FUNCTION czy_zdal() RETURNS trigger AS $$
+BEGIN
+	IF NOT EXISTS(
+	SELECT *
+	FROM egzaminy NATURAL JOIN egzaminy
+	WHERE id_kierowcy = NEW.id_właściciela 
+	AND typ = 'praktyka' AND wynik =  'zdał'
+	AND data_przeprowadzenia <= NEW.data_wydania)
+	THEN 
+		RAISE EXCEPTION 'Ta osoba nie zdała prawa jazdy jeszcze';
+	END IF;
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS czy_zdal ON prawa_jazdy;
+
+CREATE TRIGGER czy_zdal BEFORE INSERT OR UPDATE ON prawa_jazdy
+FOR EACH ROW EXECUTE PROCEDURE czy_zdal();
+
 --wypis id pojazdow ktorych wlascicielem jest kierowca o id_k
 DROP FUNCTION IF EXISTS pojazdy(integer);
 
