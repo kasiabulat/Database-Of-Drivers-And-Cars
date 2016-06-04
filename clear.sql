@@ -21,5 +21,12 @@ DROP FUNCTION IF EXISTS ostatni_egzamin(integer);
 DROP FUNCTION IF EXISTS imie_i_nazwisko_wlasciciela_samochodu(char(7));
 DROP VIEW IF EXISTS statystyki_pojazdow_markaModel;
 DROP VIEW IF EXISTS statystyki_pojazdow_rokRejestracji;
+DROP VIEW IF EXISTS statystyki_pojazdow_typ;
 DROP VIEW IF EXISTS statystyki_zdawalnosci_egzaminow;
-
+DROP VIEW IF EXISTS statystyki_egzaminow_w_latach;
+DROP VIEW IF EXISTS statystyki_egzaminatorow;
+DROP VIEW IF EXISTS statystyki_egzaminow_w_zaleznosci_od_osrodka;
+DROP FUNCTION IF EXISTS spis_wykroczen_danego_kierowcy(integer);
+DROP VIEW IF EXISTS statystyki_mandatow_najniebezpieczniejsi_kierowcy;
+DROP VIEW IF EXISTS ranking_wykroczen;
+DROP VIEW IF EXISTS ranking_kierowcow_z_najwieksza_grzywna;

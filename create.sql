@@ -290,6 +290,16 @@ FROM pojazdy
 GROUP BY rok
 ORDER BY rok;
 
+--stattystyki po typie pojazdu
+DROP VIEW IF EXISTS statystyki_pojazdow_typ;
+
+CREATE OR REPLACE VIEW statystyki_pojazdow_typ
+AS
+SELECT typ, COUNT(id_pojazdu)
+FROM pojazdy
+GROUP BY typ
+ORDER BY typ;
+
 --statystyki zdawalnosci egzaminow
 DROP VIEW IF EXISTS statystyki_zdawalnosci_egzaminow;
 
@@ -299,6 +309,101 @@ SELECT wynik, typ, COUNT(id_egzaminu)
 FROM egzaminy
 NATURAL JOIN wyniki_egzaminów
 GROUP BY wynik, typ;
+
+--liczba przystepujacych do egzaminow w poszczegolnych latach
+DROP VIEW IF EXISTS statystyki_egzaminow_w_latach;
+
+CREATE OR REPLACE VIEW statystyki_egzaminow_w_latach
+AS
+SELECT EXTRACT(YEAR FROM data_przeprowadzenia) AS rok, COUNT(id_egzaminu) AS ilosc
+FROM egzaminy
+NATURAL JOIN wyniki_egzaminów
+GROUP BY rok
+ORDER BY rok;
+
+--ranking najlepszych egzaminatorów z najwieksza liczba zdjacych klientow
+DROP VIEW IF EXISTS statystyki_egzaminatorow;
+
+CREATE OR REPLACE VIEW statystyki_egzaminatorow
+AS
+SELECT egzaminatorzy.imię, egzaminatorzy.nazwisko,
+COUNT(
+CASE
+	WHEN wynik = 'zdał' THEN 1
+	ELSE NULL
+END) AS ilu_zdalo
+FROM egzaminy
+NATURAL JOIN wyniki_egzaminów
+NATURAL JOIN egzaminatorzy
+GROUP BY egzaminatorzy.imię, egzaminatorzy.nazwisko
+ORDER BY ilu_zdalo DESC, egzaminatorzy.nazwisko, egzaminatorzy.imię;
+
+--ranking najlepszych osrodkow
+DROP VIEW IF EXISTS statystyki_egzaminow_w_zaleznosci_od_osrodka;
+
+CREATE OR REPLACE VIEW statystyki_egzaminow_w_zaleznosci_od_osrodka
+AS
+SELECT nazwa, adres, COUNT(
+CASE WHEN wynik = 'zdał' THEN 1
+ELSE NULL
+END) AS zdało, COUNT(wynik) AS zdawało, ROUND(100 * COUNT(
+CASE WHEN wynik = 'zdał' THEN 1
+ELSE NULL
+END)/COUNT(wynik)) AS efektywnosc
+FROM ośrodki
+NATURAL JOIN egzaminy
+NATURAL JOIN wyniki_egzaminów
+GROUP BY nazwa, adres
+ORDER BY efektywnosc DESC, nazwa, adres;
+
+--spis wykroczen danego kierowcy o id_k
+DROP FUNCTION IF EXISTS spis_wykroczen_danego_kierowcy(integer);
+
+CREATE OR REPLACE FUNCTION spis_wykroczen_danego_kierowcy(id_k INTEGER)
+RETURNS SETOF text AS
+$$
+SELECT DISTINCT opis
+FROM mandaty NATURAL JOIN wykroczenia
+WHERE id_kierowcy = id_k;
+$$ LANGUAGE sql;
+
+--ranking kierowcow z najwieksza liczba mandatow
+DROP VIEW IF EXISTS statystyki_mandatow_najniebezpieczniejsi_kierowcy;
+
+CREATE OR REPLACE VIEW statystyki_mandatow_najniebezpieczniejsi_kierowcy
+AS
+SELECT imię, nazwisko, COUNT(id_mandatu) AS ilosc_mandatow,
+SUM(punkty_karne) AS suma_punktow_karnych
+FROM wykroczenia 
+NATURAL JOIN mandaty
+NATURAL JOIN kierowcy
+GROUP BY imię, nazwisko
+ORDER BY ilosc_mandatow DESC, suma_punktow_karnych DESC;
+
+--ranking wykroczen
+DROP VIEW IF EXISTS ranking_wykroczen;
+
+CREATE OR REPLACE VIEW ranking_wykroczen
+AS
+SELECT opis, COUNT(id_mandatu) AS ilosc
+FROM wykroczenia 
+NATURAL JOIN mandaty
+GROUP BY opis
+ORDER BY ilosc DESC, opis;
+
+--ranking kierowcow z najwiekszymi grzywnami
+DROP VIEW IF EXISTS ranking_kierowcow_z_najwieksza_grzywna;
+
+CREATE OR REPLACE VIEW ranking_kierowcow_z_najwieksza_grzywna
+AS
+SELECT imię, nazwisko, SUM(wysokość_grzywny) AS suma_grzywn
+FROM wykroczenia 
+NATURAL JOIN mandaty
+NATURAL JOIN kierowcy
+GROUP BY imię, nazwisko
+ORDER BY suma_grzywn DESC, nazwisko, imię;
+
+
 
 
 INSERT INTO kierowcy VALUES ('1', '93071089612', 'Leon', 'Sawicki', 'dkhepesin@o2.pl', '823826048', 'Dąbrowska 3/76');
