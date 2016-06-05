@@ -32,7 +32,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField promptText="id_kierowcy" GridPane.columnIndex="1" />
+                  <TextField fx:id="id_kierowcy" promptText="id_kierowcy" GridPane.columnIndex="1" />
                   <Button fx:id="showInfo" mnemonicParsing="false" onAction="#showInfo" text="wyświetl informacje" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>

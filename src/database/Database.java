@@ -27,10 +27,10 @@ final public class Database
 
 
 	private static final String SERVER_ADRES="localhost";
-	private static final String PORT="5432";
-	private static final String DB_NAME="projektID";
-	private static final String USER_NAME="rafalbyczek";
-	private static final String PASSWORD="Rafciob.960";
+	private static final String PORT="5433";
+	private static final String DB_NAME="kierowcy";
+	private static final String USER_NAME="kierowcy";
+	private static final String PASSWORD="test";
 
 
 	/**
@@ -181,6 +181,47 @@ final public class Database
 		insertColumn(examTable,String.class,"punkty_karne",30);
 		examTable.setItems(getOffenceList());
 	}
+
+	public String getDriversVehicles(final int driver)
+	{
+		String pojazdy="";
+		try(PreparedStatement preparedStatement=connection.prepareStatement("SELECT pojazdy(?)"))
+		{
+			preparedStatement.setInt(1,driver);
+			try(ResultSet resultSet=preparedStatement.executeQuery())
+			{
+				while(resultSet.next())
+					pojazdy+=resultSet.getString(1)+',';
+			}
+		}catch(final SQLException e)
+		{
+			throw new DatabaseException(e);
+		}
+		if(pojazdy.isEmpty())
+			return "";
+		return pojazdy.substring(0,pojazdy.length()-1);
+	}
+
+	public String getDriverSimpleStringInformation(final String query,final int driver)
+	{
+		String result;
+		try(PreparedStatement preparedStatement=connection.prepareStatement(query))
+		{
+			preparedStatement.setInt(1,driver);
+			try(ResultSet resultSet=preparedStatement.executeQuery())
+			{
+				if(resultSet.next())
+					return resultSet.getString(1);
+			}
+		}catch(final SQLException e)
+		{
+			throw new DatabaseException(e);
+		}
+		throw new IllegalArgumentException("Query did not returned results");
+	}
+
+
+
 
 	/*public static void main(String[] args) {
 		launch(args);
