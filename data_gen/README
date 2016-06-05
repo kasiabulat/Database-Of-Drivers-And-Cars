@@ -1,0 +1,9 @@
+Generatorka przepisana na Javę.
+
+Dane spełniają wszystko, co jest sprawdzane przez triggery/funkcje/etc. na 05-06-16 17:23
+W files/gen_in_data.in jest wszystko co potrzebne do generowania senswnych danych, zapytanie generuje się zaś do pliku myNewQuery.sql
+Przy obecnie ustawionych stałych generuje się ~2000 krotek; we wszyskich możliwych miejscach pojawiły się wiarygodne dane (tj. mogące mieć/mające bezpośrednie odzwierciedlenie w rzeczywistości).
+Jedyną bolączką na ten moment jest to, że generuje się dużo egzaminów, bo w każdym bierze udział jedna osoba, może dwie... Wynika to głównie z małej ilości kierowców i ich rozkładu dat urodzenia (program naiwnie zakłada, że na prawo jazdy zdaje się zaraz po 18 urodzinach :P) - to zabiera najwięcej krotek
+
+Nie powinno być problemu przy ewentualnym podpinaniu tego pod program do obsługi bazy :)
+W razie pytań piszcie.
