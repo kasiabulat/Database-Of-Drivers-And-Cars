@@ -32,8 +32,8 @@ public class Pojazdy {
 
         nr_rejestracyjny = "";
         nr_rejestracyjny += Dane.kodyTablic.get(rNum.nextInt(Dane.kodyTablic.size()));
-        nr_rejestracyjny += " ";
         int dolosuj = 7 - nr_rejestracyjny.length();
+        nr_rejestracyjny += " ";
 
         nr_rejestracyjny += (char)(rNum.nextInt(10) + '0');  // Po kodzie powiatu cyfra
         for (int i = 1; i < dolosuj; ++i) {
