@@ -238,7 +238,7 @@ BEGIN
 	WHERE id_właściciela = id_k
 	LIMIT 1);
 
-	RETURN nr;
+	RETURN COALESCE(nr, 'brak');
 END;
 $$ LANGUAGE plpgsql;
 
@@ -255,7 +255,7 @@ BEGIN
 	WHERE id_właściciela = id_k AND międzynarodowe IS TRUE
 	LIMIT 1);
 
-	RETURN nr;
+	RETURN COALESCE(nr,'brak');
 END;
 $$ LANGUAGE plpgsql;
 
@@ -283,7 +283,7 @@ DROP FUNCTION IF EXISTS ile_punktow(integer);
 CREATE OR REPLACE FUNCTION ile_punktow(id_k INT)
 RETURNS NUMERIC AS
 $$
-SELECT SUM(punkty_karne) 
+SELECT COALESCE(SUM(punkty_karne),0)
 FROM (
       SELECT punkty_karne
       FROM mandaty INNER JOIN wykroczenia ON mandaty.id_wykroczenia = wykroczenia.id_wykroczenia
