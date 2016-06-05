@@ -6,17 +6,17 @@ import java.util.Random;
  * Created by Michal Stobierski on 2016-06-04.
  */
 
-public class Wykroczenia {
+class Wykroczenia {
 
-    static int objects = 0;
-    static Random rNum = new Random();
-    public static Map<String, Boolean> wytworzoneWykroczenia = new HashMap<>();
+    private static int objects;
+    private static final Random rNum = new Random();
+    private static final Map<String, Boolean> wytworzoneWykroczenia = new HashMap<>();
 
 
-    int id_wykroczenia;
-    String opis;
-    double wysokosc_grzywny;
-    int punkty_karne;
+    private final int id_wykroczenia;
+    private final String opis;
+    private final double wysokosc_grzywny;
+    private final int punkty_karne;
 
     public Wykroczenia() {
         id_wykroczenia = ++objects;
@@ -42,6 +42,6 @@ public class Wykroczenia {
                 ", '" + opis +
                 "', " + wysokosc_grzywny +
                 ", " + punkty_karne +
-                ")";
+                ')';
     }
 }

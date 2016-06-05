@@ -4,17 +4,17 @@ import java.util.*;
  * Created by Michal Stobierski on 2016-06-04.
  */
 
-public class PrawaJazdy {
+class PrawaJazdy {
 
-    static Random rNum = new Random();
-    public static Map<Integer, Boolean> posiadaMiedzynarodowe = new HashMap<>();
+    private static final Random rNum = new Random();
+    private static final Map<Integer, Boolean> posiadaMiedzynarodowe = new HashMap<>();
 
-    String numer_prawa_jazdy;
-    int id_wlasciciela;
-    String data_wydania;
-    boolean miedzynarodowe;
+    private String numer_prawa_jazdy;
+    private final int id_wlasciciela;
+    private final String data_wydania;
+    private boolean miedzynarodowe;
 
-    public PrawaJazdy(int id_wlasciciela, String data_wydania) {
+    public PrawaJazdy(final int id_wlasciciela,final String data_wydania) {
         this.id_wlasciciela = id_wlasciciela;
         this.data_wydania = data_wydania;
 
@@ -32,11 +32,7 @@ public class PrawaJazdy {
         if(rNum.nextInt(8) == 0) {
             miedzynarodowe = true;
             posiadaMiedzynarodowe.put(id_wlasciciela, true);
-            for (PrawaJazdy i: Dane.prawaJazdy){
-                if(i.id_wlasciciela == id_wlasciciela){
-                    i.miedzynarodowe = true;
-                }
-            }
+            Dane.prawaJazdy.stream().filter(i->i.id_wlasciciela==id_wlasciciela).forEach(i->i.miedzynarodowe=true);
         }
 
     }
@@ -47,11 +43,10 @@ public class PrawaJazdy {
 
     @Override
     public String toString() {
-        return "(" +
-                "'" + numer_prawa_jazdy +
+        return "(\'"+ numer_prawa_jazdy +
                 "', " + id_wlasciciela +
                 ", '" + data_wydania +
                 "', " + miedzynarodowe +
-                ")";
+                ')';
     }
 }

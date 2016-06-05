@@ -5,22 +5,22 @@ import java.util.Random;
  * Created by Michal Stobierski on 2016-06-03.
  */
 
-public class Egzaminatorzy {
+class Egzaminatorzy {
 
-    static int objects = 0;
-    static Random rNum = new Random();
+    private static int objects;
+    private static final Random rNum = new Random();
 
-    int id_egzaminatora;
-    String imie;
-    String nazwisko;
+    private final int id_egzaminatora;
+    private final String imie;
+    private final String nazwisko;
 
 
     public Egzaminatorzy() {
-        int plec = rNum.nextInt(2);
+        final int plec = rNum.nextInt(2);
 
         id_egzaminatora = ++objects;
 
-        List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
+        final List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
         imie = personalia.get(0);
         nazwisko = personalia.get(1);
     }
@@ -29,6 +29,7 @@ public class Egzaminatorzy {
         return id_egzaminatora;
     }
 
+    @Override
     public String toString() {
         return "(" +
                 id_egzaminatora +

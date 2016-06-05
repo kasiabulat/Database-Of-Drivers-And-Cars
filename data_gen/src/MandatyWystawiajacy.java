@@ -5,21 +5,21 @@ import java.util.Random;
  * Created by Michal Stobierski on 2016-06-03.
  */
 
-public class MandatyWystawiajacy {
+class MandatyWystawiajacy {
 
-    static int objects = 0;
-    static Random rNum = new Random();
+    private static int objects;
+    private static final Random rNum = new Random();
 
-    int id_wystawiajacego;
-    String imie;
-    String nazwisko;
+    private final int id_wystawiajacego;
+    private final String imie;
+    private final String nazwisko;
 
     public MandatyWystawiajacy() {
-        int plec = rNum.nextInt(2);
+        final int plec = rNum.nextInt(2);
 
         id_wystawiajacego = ++objects;
 
-        List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
+        final List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
         imie = personalia.get(0);
         nazwisko = personalia.get(1);
     }
@@ -28,6 +28,7 @@ public class MandatyWystawiajacy {
         return id_wystawiajacego;
     }
 
+    @Override
     public String toString() {
         return "(" +
                 id_wystawiajacego +

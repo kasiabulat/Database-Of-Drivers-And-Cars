@@ -6,15 +6,15 @@ import java.util.Random;
  * Created by Michal Stobierski on 2016-06-03.
  */
 
-public class Osrodki {
+class Osrodki {
 
-    static int objects = 0;
-    static Random rNum = new Random();
-    public static Map<String, Boolean> wytworzoneOsrodki = new HashMap<>();
+    private static int objects;
+    private static final Random rNum = new Random();
+    private static final Map<String, Boolean> wytworzoneOsrodki = new HashMap<>();
 
-    int id_osrodka;
-    String nazwa;
-    String adres;
+    private final int id_osrodka;
+    private final String nazwa;
+    private final String adres;
 
     public Osrodki() {
         id_osrodka = ++objects;
@@ -32,6 +32,7 @@ public class Osrodki {
         return id_osrodka;
     }
 
+    @Override
     public String toString() {
         return "(" +
                 id_osrodka +

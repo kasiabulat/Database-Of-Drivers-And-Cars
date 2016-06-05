@@ -10,47 +10,47 @@ import java.util.regex.Pattern;
  * Created by Michal Stobierski on 2016-06-03.
  */
 
-public class FunkcjeLosujace {
+class FunkcjeLosujace {
 
-    static Random rNum = new Random();
+    private static final Random rNum = new Random();
+    private static final Pattern Ł=Pattern.compile("ł");
 
-    static long generujPesel(int plec, String data_urodzenia){
+    static long generujPesel(final int plec,final String data_urodzenia){
         // Generowanie prawdziwego PESELu
-        long suma_kontrolna = 0;
-        long pesel = 0;
-        pesel = 0;
 
         long temp = Integer.parseInt(data_urodzenia.substring(2, 4));  // rok urodzenia
+        long pesel=0;
         pesel += temp;
-        suma_kontrolna += ((temp/10) + (temp%10)*3);
+        long suma_kontrolna=0;
+        suma_kontrolna +=temp/10+ temp%10*3;
 
         temp = Integer.parseInt(data_urodzenia.substring(5, 7));   // miesiac urodzenia
         pesel *= 100; pesel += temp;
-        suma_kontrolna += ((temp/10)*7 + (temp%10)*9);
+        suma_kontrolna +=temp/10*7 + temp%10*9;
 
         temp = Integer.parseInt(data_urodzenia.substring(8, 10));   // dzien urodzenia
         pesel *= 100; pesel += temp;
-        suma_kontrolna += ((temp/10) + (temp%10)*3);
+        suma_kontrolna +=temp/10+ temp%10*3;
 
         temp = rNum.nextInt(100);  // byle co
         pesel *= 100; pesel += temp;
-        suma_kontrolna += ((temp/10)*7 + (temp%10)*9);
+        suma_kontrolna +=temp/10*7 + temp%10*9;
 
         temp = rNum.nextInt(99) + 1;  // znowu
-        if(plec == 0 && temp%2 == 1) temp--;    // plec jest 10 cyfra peselu, zalezy od parzystosci
-        else if(plec == 1 && temp%2 == 0) temp--;
-        pesel *= 100; pesel += temp;
-        suma_kontrolna += ((temp/10)*1 + (temp%10)*3);
+        if(plec==0&&temp%2==1||plec==1&&temp%2==0) temp--;    // plec jest 10 cyfra peselu, zalezy od parzystosci
 
-        pesel *= 10; pesel += ((10 - (suma_kontrolna%10))%10);
+        pesel *= 100; pesel += temp;
+        suma_kontrolna +=temp/10+ temp%10*3;
+
+        pesel *= 10; pesel +=(10 -suma_kontrolna%10)%10;
 
         return pesel;
         // uff, koniec PESELU
     }
 
-    static List<String> generuj_imie_nazwisko(int plec)
+    static List<String> generuj_imie_nazwisko(final int plec)
     {
-        List<String> res = new ArrayList<>();
+        final List<String> res = new ArrayList<>();
         if(plec == 0)
         {
             res.add(Dane.imionaDamskie.get(rNum.nextInt(Dane.imionaDamskie.size())));
@@ -73,14 +73,14 @@ public class FunkcjeLosujace {
         return email;
     }
 
-    public static String deAccent(String str) {
+    private static String deAccent(final CharSequence str) {
         String nfdNormalizedString = Normalizer.normalize(str, Normalizer.Form.NFD);
-        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
-        nfdNormalizedString = nfdNormalizedString.replaceAll("ł", "l");
+        final Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+        nfdNormalizedString =Ł.matcher(nfdNormalizedString).replaceAll("l");
         return pattern.matcher(nfdNormalizedString).replaceAll("");
     }
 
-    static String generuj_mail(String imie, String nazwisko){
+    static String generuj_mail(final String imie,final String nazwisko){
         String email = "";
         email += nazwisko.toLowerCase(Locale.ENGLISH);
         email += ".";
@@ -102,8 +102,7 @@ public class FunkcjeLosujace {
 
     static String generuj_adres()
     {
-        String adres = "";
-        adres = Dane.adresy.get(rNum.nextInt(Dane.adresy.size()));
+        String adres=Dane.adresy.get(rNum.nextInt(Dane.adresy.size()));
         adres += " ";
         for (int i = 0; i < rNum.nextInt(2)+1; ++i){
             adres += (char)(rNum.nextInt(10) + '0');    // dowolna cyfra
@@ -126,14 +125,14 @@ public class FunkcjeLosujace {
         return adres;
     }
 
-    static String generuj_date(String s, String e){
+    static String generuj_date(final CharSequence s,final CharSequence e){
         //String s = "2016-05-30";
         //String e = "2016-06-10";
-        LocalDate start = LocalDate.parse(s);
-        LocalDate end = LocalDate.parse(e);
-        int days = start.until(end).getDays();
-        int years = start.until(end).getYears();
-        int months = start.until(end).getMonths();
+        final LocalDate start = LocalDate.parse(s);
+        final LocalDate end = LocalDate.parse(e);
+        final int days = start.until(end).getDays();
+        final int years = start.until(end).getYears();
+        final int months = start.until(end).getMonths();
 
         /*List<LocalDate> totalDates = new ArrayList<>();
         while (!start.isAfter(end)) {

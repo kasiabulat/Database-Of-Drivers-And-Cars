@@ -4,17 +4,17 @@ import java.util.Random;
  * Created by Michal Stobierski on 2016-06-04.
  */
 
-public class Mandaty {
+class Mandaty {
 
-    static int objects = 0;
-    static Random rNum = new Random();
+    private static int objects;
+    private static final Random rNum = new Random();
 
-    int id_mandatu;
-    int id_kierowcy;
-    int id_wystawiajacego;
-    int id_wykroczenia;
+    private final int id_mandatu;
+    private final int id_kierowcy;
+    private final int id_wystawiajacego;
+    private final int id_wykroczenia;
 
-    public Mandaty(int id_kierowcy) {
+    public Mandaty(final int id_kierowcy) {
         this.id_kierowcy = id_kierowcy;
         id_mandatu = ++objects;
 
@@ -29,6 +29,6 @@ public class Mandaty {
                 ", " + id_kierowcy +
                 ", " + id_wystawiajacego +
                 ", " + id_wykroczenia +
-                ")";
+                ')';
     }
 }

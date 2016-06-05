@@ -5,36 +5,33 @@ import java.util.*;
  * Created by Michal Stobierski on 2016-06-03.
  */
 
-public class Kierowca {
+class Kierowca {
 
-    static int objects = 0;
-    static Random rNum = new Random();
-    static final String URODZENI_OD = "1986-01-01";
-    static final String URODZENI_DO = "1997-01-01";
-    static final int OCZEKIWANIE = 21;
+    private static int objects;
+    private static final Random rNum = new Random();
+    private static final String URODZENI_OD = "1986-01-01";
+    private static final String URODZENI_DO = "1997-01-01";
+    private static final int OCZEKIWANIE = 21;
 
-    int id_kierowcy;
-    long pesel;
-    String imie;
-    String nazwisko;
-    String email;
-    String nr_telefonu;
-    String adres;
-
-    // pola pomocnicze, nie uwzgledniane w krotce
-    String data_urodzenia;
+    private final int id_kierowcy;
+    private final long pesel;
+    private final String imie;
+    private final String nazwisko;
+    private final String email;
+    private final String nr_telefonu;
+    private final String adres;
 
     public Kierowca() {
 
-        int plec = rNum.nextInt(2);    // 0 - K, 1 - M
+        final int plec = rNum.nextInt(2);    // 0 - K, 1 - M
 
         id_kierowcy = ++objects;
 
-        data_urodzenia = FunkcjeLosujace.generuj_date(URODZENI_OD, URODZENI_DO);
+        final String data_urodzenia=FunkcjeLosujace.generuj_date(URODZENI_OD,URODZENI_DO);
         //System.out.println(data_urodzenia);
-        pesel = FunkcjeLosujace.generujPesel(plec, data_urodzenia);
+        pesel = FunkcjeLosujace.generujPesel(plec,data_urodzenia);
 
-        List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
+        final List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
         imie = personalia.get(0);
         nazwisko = personalia.get(1);
 
@@ -45,7 +42,7 @@ public class Kierowca {
 
         // Generuj w miare sensowne dane dotyczace kierowcy
 
-        List<String> posiadaneKat = new ArrayList<>();
+        final List<String> posiadaneKat = new ArrayList<>();
         posiadaneKat.add("B"); posiadaneKat.add("A"); posiadaneKat.add("C"); posiadaneKat.add("D");
 
         int ilePrawJazdy = rNum.nextInt(100)+1;
@@ -55,22 +52,21 @@ public class Kierowca {
         else ilePrawJazdy = 4;
 
         for (int i = 0; i < ilePrawJazdy; ++i) {
-            int ileTeorii = rNum.nextInt(2);
-            int ilePraktyk = rNum.nextInt(3);
+            final int ileTeorii = rNum.nextInt(2);
+            final int ilePraktyk = rNum.nextInt(3);
 
             // Jakiej kategorii bedzie to prawko
-            String kategoria = posiadaneKat.get(i);
+            final String kategoria = posiadaneKat.get(i);
 
             // Wszystkie podejscia do teorii
-            WynikiEgzaminow nowyEgz;
 
             LocalDate orientacyjnaData = LocalDate.parse(data_urodzenia);
             orientacyjnaData = orientacyjnaData.plusYears(18).plusDays(21*(i+4));
-            String wynikEgzV = "";
-            for (int j = 0; j < ileTeorii; ++j){
-                int wynikEgz = rNum.nextInt(4);
-                if(wynikEgz < 1) wynikEgzV = "nie stawił się";
-                else wynikEgzV = "nie zdał";
+            String wynikEgzV;
+            WynikiEgzaminow nowyEgz;
+            for (int j=0;j < ileTeorii;++j){
+                final int wynikEgz = rNum.nextInt(4);
+                wynikEgzV=wynikEgz<1?"nie stawił się":"nie zdał";
 
                 nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "teoria");
                 Dane.wynikiEgzaminow.add(nowyEgz);
@@ -84,9 +80,8 @@ public class Kierowca {
 
             // Wszystkie podejscia do praktyki
             for (int j = 0; j < ilePraktyk; ++j){
-                int wynikEgz = rNum.nextInt(4);
-                if(wynikEgz < 1) wynikEgzV = "nie stawił się";
-                else wynikEgzV = "nie zdał";
+                final int wynikEgz = rNum.nextInt(4);
+                wynikEgzV=wynikEgz<1?"nie stawił się":"nie zdał";
 
                 nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "praktyka");
                 Dane.wynikiEgzaminow.add(nowyEgz);
@@ -99,41 +94,41 @@ public class Kierowca {
             orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE/2*3);
 
             // Wygeneruj prawko tej kategorii
-            PrawaJazdy nowePJ = new PrawaJazdy(id_kierowcy, orientacyjnaData.toString());
+            final PrawaJazdy nowePJ = new PrawaJazdy(id_kierowcy, orientacyjnaData.toString());
             Dane.prawaJazdy.add(nowePJ);
 
             // Wygeneruj PJkategorie
-            PrawaJazdyKategorie nowePJK = new PrawaJazdyKategorie(nowePJ.getNumer_prawa_jazdy(), kategoria);
+            final PrawaJazdyKategorie nowePJK = new PrawaJazdyKategorie(nowePJ.getNumer_prawa_jazdy(), kategoria);
             Dane.prawaJazdyKategorie.add(nowePJK);
         }
 
         // Generowanie pojazdow
-        int ilePojazdow = rNum.nextInt(2)+1;
+        final int ilePojazdow = rNum.nextInt(2)+1;
         for (int i = 0; i< ilePojazdow; ++i){
-            Pojazdy nowyPojazd = new Pojazdy(LocalDate.parse(data_urodzenia).plusYears(18).plusDays(1));
+            final Pojazdy nowyPojazd = new Pojazdy(LocalDate.parse(data_urodzenia).plusYears(18).plusDays(1));
             Dane.pojazdy.add(nowyPojazd);
 
-            KierowcyPojazdy nowyKP = new KierowcyPojazdy(id_kierowcy, nowyPojazd.getId_pojazdu());
+            final KierowcyPojazdy nowyKP = new KierowcyPojazdy(id_kierowcy, nowyPojazd.getId_pojazdu());
             Dane.kierowcyPojazdy.add(nowyKP);
         }
 
         // Generowanie otrzymanych mandatow
-        int ileMandatow = rNum.nextInt(4);
+        final int ileMandatow = rNum.nextInt(4);
         for (int i = 0; i < ileMandatow; ++i){
-            Mandaty nowyMandat = new Mandaty(id_kierowcy);
+            final Mandaty nowyMandat = new Mandaty(id_kierowcy);
             Dane.mandaty.add(nowyMandat);
         }
     }
 
+    @Override
     public String toString() {
-        return "(" +
-                "'" + id_kierowcy +
+        return "(\'"+ id_kierowcy +
                 "', '" + pesel +
                 "', '" + imie +
                 "', '" + nazwisko +
                 "', '" + email +
                 "', '" + nr_telefonu +
-                "', '" + adres + "'" +
-                ")";
+                "', '" + adres +'\''+
+                ')';
     }
 }
