@@ -202,8 +202,8 @@ CREATE OR REPLACE FUNCTION czy_zdal() RETURNS trigger AS $$
 BEGIN
 	IF NOT EXISTS(
 	SELECT *
-	FROM egzaminy NATURAL JOIN egzaminy
-	WHERE id_kierowcy = NEW.id_właściciela 
+	FROM egzaminy NATURAL JOIN wyniki_egzaminów
+	WHERE id_kierowcy = NEW.id_właściciela
 	AND typ = 'praktyka' AND wynik =  'zdał'
 	AND data_przeprowadzenia <= NEW.data_wydania)
 	THEN 
