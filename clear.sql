@@ -3,7 +3,6 @@ DROP TABLE IF EXISTS kierowcy CASCADE;
 DROP TABLE IF EXISTS kierowcy_pojazdy CASCADE;
 DROP TABLE IF EXISTS prawa_jazdy CASCADE;
 DROP TABLE IF EXISTS prawa_jazdy_kategorie CASCADE;
-DROP TYPE IF EXISTS typ_egzaminu CASCADE;
 DROP TABLE IF EXISTS marka_model CASCADE;
 DROP TABLE IF EXISTS egzaminatorzy CASCADE;
 DROP TABLE IF EXISTS egzaminy CASCADE;
@@ -15,11 +14,22 @@ DROP TABLE IF EXISTS wojewodztwa CASCADE;
 DROP TABLE IF EXISTS powiaty CASCADE;
 DROP TABLE IF EXISTS miejscowosci CASCADE;
 DROP TABLE IF EXISTS ulice CASCADE;
+DROP TABLE IF EXISTS kraje CASCADE;
+DROP TABLE IF EXISTS firma CASCADE;
+DROP TABLE IF EXISTS sposob_zasilania CASCADE;
+DROP TABLE IF EXISTS historia_wlascicieli CASCADE;
+DROP TABLE IF EXISTS historia_przegladow_technicznych CASCADE;
+
+DROP TYPE IF EXISTS typ_egzaminu CASCADE;
+DROP TYPE IF EXISTS typ_wlasciciela CASCADE;
+DROP TYPE IF EXISTS typ_kierownicy CASCADE;
+
 DROP TRIGGER IF EXISTS pesel_check ON kierowcy;
 DROP TRIGGER IF EXISTS wykroczenia_check ON wykroczenia;
 DROP TRIGGER IF EXISTS prawa_jazdy_check ON prawa_jazdy;
 DROP TRIGGER IF EXISTS czy_zdal ON prawa_jazdy;
 DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie;
+
 DROP FUNCTION IF EXISTS czy_zdal();
 DROP FUNCTION IF EXISTS pj_kategorie();
 DROP FUNCTION IF EXISTS prawa_jazdy_check();
@@ -34,6 +44,7 @@ DROP FUNCTION IF EXISTS ilosc_egzaminow(integer);
 DROP FUNCTION IF EXISTS ostatni_egzamin(integer);
 DROP FUNCTION IF EXISTS imie_i_nazwisko_wlasciciela_samochodu(char(7));
 DROP FUNCTION IF EXISTS spis_wykroczen_danego_kierowcy(integer);
+
 DROP VIEW IF EXISTS statystyki_pojazdow_markaModel;
 DROP VIEW IF EXISTS statystyki_pojazdow_rokRejestracji;
 DROP VIEW IF EXISTS statystyki_pojazdow_typ;

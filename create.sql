@@ -18,24 +18,18 @@ DROP TABLE IF EXISTS wojewodztwa CASCADE;
 DROP TABLE IF EXISTS powiaty CASCADE;
 DROP TABLE IF EXISTS miejscowosci CASCADE;
 DROP TABLE IF EXISTS ulice CASCADE;
+DROP TABLE IF EXISTS kraje CASCADE;
+DROP TABLE IF EXISTS firma CASCADE;
+DROP TABLE IF EXISTS sposob_zasilania CASCADE;
+DROP TABLE IF EXISTS historia_wlascicieli CASCADE;
+DROP TABLE IF EXISTS historia_przegladow_technicznych CASCADE;
 
 
-CREATE TABLE marka_model(
-	id_marka_model SERIAL NOT NULL PRIMARY KEY,
-	marka TEXT,
-	model TEXT
+CREATE TABLE sposob_zasilania(
+	id_sposob SERIAL NOT NULL PRIMARY KEY,
+	nazwa TEXT --gaz, benzyna etc
 );
 
-CREATE TABLE pojazdy(
-	id_pojazdu SERIAL PRIMARY KEY,
-	nr_rejestracyjny CHAR(7) UNIQUE ,
-	numer_vin INT,
-	data_rejestracji DATE NOT NULL,
-	/* Id_właściciela*/
-	id_marka_model INT NOT NULL REFERENCES marka_model(id_marka_model),
-	typ TEXT,
-	waga_samochodu NUMERIC
-);
 
 CREATE TABLE wojewodztwa(
 	id_wojewodztwa SERIAL NOT NULL PRIMARY KEY,
@@ -57,6 +51,69 @@ CREATE TABLE miejscowosci(
 CREATE TABLE ulice(
 	id_ulicy SERIAL NOT NULL PRIMARY KEY,
 	ulica TEXT NOT NULL
+);
+
+CREATE TYPE TYP_KIEROWNICY AS ENUM ('po prawej', 'po  lewej');
+
+CREATE TYPE TYP_WLASCICIELA AS ENUM ('firma', 'posoba', 'brak');
+
+CREATE TABLE marka_model(
+	id_marka_model SERIAL NOT NULL PRIMARY KEY,
+	marka TEXT,
+	model TEXT,
+	sposob_zasilania INT REFERENCES sposob_zasilania(id_sposob),
+	liczba_miejsc INT NOT NULL,
+	typ_kierownicy TYP_KIEROWNICY NOT NULL
+);
+
+CREATE TABLE kraje(
+	id_kraju INT NOT NULL PRIMARY KEY,
+	nazwa TEXT
+);
+
+CREATE TABLE pojazdy(
+	id_pojazdu SERIAL PRIMARY KEY,
+	nr_rejestracyjny CHAR(7) UNIQUE ,
+	numer_vin INT,
+	data_rejestracji DATE NOT NULL,
+	typ_wlasciciela TYP_WLASCICIELA NOT NULL,
+	id_wlasciciela INT, --podobnie trigger na wlascicieli 
+	id_marka_model INT NOT NULL REFERENCES marka_model(id_marka_model),
+	typ TEXT,
+	id_kraju INT NOT NULL REFERENCES kraje(id_kraju), --kraj produkcji samochodu
+	waga_samochodu NUMERIC
+);
+
+CREATE TABLE historia_przegladow_technicznych(
+	nr_pojazdu INT NOT NULL REFERENCES pojazdy(id_pojazdu),
+	data_przegladu timestamp without time zone,
+	data_wygasniecia timestamp without time zone
+);
+
+CREATE TABLE firma(
+	id_firmy SERIAL NOT NULL PRIMARY KEY,
+	NIP char(10), --bedzie trigger
+	REGON char(9), -- tez bedzie
+	numerKRS text,
+	nazwa_firmy TEXT NOT NULL,
+	email TEXT, /*CHECK*/
+	nr_telefonu CHAR(9),
+	nr_ulicy INT NOT NULL REFERENCES ulice(id_ulicy),
+	nr_budynku TEXT,
+	kod_pocztowy TEXT,
+	nr_miejscowosci INT NOT NULL REFERENCES miejscowosci(id_miejscowosci)	
+);
+
+CREATE TABLE historia_wlascicieli(
+	id_pojazdu INT NOT NULL REFERENCES pojazdy(id_pojazdu),
+	typ_wlasciciela TYP_WLASCICIELA NOT NULL,
+	id_wlasciciela INT NOT NULL,
+	od_kiedy timestamp without time zone,
+	do_kiedy timestamp without time zone
+	--jezeli typ wlascciela to forma to id_wlasciciela wskazuje na firme
+	--w tabeli firmy a jezeli wlasciciel to osoba to jest ona w tabeli kierowcy
+	--i wtedy id wlasciciela pochodzi z tamtej tabeli
+	--calosc bedzie obieta triggerem przy wstawianiu etc czy wszystko poprawnie
 );
 
 CREATE TABLE kierowcy(
