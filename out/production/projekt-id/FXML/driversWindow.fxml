@@ -51,11 +51,23 @@
                         <ColumnConstraints hgrow="SOMETIMES" />
                         <ColumnConstraints hgrow="SOMETIMES" />
                     </columnConstraints>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField promptText="id_kierowcy">
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addDriver" text="dodaj kierowcę" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                        <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#showMoreInfo" text="więcej informacji o kierowcy" />
+                     </children>
+                  </GridPane>
+                  <GridPane>
+                     <children>
+                        <TextField promptText="id kierowcy">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
@@ -75,31 +87,58 @@
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="e-mail" GridPane.columnIndex="4">
+                        <TextField promptText="płeć" GridPane.columnIndex="4">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="nr_telefonu" GridPane.columnIndex="5">
+                        <TextField promptText="e-mail" GridPane.columnIndex="5">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="adres" GridPane.columnIndex="6" />
+                        <TextField promptText="nr telefonu" GridPane.columnIndex="6">
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField promptText="nr ulicy" GridPane.columnIndex="7">
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField promptText="nr budynku" GridPane.columnIndex="8">
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField promptText="kod pocztowy" GridPane.columnIndex="9">
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField promptText="nr miejscowosci" GridPane.columnIndex="10">
+                           <GridPane.margin>
+                              <Insets left="2.0" right="2.0" />
+                           </GridPane.margin>
+                        </TextField>
                      </children>
-                  </GridPane>
-                  <GridPane GridPane.rowIndex="1">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addDriver" text="dodaj kierowcę" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
-                        <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#showMoreInfo" text="więcej informacji o kierowcy" />
-                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                   </GridPane>
                </children>
             </GridPane>

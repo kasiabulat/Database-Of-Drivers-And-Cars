@@ -75,7 +75,7 @@ CREATE TABLE kraje (
 CREATE TABLE pojazdy (
   id_pojazdu       SERIAL PRIMARY KEY,
   nr_rejestracyjny CHAR(7) UNIQUE,
-  numer_vin        INT,
+  numer_vin        CHAR(17),
   data_rejestracji DATE            NOT NULL,
   id_marka_model   INT             NOT NULL REFERENCES marka_model (id_marka_model),
   typ              TEXT,

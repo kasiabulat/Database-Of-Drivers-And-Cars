@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f045022-2726-4e20-9621-016b0062f21e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/FirmsController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/licencesChoiceWindow.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/LicencesChoiceController.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/LicencesChoiceController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/LicencesChoiceController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/MainController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesMoreInfoController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesMoreInfoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create.sql" afterPath="$PROJECT_DIR$/create.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/driversWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/driversWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/examsWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/examsWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/mainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/mainWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/offencesWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/offencesWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/driversWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/driversWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/examsWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/examsWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/mainWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/mainWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/offencesWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/offencesWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/vehiclesWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/vehiclesWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ExamsController.java" afterPath="$PROJECT_DIR$/src/controllers/ExamsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FXML/licencesChoiceWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/ownersChoiceWindow.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controllers/LicencesChoiceController.java" afterPath="$PROJECT_DIR$/src/controllers/OwnersChoiceController.java" />
     </list>
     <ignored path="Projekt ID.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,47 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-              <folding>
-                <marker date="1465643605903" expanded="true" signature="1925:1947" placeholder="SELECT * FRO... kierowcy" />
-                <marker date="1465643605903" expanded="true" signature="3195:3216" placeholder="SELECT * FRO... pojazdy" />
-                <marker date="1465643605903" expanded="true" signature="4405:4635" placeholder="SELECT id_eg... egzaminy" />
-                <marker date="1465643605903" expanded="true" signature="6184:6315" placeholder="SELECT K.imi... kierowcy" />
-                <marker date="1465643605903" expanded="true" signature="7311:7328" placeholder="SELECT pojaz... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DriversController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/create.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5185">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <state relative-caret-position="374">
+              <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -139,14 +110,18 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/controllers/DriversController.java" />
         <option value="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/ExamsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/LicencesChoiceController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
         <option value="$PROJECT_DIR$/src/database/Database.java" />
         <option value="$PROJECT_DIR$/create.sql" />
+        <option value="$PROJECT_DIR$/src/controllers/OwnersChoiceController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/ExamsController.java" />
+        <option value="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/FirmsMoreInfoController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/FirmsController.java" />
       </list>
     </option>
   </component>
@@ -283,6 +258,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\TCS\II SEMESTR\Inżynieria Danych\projekt-id\src\FXML" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.MainApp">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -736,16 +719,24 @@
       <workItem from="1465645375407" duration="923000" />
       <workItem from="1465646429273" duration="392000" />
       <workItem from="1465647699547" duration="393000" />
-      <workItem from="1465648515027" duration="65000" />
+      <workItem from="1465648515027" duration="3282000" />
     </task>
+    <task id="LOCAL-00001" summary="drobne zmiany w create.sql">
+      <created>1465648610842</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1465648610842</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18833000" />
+    <option name="totallyTimeSpent" value="22050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -759,7 +750,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -786,6 +777,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="drobne zmiany w create.sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="drobne zmiany w create.sql" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -795,64 +790,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Driver.java" />
-    <entry file="file://$PROJECT_DIR$/src/database/Database.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="76" column="47" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Driver.java" />
     <entry file="file://$PROJECT_DIR$/src/database/Driver.java" />
     <entry file="file://$PROJECT_DIR$/src/database/Database.java" />
     <entry file="file://$PROJECT_DIR$/data_gen/main.cpp" />
     <entry file="file://$PROJECT_DIR$/data_gen/gen_in_data.in" />
     <entry file="file://$PROJECT_DIR$/data_gen/Kierowca.h" />
-    <entry file="file://$PROJECT_DIR$/src/FXML/examsWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FXML/mainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/driversMoreInfoWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -901,13 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-452">
           <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Exam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1048,27 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/LicencesChoiceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/OffencesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1104,25 +1018,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/create.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="315" column="42" selection-start-line="315" selection-start-column="42" selection-end-line="315" selection-end-column="42" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <marker date="1465643605903" expanded="true" signature="1925:1947" placeholder="SELECT * FRO... kierowcy" />
-            <marker date="1465643605903" expanded="true" signature="3195:3216" placeholder="SELECT * FRO... pojazdy" />
-            <marker date="1465643605903" expanded="true" signature="4405:4635" placeholder="SELECT id_eg... egzaminy" />
-            <marker date="1465643605903" expanded="true" signature="6184:6315" placeholder="SELECT K.imi... kierowcy" />
-            <marker date="1465643605903" expanded="true" signature="7311:7328" placeholder="SELECT pojaz... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,10 +1034,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create.sql">
+    <entry file="file://$PROJECT_DIR$/src/FXML/mainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5185">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="319">
+          <caret line="52" column="86" selection-start-line="52" selection-start-column="86" selection-end-line="52" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="2596" column="0" selection-start-line="2596" selection-start-column="0" selection-end-line="2596" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/ownersChoiceWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/LicencesChoiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="34" column="9" selection-start-line="25" selection-start-column="7" selection-end-line="34" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Exam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/OwnersChoiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <marker date="1465643605903" expanded="true" signature="1925:1947" placeholder="SELECT * FRO... kierowcy" />
+            <marker date="1465643605903" expanded="true" signature="3195:3216" placeholder="SELECT * FRO... pojazdy" />
+            <marker date="1465643605903" expanded="true" signature="4405:4635" placeholder="SELECT id_eg... egzaminy" />
+            <marker date="1465643605903" expanded="true" signature="6184:6315" placeholder="SELECT K.imi... kierowcy" />
+            <marker date="1465643605903" expanded="true" signature="7311:7328" placeholder="SELECT pojaz... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/firmsWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="257" selection-start-line="12" selection-start-column="257" selection-end-line="12" selection-end-column="257" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/examsWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FXML/firmsMoreInfoWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/FirmsMoreInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/FirmsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="54" selection-start-line="33" selection-start-column="54" selection-end-line="33" selection-end-column="54" />
           <folding />
         </state>
       </provider>

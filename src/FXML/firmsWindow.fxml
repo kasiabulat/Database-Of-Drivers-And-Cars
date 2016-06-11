@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DriversController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FirmsController">
    <children>
       <GridPane layoutX="37.0" layoutY="78.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -22,7 +22,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Kierowcy" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label text="Firmy" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font name="Georgia Bold" size="18.0" />
                </font>
@@ -43,51 +43,43 @@
                <children>
                   <GridPane>
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="14.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="14.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="14.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="14.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" />
-                        <ColumnConstraints hgrow="SOMETIMES" />
-                        <ColumnConstraints hgrow="SOMETIMES" />
-                    </columnConstraints>
-                  </GridPane>
-                  <GridPane GridPane.rowIndex="1">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addDriver" text="dodaj kierowcę" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
-                        <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#showMoreInfo" text="więcej informacji o kierowcy" />
-                     </children>
-                  </GridPane>
-                  <GridPane>
-                     <children>
-                        <TextField promptText="id kierowcy">
+                        <TextField promptText="id firmy">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField prefHeight="25.0" prefWidth="71.0" promptText="PESEL" GridPane.columnIndex="1">
+                        <TextField prefHeight="25.0" prefWidth="71.0" promptText="NIP" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField prefHeight="25.0" prefWidth="121.0" promptText="imię" GridPane.columnIndex="2">
+                        <TextField prefHeight="25.0" prefWidth="121.0" promptText="REGON" GridPane.columnIndex="2">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="nazwisko" GridPane.columnIndex="3">
+                        <TextField promptText="numerKRS" GridPane.columnIndex="3">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="płeć" GridPane.columnIndex="4">
+                        <TextField promptText="nazwa firmy" GridPane.columnIndex="4">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
@@ -100,8 +92,7 @@
                         <TextField promptText="nr telefonu" GridPane.columnIndex="6">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
-                           </GridPane.margin>
-                        </TextField>
+                           </GridPane.margin></TextField>
                         <TextField promptText="nr ulicy" GridPane.columnIndex="7">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
@@ -123,22 +114,17 @@
                            </GridPane.margin>
                         </TextField>
                      </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" percentWidth="9.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
+                  </GridPane>
+                  <GridPane GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addFirm" text="dodaj firmę" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                     </children>
                   </GridPane>
                </children>
             </GridPane>

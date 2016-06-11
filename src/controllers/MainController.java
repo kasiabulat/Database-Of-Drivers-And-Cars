@@ -17,7 +17,7 @@ public class MainController {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private Button driversButton;
+    private Button ownersButton;
     @FXML
     private Button vehiclesButton;
     @FXML
@@ -56,10 +56,10 @@ public class MainController {
     @FXML
     public void showLicences(final ActionEvent event) {
         try {
-            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/licencesChoiceWindow.fxml"));
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/examsWindow.fxml"));
             final Stage stage = new Stage();
-            stage.setTitle("Prawa jazdy");
-            stage.setScene(new Scene(root, 300, 220));
+            stage.setTitle("Egzaminy");
+            stage.setScene(new Scene(root, 610, 500));
             stage.show();
 
         } catch (final IOException e) {
@@ -68,12 +68,12 @@ public class MainController {
     }
 
     @FXML
-    public void showDrivers(final ActionEvent event) {
+    public void showOwners(final ActionEvent event) {
         try {
-            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/driversWindow.fxml"));
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/ownersChoiceWindow.fxml"));
             final Stage stage = new Stage();
-            stage.setTitle("Kierowcy");
-            stage.setScene(new Scene(root, 610, 500));
+            stage.setTitle("Właściciele pojazdów");
+            stage.setScene(new Scene(root, 300, 220));
             stage.show();
 
         } catch (final IOException e) {
