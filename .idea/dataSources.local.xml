@@ -3,6 +3,7 @@
   <component name="dataSourceStorageLocal">
     <data-source name="PostgreSQL - kierowcy@localhost" uuid="dfe5b7df-913c-4a7f-80a6-f7e881152cc5">
       <secret-storage>memory</secret-storage>
+      <user-name>kierowcy</user-name>
     </data-source>
   </component>
 </project>

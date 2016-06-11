@@ -1,4 +1,6 @@
 BEGIN;
+DROP TYPE IF EXISTS typ_kierownicy CASCADE;
+DROP TYPE IF EXISTS typ_wlasciciela CASCADE;
 DROP TABLE IF EXISTS pojazdy CASCADE;
 DROP TABLE IF EXISTS kierowcy CASCADE;
 DROP TABLE IF EXISTS kierowcy_pojazdy CASCADE;
@@ -54,7 +56,7 @@ CREATE TABLE ulice (
 
 CREATE TYPE TYP_KIEROWNICY AS ENUM ('po prawej', 'po  lewej');
 
-CREATE TYPE TYP_WLASCICIELA AS ENUM ('firma', 'posoba', 'brak');
+CREATE TYPE TYP_WLASCICIELA AS ENUM ('firma', 'osoba', 'brak');
 
 CREATE TABLE marka_model (
   id_marka_model   SERIAL         NOT NULL PRIMARY KEY,
@@ -75,8 +77,6 @@ CREATE TABLE pojazdy (
   nr_rejestracyjny CHAR(7) UNIQUE,
   numer_vin        INT,
   data_rejestracji DATE            NOT NULL,
-  typ_wlasciciela  TYP_WLASCICIELA NOT NULL,
-  id_wlasciciela   INT, --podobnie trigger na wlascicieli
   id_marka_model   INT             NOT NULL REFERENCES marka_model (id_marka_model),
   typ              TEXT,
   id_kraju         INT             NOT NULL REFERENCES kraje (id_kraju), --kraj produkcji samochodu
@@ -127,12 +127,6 @@ CREATE TABLE kierowcy (
   nr_domu         TEXT,
   kod_pocztowy    TEXT,
   nr_miejscowosci INT         NOT NULL REFERENCES miejscowosci (id_miejscowosci)
-);
-
-CREATE TABLE kierowcy_pojazdy (
-  id_kierowcy INT NOT NULL REFERENCES kierowcy,
-  id_pojazdu  INT NOT NULL REFERENCES pojazdy,
-  PRIMARY KEY (id_kierowcy, id_pojazdu)
 );
 
 CREATE TABLE prawa_jazdy_kategorie (
@@ -328,8 +322,8 @@ CREATE OR REPLACE FUNCTION pojazdy(id_k INT)
   RETURNS SETOF INT AS
 $$
 SELECT id_pojazdu
-FROM kierowcy_pojazdy
-WHERE id_kierowcy = id_k;
+FROM historia_wlascicieli
+WHERE (typ_wlasciciela = 'osoba' AND id_wlasciciela = id_k AND od_kiedy < now() AND do_kiedy > now());
 $$ LANGUAGE SQL;
 
 --wypis numeru prawa jazdy kierowcy o id_k
@@ -441,16 +435,6 @@ $$ LANGUAGE plpgsql;
 
 --dla danego numeru rejestracji wypisuje imiona_i_naziwska_osob_z_bazy_ktorego maja go przypisanego
 DROP FUNCTION IF EXISTS imie_i_nazwisko_wlasciciela_samochodu( CHAR(7) );
-
-CREATE OR REPLACE FUNCTION imie_i_nazwisko_wlasciciela_samochodu(id_p CHAR(7))
-  RETURNS SETOF TEXT AS
-$$
-SELECT CONCAT(imię, ' ', nazwisko)
-FROM pojazdy
-  NATURAL JOIN kierowcy_pojazdy
-  NATURAL JOIN kierowcy
-WHERE nr_rejestracyjny = id_p
-$$ LANGUAGE SQL;
 
 --statystki ile jest w bazie pojazdow jakiej marki i modelu
 DROP VIEW IF EXISTS statystyki_pojazdow_markaModel;
@@ -632,5 +616,4 @@ AS
       ON prawa_jazdy_kategorie.id_kategoria = prawa_jazdy.id_kategoria
   GROUP BY kategoria
   ORDER BY ilosc DESC, kategoria;
-
-COMMIT;
+END;
