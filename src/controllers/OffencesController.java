@@ -14,38 +14,41 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class OffencesController {
-	//TODO: add fields
-	@FXML
-	private TableView<?> tableView;
-	@FXML
-	private Button addButton;
-	@FXML
-	private Button moreInfoButton;
-	@FXML
-	private Button statisticsButton;
-	@FXML
-	public void initialize()
-	{
-		Database.instance.getOffenceTable((TableView<Offence>)tableView);
-	}
-	public void addOffence (final ActionEvent event) {
-		// TODO: adding offence to database
-	}
-	@FXML
-	public void showMoreInfo (final ActionEvent event) {
-		try {
-			final Parent root= FXMLLoader.load(getClass().getResource("../FXML/offencesMoreInfoWindow.fxml"));
-			final Stage stage=new Stage();
-			stage.setTitle("Wykroczenia - szczegółowe informacje");
-			stage.setScene(new Scene(root,450,310));
-			stage.show();
+    //TODO: add fields
+    @FXML
+    private TableView<?> tableView;
+    @FXML
+    private Button addButton;
+    @FXML
+    private Button moreInfoButton;
+    @FXML
+    private Button statisticsButton;
 
-		} catch(final IOException e) {
-			e.printStackTrace();
-		}
-	}
-	@FXML
-	public void showStatistics (final ActionEvent event) {
-		// TODO: show how many offences in each type had been committed, how many which officer had registered etc.
-	}
+    @FXML
+    public void initialize() {
+        Database.instance.getOffenceTable((TableView<Offence>) tableView);
+    }
+
+    public void addOffence(final ActionEvent event) {
+        // TODO: adding offence to database
+    }
+
+    @FXML
+    public void showMoreInfo(final ActionEvent event) {
+        try {
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/offencesMoreInfoWindow.fxml"));
+            final Stage stage = new Stage();
+            stage.setTitle("Wykroczenia - szczegółowe informacje");
+            stage.setScene(new Scene(root, 450, 310));
+            stage.show();
+
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void showStatistics(final ActionEvent event) {
+        // TODO: show how many offences in each type had been committed, how many which officer had registered etc.
+    }
 }
