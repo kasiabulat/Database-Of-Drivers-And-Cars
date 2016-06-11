@@ -40,10 +40,6 @@ class Dane {
     public static final Map<LocalDate, Integer> egzaminyDaty = new HashMap<>();
     public static final Map<Integer, String> egzaminyTypy = new HashMap<>();
     public static final List<List<Integer>> egzaminyObecnosc = new ArrayList<>(1000000);
-    static {
-        for (int i=0; i<1000000; ++i) egzaminyObecnosc.add(new ArrayList<>());
-    }
-
     public static final Collection<WynikiEgzaminow> wynikiEgzaminow = new ArrayList<>();
     public static final Collection<PrawaJazdy> prawaJazdy = new ArrayList<>();
     public static final Collection<PrawaJazdyKategorie> prawaJazdyKategorie = new ArrayList<>();
@@ -52,14 +48,16 @@ class Dane {
     public static final Collection<Mandaty> mandaty = new ArrayList<>();
     public static final Collection<Kierowca> kierowcy = new ArrayList<>();
 
-
+    static {
+        for (int i = 0; i < 1000000; ++i) egzaminyObecnosc.add(new ArrayList<>());
+    }
 
     // Funkcja do zrzutu danych do struktur
-    static void dodaj(final BufferedReader reader,final Collection<String> lista) throws IOException {
-        String line= reader.readLine();
+    static void dodaj(final BufferedReader reader, final Collection<String> lista) throws IOException {
+        String line = reader.readLine();
         int n = Integer.parseInt(line);
 
-        while(n-- > 0){
+        while (n-- > 0) {
             line = reader.readLine();
             lista.add(line);
         }

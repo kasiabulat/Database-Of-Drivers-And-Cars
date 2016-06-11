@@ -7,12 +7,11 @@ import java.util.*;
 
 class Kierowca {
 
-    private static int objects;
     private static final Random rNum = new Random();
     private static final String URODZENI_OD = "1986-01-01";
     private static final String URODZENI_DO = "1997-01-01";
     private static final int OCZEKIWANIE = 21;
-
+    private static int objects;
     private final int id_kierowcy;
     private final long pesel;
     private final String imie;
@@ -27,9 +26,9 @@ class Kierowca {
 
         id_kierowcy = ++objects;
 
-        final String data_urodzenia=FunkcjeLosujace.generuj_date(URODZENI_OD,URODZENI_DO);
+        final String data_urodzenia = FunkcjeLosujace.generuj_date(URODZENI_OD, URODZENI_DO);
         //System.out.println(data_urodzenia);
-        pesel = FunkcjeLosujace.generujPesel(plec,data_urodzenia);
+        pesel = FunkcjeLosujace.generujPesel(plec, data_urodzenia);
 
         final List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
         imie = personalia.get(0);
@@ -43,12 +42,15 @@ class Kierowca {
         // Generuj w miare sensowne dane dotyczace kierowcy
 
         final List<String> posiadaneKat = new ArrayList<>();
-        posiadaneKat.add("B"); posiadaneKat.add("A"); posiadaneKat.add("C"); posiadaneKat.add("D");
+        posiadaneKat.add("B");
+        posiadaneKat.add("A");
+        posiadaneKat.add("C");
+        posiadaneKat.add("D");
 
-        int ilePrawJazdy = rNum.nextInt(100)+1;
-        if(ilePrawJazdy <= 60) ilePrawJazdy = 1;
-        else if(ilePrawJazdy <= 80) ilePrawJazdy = 2;
-        else if(ilePrawJazdy <= 90) ilePrawJazdy = 3;
+        int ilePrawJazdy = rNum.nextInt(100) + 1;
+        if (ilePrawJazdy <= 60) ilePrawJazdy = 1;
+        else if (ilePrawJazdy <= 80) ilePrawJazdy = 2;
+        else if (ilePrawJazdy <= 90) ilePrawJazdy = 3;
         else ilePrawJazdy = 4;
 
         for (int i = 0; i < ilePrawJazdy; ++i) {
@@ -61,12 +63,12 @@ class Kierowca {
             // Wszystkie podejscia do teorii
 
             LocalDate orientacyjnaData = LocalDate.parse(data_urodzenia);
-            orientacyjnaData = orientacyjnaData.plusYears(18).plusDays(21*(i+4));
+            orientacyjnaData = orientacyjnaData.plusYears(18).plusDays(21 * (i + 4));
             String wynikEgzV;
             WynikiEgzaminow nowyEgz;
-            for (int j=0;j < ileTeorii;++j){
+            for (int j = 0; j < ileTeorii; ++j) {
                 final int wynikEgz = rNum.nextInt(4);
-                wynikEgzV=wynikEgz<1?"nie stawił się":"nie zdał";
+                wynikEgzV = wynikEgz < 1 ? "nie stawił się" : "nie zdał";
 
                 nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "teoria");
                 Dane.wynikiEgzaminow.add(nowyEgz);
@@ -76,12 +78,12 @@ class Kierowca {
             wynikEgzV = "zdał";
             nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "teoria");
             Dane.wynikiEgzaminow.add(nowyEgz);
-            orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE/3);
+            orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE / 3);
 
             // Wszystkie podejscia do praktyki
-            for (int j = 0; j < ilePraktyk; ++j){
+            for (int j = 0; j < ilePraktyk; ++j) {
                 final int wynikEgz = rNum.nextInt(4);
-                wynikEgzV=wynikEgz<1?"nie stawił się":"nie zdał";
+                wynikEgzV = wynikEgz < 1 ? "nie stawił się" : "nie zdał";
 
                 nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "praktyka");
                 Dane.wynikiEgzaminow.add(nowyEgz);
@@ -91,7 +93,7 @@ class Kierowca {
             wynikEgzV = "zdał";
             nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "praktyka");
             Dane.wynikiEgzaminow.add(nowyEgz);
-            orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE/2*3);
+            orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE / 2 * 3);
 
             // Wygeneruj prawko tej kategorii
             final PrawaJazdy nowePJ = new PrawaJazdy(id_kierowcy, orientacyjnaData.toString());
@@ -103,8 +105,8 @@ class Kierowca {
         }
 
         // Generowanie pojazdow
-        final int ilePojazdow = rNum.nextInt(2)+1;
-        for (int i = 0; i< ilePojazdow; ++i){
+        final int ilePojazdow = rNum.nextInt(2) + 1;
+        for (int i = 0; i < ilePojazdow; ++i) {
             final Pojazdy nowyPojazd = new Pojazdy(LocalDate.parse(data_urodzenia).plusYears(18).plusDays(1));
             Dane.pojazdy.add(nowyPojazd);
 
@@ -114,7 +116,7 @@ class Kierowca {
 
         // Generowanie otrzymanych mandatow
         final int ileMandatow = rNum.nextInt(4);
-        for (int i = 0; i < ileMandatow; ++i){
+        for (int i = 0; i < ileMandatow; ++i) {
             final Mandaty nowyMandat = new Mandaty(id_kierowcy);
             Dane.mandaty.add(nowyMandat);
         }
@@ -122,13 +124,13 @@ class Kierowca {
 
     @Override
     public String toString() {
-        return "(\'"+ id_kierowcy +
+        return "(\'" + id_kierowcy +
                 "', '" + pesel +
                 "', '" + imie +
                 "', '" + nazwisko +
                 "', '" + email +
                 "', '" + nr_telefonu +
-                "', '" + adres +'\''+
+                "', '" + adres + '\'' +
                 ')';
     }
 }

@@ -6,9 +6,8 @@ import java.util.Random;
 
 class Mandaty {
 
-    private static int objects;
     private static final Random rNum = new Random();
-
+    private static int objects;
     private final int id_mandatu;
     private final int id_kierowcy;
     private final int id_wystawiajacego;

@@ -1,7 +1,8 @@
 package database;
 
 /**
- Created by Kamil Rajtar on 02.06.16. */
+ * Created by Kamil Rajtar on 02.06.16.
+ */
 public class Driver
 {
 	private int id_kierowcy;

@@ -8,11 +8,9 @@ import java.util.Random;
 
 class Wykroczenia {
 
-    private static int objects;
     private static final Random rNum = new Random();
     private static final Map<String, Boolean> wytworzoneWykroczenia = new HashMap<>();
-
-
+    private static int objects;
     private final int id_wykroczenia;
     private final String opis;
     private final double wysokosc_grzywny;
@@ -22,7 +20,7 @@ class Wykroczenia {
         id_wykroczenia = ++objects;
 
         String[] wykroczenie = Dane.taryfikator.get(rNum.nextInt(Dane.taryfikator.size())).split(";");
-        while(wytworzoneWykroczenia.containsKey(wykroczenie[0])){
+        while (wytworzoneWykroczenia.containsKey(wykroczenie[0])) {
             wykroczenie = Dane.taryfikator.get(rNum.nextInt(Dane.taryfikator.size())).split(";");
         }
         opis = wykroczenie[0];

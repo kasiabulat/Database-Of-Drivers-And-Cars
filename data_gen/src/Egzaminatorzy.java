@@ -7,9 +7,8 @@ import java.util.Random;
 
 class Egzaminatorzy {
 
-    private static int objects;
     private static final Random rNum = new Random();
-
+    private static int objects;
     private final int id_egzaminatora;
     private final String imie;
     private final String nazwisko;

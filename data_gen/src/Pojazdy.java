@@ -7,15 +7,14 @@ import java.util.Random;
 
 class Pojazdy {
 
-    private static int objects;
     private static final Random rNum = new Random();
-
+    private static int objects;
     private final int id_pojazdu;
-    private String nr_rejestracyjny;
     private final String data_rejestracji;
     private final String marka;
     private final String model;
     private final String typ;
+    private String nr_rejestracyjny;
 
 
     public Pojazdy(final LocalDate mozliwaRejestracja) {
@@ -27,18 +26,18 @@ class Pojazdy {
         marka = samochod[0];
         model = samochod[1];
 
-        this.typ=rNum.nextInt(32)==0?"ciężarowy":"osobowy";
+        this.typ = rNum.nextInt(32) == 0 ? "ciężarowy" : "osobowy";
 
         nr_rejestracyjny = "";
         nr_rejestracyjny += Dane.kodyTablic.get(rNum.nextInt(Dane.kodyTablic.size()));
         final int dolosuj = 7 - nr_rejestracyjny.length();
         nr_rejestracyjny += " ";
 
-        nr_rejestracyjny += (char)(rNum.nextInt(10) + '0');  // Po kodzie powiatu cyfra
+        nr_rejestracyjny += (char) (rNum.nextInt(10) + '0');  // Po kodzie powiatu cyfra
         for (int i = 1; i < dolosuj; ++i) {
 
-            nr_rejestracyjny+=(char)(rNum.nextInt(2)==1&&(i==1||i==dolosuj-1||i==dolosuj-2)?rNum
-                    .nextInt(26)+'A':rNum.nextInt(10)+'0');
+            nr_rejestracyjny += (char) (rNum.nextInt(2) == 1 && (i == 1 || i == dolosuj - 1 || i == dolosuj - 2) ? rNum
+                    .nextInt(26) + 'A' : rNum.nextInt(10) + '0');
         }
     }
 

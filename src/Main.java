@@ -8,17 +8,15 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    public static void main(final String[] args) {
+        launch(args);
+    }
+
     @Override
-    public void start(final Stage primaryStage) throws IOException
-    {
+    public void start(final Stage primaryStage) throws IOException {
         final Parent root = FXMLLoader.load(getClass().getResource("FXML/mainWindow.fxml"));
         primaryStage.setTitle("System ewidencji pojazdów i kierowców");
         primaryStage.setScene(new Scene(root, 300, 220));
         primaryStage.show();
-    }
-
-
-    public static void main(final String[] args) {
-        launch(args);
     }
 }

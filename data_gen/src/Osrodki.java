@@ -8,10 +8,9 @@ import java.util.Random;
 
 class Osrodki {
 
-    private static int objects;
     private static final Random rNum = new Random();
     private static final Map<String, Boolean> wytworzoneOsrodki = new HashMap<>();
-
+    private static int objects;
     private final int id_osrodka;
     private final String nazwa;
     private final String adres;
@@ -20,7 +19,7 @@ class Osrodki {
         id_osrodka = ++objects;
 
         String[] osrodek = Dane.adresyOsrodkow.get(rNum.nextInt(Dane.adresyOsrodkow.size())).split(";");
-        while(wytworzoneOsrodki.containsKey(osrodek[0])){
+        while (wytworzoneOsrodki.containsKey(osrodek[0])) {
             osrodek = Dane.adresyOsrodkow.get(rNum.nextInt(Dane.adresyOsrodkow.size())).split(";");
         }
         nazwa = osrodek[0];

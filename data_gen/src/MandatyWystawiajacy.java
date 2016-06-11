@@ -7,9 +7,8 @@ import java.util.Random;
 
 class MandatyWystawiajacy {
 
-    private static int objects;
     private static final Random rNum = new Random();
-
+    private static int objects;
     private final int id_wystawiajacego;
     private final String imie;
     private final String nazwisko;
