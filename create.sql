@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS egzaminy CASCADE;
 DROP TABLE IF EXISTS ośrodki CASCADE;
 DROP TABLE IF EXISTS mandaty CASCADE;
 DROP TABLE IF EXISTS mandaty_wystawiający CASCADE;
+DROP TABLE IF EXISTS prawa_jazdy_kategorie_praw_jazdy CASCADE;
 DROP TABLE IF EXISTS wykroczenia CASCADE;
 DROP TABLE IF EXISTS wojewodztwa CASCADE;
 DROP TABLE IF EXISTS powiaty CASCADE;
@@ -25,7 +26,7 @@ DROP TABLE IF EXISTS firma CASCADE;
 DROP TABLE IF EXISTS sposob_zasilania CASCADE;
 DROP TABLE IF EXISTS historia_wlascicieli CASCADE;
 DROP TABLE IF EXISTS historia_przegladow_technicznych CASCADE;
-
+DROP TABLE IF EXISTS pojazdy_kierowcy CASCADE;
 
 CREATE TABLE sposob_zasilania (
   id_sposob SERIAL NOT NULL PRIMARY KEY,
@@ -76,10 +77,10 @@ CREATE TABLE pojazdy (
   id_pojazdu       SERIAL PRIMARY KEY,
   nr_rejestracyjny CHAR(7) UNIQUE,
   numer_vin        CHAR(17),
-  data_rejestracji DATE            NOT NULL,
-  id_marka_model   INT             NOT NULL REFERENCES marka_model (id_marka_model),
+  data_rejestracji DATE NOT NULL,
+  id_marka_model   INT  NOT NULL REFERENCES marka_model (id_marka_model),
   typ              TEXT,
-  id_kraju         INT             NOT NULL REFERENCES kraje (id_kraju), --kraj produkcji samochodu
+  id_kraju         INT  NOT NULL REFERENCES kraje (id_kraju), --kraj produkcji samochodu
   waga_samochodu   NUMERIC
 );
 
@@ -129,6 +130,11 @@ CREATE TABLE kierowcy (
   nr_miejscowosci INT         NOT NULL REFERENCES miejscowosci (id_miejscowosci)
 );
 
+CREATE TABLE pojazdy_kierowcy(
+  id_kierowcy	  INT REFERENCES kierowcy(id_kierowcy),
+  id_pojazdu	  INT REFERENCES pojazdy(id_pojazdu)
+);
+
 CREATE TABLE prawa_jazdy_kategorie (
   id_kategoria SERIAL NOT NULL PRIMARY KEY,
   kategoria    TEXT
@@ -138,10 +144,13 @@ CREATE TABLE prawa_jazdy (
   numer_prawa_jazdy TEXT PRIMARY KEY,
   id_właściciela    INT REFERENCES kierowcy (id_kierowcy),
   data_wydania      DATE NOT NULL,
-  międzynarodowe    BOOL NOT NULL,
-  id_kategoria      INT REFERENCES prawa_jazdy_kategorie (id_kategoria)
+  międzynarodowe    BOOL NOT NULL
 );
 
+CREATE TABLE prawa_jazdy_kategorie_praw_jazdy(
+  id_prawa_jazdy    TEXT NOT NULL REFERENCES prawa_jazdy(numer_prawa_jazdy),
+  id_kategoria      INT NOT NULL REFERENCES prawa_jazdy_kategorie(id_kategoria)
+);
 
 CREATE TYPE TYP_EGZAMINU AS ENUM ('teoria', 'praktyka');
 
@@ -612,8 +621,8 @@ AS
     kategoria,
     COUNT(numer_prawa_jazdy) ilosc
   FROM prawa_jazdy
-    INNER JOIN prawa_jazdy_kategorie
-      ON prawa_jazdy_kategorie.id_kategoria = prawa_jazdy.id_kategoria
+    NATURAL JOIN prawa_jazdy_kategorie_praw_jazdy
+    NATURAL JOIN  prawa_jazdy_kategorie
   GROUP BY kategoria
   ORDER BY ilosc DESC, kategoria;
 END;

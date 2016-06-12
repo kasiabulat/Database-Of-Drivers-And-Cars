@@ -19,6 +19,8 @@ DROP TABLE IF EXISTS firma CASCADE;
 DROP TABLE IF EXISTS sposob_zasilania CASCADE;
 DROP TABLE IF EXISTS historia_wlascicieli CASCADE;
 DROP TABLE IF EXISTS historia_przegladow_technicznych CASCADE;
+DROP TABLE IF EXISTS pojazdy_kierowcy CASCADE;
+DROP TABLE IF EXISTS prawa_jazdy_kategorie_praw_jazdy CASCADE;
 
 DROP TYPE IF EXISTS typ_egzaminu CASCADE;
 DROP TYPE IF EXISTS typ_wlasciciela CASCADE;
