@@ -59,56 +59,56 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField promptText="id firmy">
+                        <TextField fx:id="id_firmyTextField" promptText="id firmy">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField prefHeight="25.0" prefWidth="71.0" promptText="NIP" GridPane.columnIndex="1">
+                        <TextField fx:id="NIPTextField" prefHeight="25.0" prefWidth="71.0" promptText="NIP" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField prefHeight="25.0" prefWidth="121.0" promptText="REGON" GridPane.columnIndex="2">
+                        <TextField fx:id="REGONTextField" prefHeight="25.0" prefWidth="121.0" promptText="REGON" GridPane.columnIndex="2">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="numerKRS" GridPane.columnIndex="3">
+                        <TextField fx:id="numerKRSTextField" promptText="numerKRS" GridPane.columnIndex="3">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="nazwa firmy" GridPane.columnIndex="4">
+                        <TextField fx:id="nazwa_firmyTextField" promptText="nazwa firmy" GridPane.columnIndex="4">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="e-mail" GridPane.columnIndex="5">
+                        <TextField fx:id="emailTextField" promptText="e-mail" GridPane.columnIndex="5">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="nr telefonu" GridPane.columnIndex="6">
+                        <TextField fx:id="nr_telefonuTextField" promptText="nr telefonu" GridPane.columnIndex="6">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin></TextField>
-                        <TextField promptText="nr ulicy" GridPane.columnIndex="7">
+                        <TextField fx:id="nr_ulicyTextField" promptText="nr ulicy" GridPane.columnIndex="7">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="nr budynku" GridPane.columnIndex="8">
+                        <TextField fx:id="nr_budynkuTextField" promptText="nr budynku" GridPane.columnIndex="8">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="kod pocztowy" GridPane.columnIndex="9">
+                        <TextField fx:id="kod_pocztowyTextField" promptText="kod pocztowy" GridPane.columnIndex="9">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField promptText="nr miejscowosci" GridPane.columnIndex="10">
+                        <TextField fx:id="nr_miejscowosciTextField" promptText="nr miejscowosci" GridPane.columnIndex="10">
                            <GridPane.margin>
                               <Insets left="2.0" right="2.0" />
                            </GridPane.margin>
