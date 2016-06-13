@@ -11,10 +11,13 @@ DROP TYPE IF EXISTS typ_egzaminu CASCADE;
 DROP TABLE IF EXISTS wyniki_egzaminów CASCADE;
 DROP TYPE IF EXISTS wynik_egzaminu CASCADE;
 DROP TABLE IF EXISTS egzaminatorzy CASCADE;
+DROP TABLE IF EXISTS miejscowosc CASCADE;
 DROP TABLE IF EXISTS egzaminy CASCADE;
-DROP TABLE IF EXISTS ośrodki CASCADE;
+DROP TABLE IF EXISTS osrodki CASCADE;
 DROP TABLE IF EXISTS mandaty CASCADE;
-DROP TABLE IF EXISTS mandaty_wystawiający CASCADE;
+DROP TABLE IF EXISTS model CASCADE;
+DROP TABLE IF EXISTS marka CASCADE;
+DROP TABLE IF EXISTS mandaty_wystawiajacy CASCADE;
 DROP TABLE IF EXISTS prawa_jazdy_kategorie_praw_jazdy CASCADE;
 DROP TABLE IF EXISTS wykroczenia CASCADE;
 DROP TABLE IF EXISTS firma CASCADE;
@@ -22,6 +25,11 @@ DROP TABLE IF EXISTS sposob_zasilania CASCADE;
 DROP TABLE IF EXISTS historia_wlascicieli CASCADE;
 DROP TABLE IF EXISTS historia_przegladow_technicznych CASCADE;
 DROP TABLE IF EXISTS pojazdy_kierowcy CASCADE;
+
+CREATE TABLE miejscowosc (
+  id_miejscowosc SERIAL NOT NULL PRIMARY KEY,
+  nazwa TEXT NOT NULL
+);
 
 CREATE TABLE sposob_zasilania (
   id_sposob SERIAL NOT NULL PRIMARY KEY,
@@ -32,9 +40,14 @@ CREATE TYPE TYP_KIEROWNICY AS ENUM ('po prawej', 'po  lewej');
 
 CREATE TYPE TYP_WLASCICIELA AS ENUM ('firma', 'osoba', 'brak');
 
-CREATE TABLE marka_model (
-  id_marka_model   SERIAL         NOT NULL PRIMARY KEY,
-  marka            TEXT,
+CREATE TABLE marka (
+  id_marka         SERIAL         NOT NULL PRIMARY KEY,
+  marka            TEXT
+);
+
+CREATE TABLE model (
+  id_modelu        SERIAL NOT NULL PRIMARY KEY,
+  id_marki         INT NOT NULL REFERENCES marka(id_marka),
   model            TEXT,
   sposob_zasilania INT REFERENCES sposob_zasilania (id_sposob),
   liczba_miejsc    INT            NOT NULL,
@@ -46,7 +59,7 @@ CREATE TABLE pojazdy (
   nr_rejestracyjny CHAR(7) UNIQUE,
   numer_vin        CHAR(17),
   data_rejestracji DATE NOT NULL,
-  id_marka_model   INT  NOT NULL REFERENCES marka_model (id_marka_model),
+  id_model         INT NOT NULL REFERENCES model(id_modelu),
   typ              TEXT,
   kraj_produkcji   TEXT,
   waga_samochodu   NUMERIC
@@ -69,13 +82,13 @@ CREATE TABLE firma (
   ulica           TEXT,
   nr_budynku      TEXT,
   kod_pocztowy    TEXT,
-  miejscowosc     TEXT
+  id_miejscowosc  INT REFERENCES miejscowosc(id_miejscowosc)
 );
 
 CREATE TABLE kierowcy (
   id_kierowcy     SERIAL PRIMARY KEY,
   PESEL           CHAR(11)    NOT NULL UNIQUE,
-  imię            VARCHAR(50) NOT NULL,
+  imie            VARCHAR(50) NOT NULL,
   nazwisko        VARCHAR(50) NOT NULL,
   plec            CHAR(1)     NOT NULL CHECK (plec = 'K' OR plec = 'M'),
   email           TEXT, /*CHECK*/
@@ -83,7 +96,7 @@ CREATE TABLE kierowcy (
   ulica           TEXT,
   nr_domu         TEXT,
   kod_pocztowy    TEXT,
-  miejscowosc	  TEXT
+  id_miejscowosc  INT REFERENCES miejscowosc(id_miejscowosc)
 );
 
 CREATE TABLE historia_wlascicieli (
@@ -111,9 +124,9 @@ CREATE TABLE prawa_jazdy_kategorie (
 
 CREATE TABLE prawa_jazdy (
   numer_prawa_jazdy TEXT PRIMARY KEY,
-  id_właściciela    INT REFERENCES kierowcy (id_kierowcy),
+  id_wlasciciela    INT REFERENCES kierowcy (id_kierowcy),
   data_wydania      DATE NOT NULL,
-  międzynarodowe    BOOL NOT NULL
+  miedzynarodowe    BOOL NOT NULL
 );
 
 CREATE TABLE prawa_jazdy_kategorie_praw_jazdy(
@@ -126,60 +139,56 @@ CREATE TYPE TYP_EGZAMINU AS ENUM ('teoria', 'praktyka');
 
 CREATE TABLE egzaminatorzy (
   id_egzaminatora SERIAL PRIMARY KEY,
-  imię            VARCHAR(50) NOT NULL,
+  imie            VARCHAR(50) NOT NULL,
   nazwisko        VARCHAR(50) NOT NULL,
   numer_licencji  TEXT
 );
 
-CREATE TABLE ośrodki (
-  id_ośrodka      SERIAL PRIMARY KEY,
+CREATE TABLE osrodki (
+  id_osrodka      SERIAL PRIMARY KEY,
   nazwa           TEXT NOT NULL,
   ulica           TEXT,
   nr_budynku      TEXT,
   kod_pocztowy    TEXT,
-  miejscowosc	  TEXT
+  id_miejscowosc  INT REFERENCES miejscowosc(id_miejscowosc)
 );
+
+CREATE TYPE WYNIK_EGZAMINU AS ENUM ('zdal', 'nie zdal', 'nie stawil sie');
 
 CREATE TABLE egzaminy (
   id_egzaminu          SERIAL PRIMARY KEY,
   data_przeprowadzenia DATE         NOT NULL,
   typ                  TYP_EGZAMINU NOT NULL,
   id_egzaminatora      INT          NOT NULL REFERENCES egzaminatorzy NOT NULL,
-  id_ośrodka           INT          NOT NULL REFERENCES ośrodki (id_ośrodka),
-  id_kategoria         INT          NOT NULL REFERENCES prawa_jazdy_kategorie (id_kategoria)
-  /*id_zdającego,
-  wynik - enum zdał, nie zdał, nie stawił się, przeniesiony,...
+  id_osrodka           INT          NOT NULL REFERENCES osrodki (id_osrodka),
+  id_kategoria         INT          NOT NULL REFERENCES prawa_jazdy_kategorie (id_kategoria),
+  /*id_zdajacego,
+  wynik - enum zdal, nie zdal, nie stawil sie, przeniesiony,...
   wynik punktowy
-  osobna tabela 1 egzamin wielu zdających*/
-);
-
-CREATE TYPE WYNIK_EGZAMINU AS ENUM ('zdał', 'nie zdał', 'nie stawił się');
-
-CREATE TABLE wyniki_egzaminów (
-  id_egzaminu INT REFERENCES egzaminy NOT NULL,
+  osobna tabela 1 egzamin wielu zdajacych*/
   id_kierowcy INT REFERENCES kierowcy NOT NULL,
-  wynik       WYNIK_EGZAMINU          NOT NULL,
-  PRIMARY KEY (id_egzaminu, id_kierowcy)
+  wynik       WYNIK_EGZAMINU          NOT NULL
 );
 
-CREATE TABLE mandaty_wystawiający (
-  id_wstawiającego SERIAL PRIMARY KEY,
-  imię             VARCHAR(50) NOT NULL,
+CREATE TABLE mandaty_wystawiajacy (
+  id_wstawiajacego SERIAL PRIMARY KEY,
+  imie             VARCHAR(50) NOT NULL,
   nazwisko         VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE wykroczenia (
   id_wykroczenia   SERIAL PRIMARY KEY,
   opis             TEXT,
-  wysokość_grzywny NUMERIC(7, 2),
+  wysokosc_grzywny NUMERIC(7, 2),
   punkty_karne     NUMERIC(2) NOT NULL
 );
 
 CREATE TABLE mandaty (
   id_mandatu        SERIAL PRIMARY KEY,
   id_kierowcy       INT REFERENCES kierowcy                                NOT NULL,
-  id_wystawiającego INT REFERENCES mandaty_wystawiający (id_wstawiającego) NOT NULL,
-  id_wykroczenia    INT REFERENCES wykroczenia                             NOT NULL
+  id_wystawiajacego INT REFERENCES mandaty_wystawiajacy (id_wstawiajacego) NOT NULL,
+  id_wykroczenia    INT REFERENCES wykroczenia                             NOT NULL,
+  data_wystawienia  TIMESTAMP WITHOUT TIME ZONE
 );
 
 --Sprawdzanie poprawnosci wprowadzanego numeru pesel
@@ -237,8 +246,8 @@ CREATE OR REPLACE FUNCTION prawa_jazdy_check()
 BEGIN
   IF EXISTS(SELECT numer_prawa_jazdy
             FROM prawa_jazdy
-            WHERE id_właściciela = NEW.id_właściciela
-                  AND międzynarodowe != NEW.międzynarodowe)
+            WHERE id_wlasciciela = NEW.id_wlasciciela
+                  AND miedzynarodowe != NEW.miedzynarodowe)
   THEN
     RAISE EXCEPTION 'Ten kierowca juz ma prawo jazdy';
   END IF;
@@ -277,12 +286,11 @@ BEGIN
   IF NOT EXISTS(
       SELECT *
       FROM egzaminy
-        NATURAL JOIN wyniki_egzaminów
-      WHERE id_kierowcy = NEW.id_właściciela
-            AND typ = 'praktyka' AND wynik = 'zdał'
+      WHERE id_kierowcy = NEW.id_wlasciciela
+            AND typ = 'praktyka' AND wynik = 'zdal'
             AND data_przeprowadzenia <= NEW.data_wydania)
   THEN
-    RAISE EXCEPTION 'Ta osoba nie zdała prawa jazdy jeszcze';
+    RAISE EXCEPTION 'Ta osoba nie zdala prawa jazdy jeszcze';
   END IF;
   RETURN NEW;
 END;
@@ -315,7 +323,7 @@ DECLARE
 BEGIN
   nr = (SELECT numer_prawa_jazdy
         FROM prawa_jazdy
-        WHERE id_właściciela = id_k
+        WHERE id_wlasciciela = id_k
         LIMIT 1);
 
   RETURN COALESCE(nr, 'brak');
@@ -333,7 +341,7 @@ DECLARE
 BEGIN
   nr = (SELECT numer_prawa_jazdy
         FROM prawa_jazdy
-        WHERE id_właściciela = id_k AND międzynarodowe IS TRUE
+        WHERE id_wlasciciela = id_k AND miedzynarodowe IS TRUE
         LIMIT 1);
 
   RETURN COALESCE(nr, 'brak');
@@ -383,7 +391,7 @@ DECLARE
 BEGIN
   nr = (
     SELECT COUNT(id_egzaminu)
-    FROM wyniki_egzaminów
+    FROM egzaminy
     WHERE id_kierowcy = id_k);
 
   RETURN nr;
@@ -401,8 +409,7 @@ DECLARE
 BEGIN
   nr = (
     SELECT egzaminy.id_egzaminu
-    FROM wyniki_egzaminów
-      INNER JOIN egzaminy ON wyniki_egzaminów.id_egzaminu = egzaminy.id_egzaminu
+    FROM egzaminy
     WHERE id_kierowcy = id_k
     ORDER BY data_przeprowadzenia DESC
     LIMIT 1);
@@ -424,8 +431,10 @@ AS
     model,
     COUNT(id_pojazdu)
   FROM pojazdy
-    INNER JOIN marka_model
-      ON marka_model.id_marka_model = pojazdy.id_marka_model
+    INNER JOIN model
+      ON model.id_modelu = pojazdy.id_model
+        INNER JOIN marka
+          ON marka.id_marka = model.id_marki
   GROUP BY marka, model;
 
 --statystyki pojazdow po roku rejestracji 
@@ -462,7 +471,6 @@ AS
     typ,
     COUNT(id_egzaminu)
   FROM egzaminy
-    NATURAL JOIN wyniki_egzaminów
   GROUP BY wynik, typ;
 
 --liczba przystepujacych do egzaminow w poszczegolnych latach
@@ -474,7 +482,6 @@ AS
     EXTRACT(YEAR FROM data_przeprowadzenia) AS rok,
     COUNT(id_egzaminu)                      AS ilosc
   FROM egzaminy
-    NATURAL JOIN wyniki_egzaminów
   GROUP BY rok
   ORDER BY rok;
 
@@ -484,19 +491,18 @@ DROP VIEW IF EXISTS statystyki_egzaminatorow;
 CREATE OR REPLACE VIEW statystyki_egzaminatorow
 AS
   SELECT
-    egzaminatorzy.imię,
+    egzaminatorzy.imie,
     egzaminatorzy.nazwisko,
     COUNT(
         CASE
-        WHEN wynik = 'zdał'
+        WHEN wynik = 'zdal'
           THEN 1
         ELSE NULL
         END) AS ilu_zdalo
   FROM egzaminy
-    NATURAL JOIN wyniki_egzaminów
     NATURAL JOIN egzaminatorzy
-  GROUP BY egzaminatorzy.imię, egzaminatorzy.nazwisko
-  ORDER BY ilu_zdalo DESC, egzaminatorzy.nazwisko, egzaminatorzy.imię;
+  GROUP BY egzaminatorzy.imie, egzaminatorzy.nazwisko
+  ORDER BY ilu_zdalo DESC, egzaminatorzy.nazwisko, egzaminatorzy.imie;
 
 --ranking najlepszych osrodkow
 DROP VIEW IF EXISTS statystyki_egzaminow_w_zaleznosci_od_osrodka;
@@ -505,21 +511,21 @@ CREATE OR REPLACE VIEW statystyki_egzaminow_w_zaleznosci_od_osrodka
 AS
   SELECT
     nazwa,
-    CONCAT(ulica, ' ', ośrodki.nr_budynku, ' ', miejscowosc, ' ', ośrodki.kod_pocztowy) AS adres,
+    CONCAT(ulica, ' ', osrodki.nr_budynku, ' ', miejscowosc.nazwa, ' ', osrodki.kod_pocztowy) AS adres,
     COUNT(
-        CASE WHEN wynik = 'zdał'
+        CASE WHEN wynik = 'zdal'
           THEN 1
         ELSE NULL
-        END)                                                                                         AS zdało,
-    COUNT(wynik)                                                                                     AS zdawało,
+        END)                                                                                         AS zdalo,
+    COUNT(wynik)                                                                                     AS zdawalo,
     ROUND(100 * COUNT(
-        CASE WHEN wynik = 'zdał'
+        CASE WHEN wynik = 'zdal'
           THEN 1
         ELSE NULL
         END) / COUNT(wynik))                                                                         AS efektywnosc
-  FROM ośrodki
+  FROM osrodki
     NATURAL JOIN egzaminy
-    NATURAL JOIN wyniki_egzaminów
+    NATURAL JOIN miejscowosc
   GROUP BY nazwa, adres
   ORDER BY efektywnosc DESC, nazwa, 2;
 
@@ -541,14 +547,14 @@ DROP VIEW IF EXISTS statystyki_mandatow_najniebezpieczniejsi_kierowcy;
 CREATE OR REPLACE VIEW statystyki_mandatow_najniebezpieczniejsi_kierowcy
 AS
   SELECT
-    imię,
+    imie,
     nazwisko,
     COUNT(id_mandatu) AS ilosc_mandatow,
     SUM(punkty_karne) AS suma_punktow_karnych
   FROM wykroczenia
     NATURAL JOIN mandaty
     NATURAL JOIN kierowcy
-  GROUP BY imię, nazwisko
+  GROUP BY imie, nazwisko
   ORDER BY ilosc_mandatow DESC, suma_punktow_karnych DESC;
 
 --ranking wykroczen
@@ -570,14 +576,14 @@ DROP VIEW IF EXISTS ranking_kierowcow_z_najwieksza_grzywna;
 CREATE OR REPLACE VIEW ranking_kierowcow_z_najwieksza_grzywna
 AS
   SELECT
-    imię,
+    imie,
     nazwisko,
-    SUM(wysokość_grzywny) AS suma_grzywn
+    SUM(wysokosc_grzywny) AS suma_grzywn
   FROM wykroczenia
     NATURAL JOIN mandaty
     NATURAL JOIN kierowcy
-  GROUP BY imię, nazwisko
-  ORDER BY suma_grzywn DESC, nazwisko, imię;
+  GROUP BY imie, nazwisko
+  ORDER BY suma_grzywn DESC, nazwisko, imie;
 
 --statystyki praw jazdy ze wzgledu na kategorie
 DROP VIEW IF EXISTS statystyki_praw_jazdy;
