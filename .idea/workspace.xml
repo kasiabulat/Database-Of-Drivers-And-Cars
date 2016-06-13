@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f045022-2726-4e20-9621-016b0062f21e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FXML/dangerousDriversWindow.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/DangerousDriversController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/FXML/offencesMoreInfoWindow.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/controllers/OffencesMoreInfoController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesMoreInfoController.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/OffencesController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/offencesMoreInfoWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/offencesMoreInfoWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/vehiclesWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/vehiclesWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/driversWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/driversWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/offencesWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/offencesWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/vehiclesWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/vehiclesWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/DriversController.java" afterPath="$PROJECT_DIR$/src/controllers/DriversController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/FirmsController.java" afterPath="$PROJECT_DIR$/src/controllers/FirmsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/OffencesController.java" afterPath="$PROJECT_DIR$/src/controllers/OffencesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/VehiclesController.java" afterPath="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/driversWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/driversWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/offencesWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/offencesWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/driversMoreInfoWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/driversMoreInfoWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" afterPath="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" />
     </list>
     <ignored path="Projekt ID.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,18 +63,28 @@
       <file leaf-file-name="DriversController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+            <state relative-caret-position="127">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VehiclesController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VehiclesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DriversMoreInfoController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="19" column="43" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -132,7 +136,6 @@
         <option value="$PROJECT_DIR$/data_gen/src/Wykroczenia.java" />
         <option value="$PROJECT_DIR$/data_gen/src/WynikiEgzaminow.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/controllers/LicencesChoiceController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/database/Database.java" />
@@ -147,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/controllers/DriversController.java" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" />
       </list>
     </option>
   </component>
@@ -747,7 +751,7 @@
       <workItem from="1465648515027" duration="4945000" />
       <workItem from="1465667263810" duration="552000" />
       <workItem from="1465673300062" duration="590000" />
-      <workItem from="1465839081741" duration="3215000" />
+      <workItem from="1465839081741" duration="4328000" />
     </task>
     <task id="LOCAL-00001" summary="drobne zmiany w create.sql">
       <created>1465648610842</created>
@@ -763,11 +767,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465651954210</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dodane odnośniki do pól tekstowych w controllerach i inne drobne zmiany">
+      <created>1465842685662</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1465842685662</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28070000" />
+    <option name="totallyTimeSpent" value="29183000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -852,7 +863,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="drobne zmiany w create.sql" />
     <MESSAGE value="podział właścicieli - firmy i kierowcy w osobnych okienkach, poprawione textboxy do dodawania firm/kierowców/pojazdów" />
-    <option name="LAST_COMMIT_MESSAGE" value="podział właścicieli - firmy i kierowcy w osobnych okienkach, poprawione textboxy do dodawania firm/kierowców/pojazdów" />
+    <MESSAGE value="dodane odnośniki do pól tekstowych w controllerach i inne drobne zmiany" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodane odnośniki do pól tekstowych w controllerach i inne drobne zmiany" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1022,13 +1034,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/licencesChoiceWindow.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="79" selection-start-line="51" selection-start-column="79" selection-end-line="51" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/OffencesMoreInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1216,14 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/FirmsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1234,8 +1231,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="43" />
           <folding />
         </state>
       </provider>
