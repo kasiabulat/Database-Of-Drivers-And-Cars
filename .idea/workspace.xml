@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f045022-2726-4e20-9621-016b0062f21e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FXML/examsCategoriesStatisticsWindow.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FXML/examsExaminersStatisticsWindow.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FXML/examsStatisticsWindow.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FXML/examsTrainingCentersStatisticsWindow.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/ExamsExaminersStatisticsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/ExamsTrainingCentersStatisticsController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/examsWindow.fxml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversMoreInfoController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversMoreInfoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/MainController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/MainController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/FXML/driversMoreInfoWindow.fxml" afterPath="$PROJECT_DIR$/out/production/projekt-id/FXML/driversMoreInfoWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ExamsController.java" afterPath="$PROJECT_DIR$/src/controllers/ExamsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/controllers/MainController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FXML/examsWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/examsMainWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/DriversController.java" afterPath="$PROJECT_DIR$/src/controllers/DriversController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/OffencesController.java" afterPath="$PROJECT_DIR$/src/controllers/OffencesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/VehiclesController.java" afterPath="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
     </list>
     <ignored path="Projekt ID.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,6 +55,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="DriversController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VehiclesController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OffencesController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/OffencesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ExamsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/ExamsController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExamsStatisticsController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExamsStatisticsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="165">
+              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -142,10 +159,7 @@
         <option value="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/controllers/DangerousDriversController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/DriversController.java" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
         <option value="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" />
@@ -153,6 +167,9 @@
         <option value="$PROJECT_DIR$/src/controllers/ExamsTrainingCentersStatisticsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ExamsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/DriversController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
       </list>
     </option>
   </component>
@@ -289,6 +306,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Programowanie obiektowe ćwiczenia/POprojekt/organizer" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -753,7 +771,7 @@
       <workItem from="1465648515027" duration="4945000" />
       <workItem from="1465667263810" duration="552000" />
       <workItem from="1465673300062" duration="590000" />
-      <workItem from="1465839081741" duration="7389000" />
+      <workItem from="1465839081741" duration="8021000" />
     </task>
     <task id="LOCAL-00001" summary="drobne zmiany w create.sql">
       <created>1465648610842</created>
@@ -783,11 +801,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465843730906</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="statystyki w prawach jazdy (do uzupełnienia po wygenerowaniu danych)">
+      <created>1465846806471</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1465846806471</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32244000" />
+    <option name="totallyTimeSpent" value="32876000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -804,14 +829,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21255673" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -874,7 +899,8 @@
     <MESSAGE value="podział właścicieli - firmy i kierowcy w osobnych okienkach, poprawione textboxy do dodawania firm/kierowców/pojazdów" />
     <MESSAGE value="dodane odnośniki do pól tekstowych w controllerach i inne drobne zmiany" />
     <MESSAGE value="kierowcy więcej informacji poprawki (text fields)" />
-    <option name="LAST_COMMIT_MESSAGE" value="kierowcy więcej informacji poprawki (text fields)" />
+    <MESSAGE value="statystyki w prawach jazdy (do uzupełnienia po wygenerowaniu danych)" />
+    <option name="LAST_COMMIT_MESSAGE" value="statystyki w prawach jazdy (do uzupełnienia po wygenerowaniu danych)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1117,14 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/examsCategoriesStatisticsWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1169,14 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="58" column="89" selection-start-line="58" selection-start-column="89" selection-end-line="58" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1200,22 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-162">
           <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="65" column="42" selection-start-line="65" selection-start-column="42" selection-end-line="65" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/OffencesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1276,8 +1270,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="36" column="48" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        <state relative-caret-position="165">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="58" column="89" selection-start-line="58" selection-start-column="89" selection-end-line="58" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/OffencesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
           <folding />
         </state>
       </provider>

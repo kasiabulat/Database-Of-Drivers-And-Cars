@@ -39,7 +39,7 @@ public class VehiclesController {
 
     public void initialize() {
 		data_rejestracjiPicker.setTooltip(new Tooltip("Data rejestracji pojazdu"));
-		Database.instance.getVehiclesTable((TableView<Vehicle>) tableView);
+	//	Database.instance.getVehiclesTable((TableView<Vehicle>) tableView);
 
     }
 

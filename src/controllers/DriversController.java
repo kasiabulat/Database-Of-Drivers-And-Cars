@@ -56,7 +56,7 @@ public class DriversController {
         assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'driversWindow.fxml'.";
         assert addButton != null : "fx:id=\"addButton\" was not injected: check your FXML file 'driversWindow.fxml'.";
 
-        Database.instance.getDriversTable((TableView<Driver>) tableView);
+//        Database.instance.getDriversTable((TableView<Driver>) tableView);
     }
 
     @FXML
