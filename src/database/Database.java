@@ -22,9 +22,9 @@ final public class Database {
     public static final Database instance = new Database();
     private static final String SERVER_ADRES = "localhost";
     private static final String PORT = "5432";
-    private static final String DB_NAME = "kierowcy";
-    private static final String USER_NAME = "kierowcy";
-    private static final String PASSWORD = "test";
+    private static final String DB_NAME = "projektID";
+    private static final String USER_NAME = "rafalbyczek";
+    private static final String PASSWORD = "Rafciob.960";
     /**
      * database to database
      */

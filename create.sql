@@ -15,43 +15,17 @@ DROP TABLE IF EXISTS egzaminy CASCADE;
 DROP TABLE IF EXISTS ośrodki CASCADE;
 DROP TABLE IF EXISTS mandaty CASCADE;
 DROP TABLE IF EXISTS mandaty_wystawiający CASCADE;
+DROP TABLE IF EXISTS prawa_jazdy_kategorie_praw_jazdy CASCADE;
 DROP TABLE IF EXISTS wykroczenia CASCADE;
-DROP TABLE IF EXISTS wojewodztwa CASCADE;
-DROP TABLE IF EXISTS powiaty CASCADE;
-DROP TABLE IF EXISTS miejscowosci CASCADE;
-DROP TABLE IF EXISTS ulice CASCADE;
-DROP TABLE IF EXISTS kraje CASCADE;
 DROP TABLE IF EXISTS firma CASCADE;
 DROP TABLE IF EXISTS sposob_zasilania CASCADE;
 DROP TABLE IF EXISTS historia_wlascicieli CASCADE;
 DROP TABLE IF EXISTS historia_przegladow_technicznych CASCADE;
-
+DROP TABLE IF EXISTS pojazdy_kierowcy CASCADE;
 
 CREATE TABLE sposob_zasilania (
   id_sposob SERIAL NOT NULL PRIMARY KEY,
   nazwa     TEXT --gaz, benzyna etc
-);
-
-CREATE TABLE wojewodztwa (
-  id_wojewodztwa SERIAL NOT NULL PRIMARY KEY,
-  nazwa          TEXT
-);
-
-CREATE TABLE powiaty (
-  id_powiatu     SERIAL NOT NULL PRIMARY KEY,
-  id_wojewodztwa INT    NOT NULL REFERENCES wojewodztwa (id_wojewodztwa),
-  nazwa          TEXT
-);
-
-CREATE TABLE miejscowosci (
-  id_miejscowosci SERIAL NOT NULL PRIMARY KEY,
-  id_powiatu      INT    NOT NULL REFERENCES powiaty (id_powiatu),
-  nazwa           TEXT
-);
-
-CREATE TABLE ulice (
-  id_ulicy SERIAL NOT NULL PRIMARY KEY,
-  ulica    TEXT   NOT NULL
 );
 
 CREATE TYPE TYP_KIEROWNICY AS ENUM ('po prawej', 'po  lewej');
@@ -67,19 +41,14 @@ CREATE TABLE marka_model (
   typ_kierownicy   TYP_KIEROWNICY NOT NULL
 );
 
-CREATE TABLE kraje (
-  id_kraju INT NOT NULL PRIMARY KEY,
-  nazwa    TEXT
-);
-
 CREATE TABLE pojazdy (
   id_pojazdu       SERIAL PRIMARY KEY,
   nr_rejestracyjny CHAR(7) UNIQUE,
   numer_vin        CHAR(17),
-  data_rejestracji DATE            NOT NULL,
-  id_marka_model   INT             NOT NULL REFERENCES marka_model (id_marka_model),
+  data_rejestracji DATE NOT NULL,
+  id_marka_model   INT  NOT NULL REFERENCES marka_model (id_marka_model),
   typ              TEXT,
-  id_kraju         INT             NOT NULL REFERENCES kraje (id_kraju), --kraj produkcji samochodu
+  kraj_produkcji   TEXT,
   waga_samochodu   NUMERIC
 );
 
@@ -97,22 +66,10 @@ CREATE TABLE firma (
   nazwa_firmy     TEXT   NOT NULL,
   email           TEXT, /*CHECK*/
   nr_telefonu     CHAR(9),
-  nr_ulicy        INT    NOT NULL REFERENCES ulice (id_ulicy),
+  ulica           TEXT,
   nr_budynku      TEXT,
   kod_pocztowy    TEXT,
-  nr_miejscowosci INT    NOT NULL REFERENCES miejscowosci (id_miejscowosci)
-);
-
-CREATE TABLE historia_wlascicieli (
-  id_pojazdu      INT             NOT NULL REFERENCES pojazdy (id_pojazdu),
-  typ_wlasciciela TYP_WLASCICIELA NOT NULL,
-  id_wlasciciela  INT             NOT NULL,
-  od_kiedy        TIMESTAMP WITHOUT TIME ZONE,
-  do_kiedy        TIMESTAMP WITHOUT TIME ZONE
-  --jezeli typ wlascciela to forma to id_wlasciciela wskazuje na firme
-  --w tabeli firmy a jezeli wlasciciel to osoba to jest ona w tabeli kierowcy
-  --i wtedy id wlasciciela pochodzi z tamtej tabeli
-  --calosc bedzie obieta triggerem przy wstawianiu etc czy wszystko poprawnie
+  miejscowosc     TEXT
 );
 
 CREATE TABLE kierowcy (
@@ -123,10 +80,28 @@ CREATE TABLE kierowcy (
   plec            CHAR(1)     NOT NULL CHECK (plec = 'K' OR plec = 'M'),
   email           TEXT, /*CHECK*/
   nr_telefonu     CHAR(9),
-  nr_ulicy        INT         NOT NULL REFERENCES ulice (id_ulicy),
+  ulica           TEXT,
   nr_domu         TEXT,
   kod_pocztowy    TEXT,
-  nr_miejscowosci INT         NOT NULL REFERENCES miejscowosci (id_miejscowosci)
+  miejscowosc	  TEXT
+);
+
+CREATE TABLE historia_wlascicieli (
+  id_pojazdu      INT             NOT NULL REFERENCES pojazdy (id_pojazdu),
+  typ_wlasciciela TYP_WLASCICIELA NOT NULL,
+  id_firmy		  INT             REFERENCES firma(id_firmy),
+  id_kierowcy	  INTEGER		  REFERENCES kierowcy(id_kierowcy),
+  od_kiedy        TIMESTAMP WITHOUT TIME ZONE,
+  do_kiedy        TIMESTAMP WITHOUT TIME ZONE
+  --jezeli typ wlascciela to forma to id_wlasciciela wskazuje na firme
+  --w tabeli firmy a jezeli wlasciciel to osoba to jest ona w tabeli kierowcy
+  --i wtedy id wlasciciela pochodzi z tamtej tabeli
+  --calosc bedzie obieta triggerem przy wstawianiu etc czy wszystko poprawnie
+);
+
+CREATE TABLE pojazdy_kierowcy(
+  id_kierowcy	  INT REFERENCES kierowcy(id_kierowcy),
+  id_pojazdu	  INT REFERENCES pojazdy(id_pojazdu)
 );
 
 CREATE TABLE prawa_jazdy_kategorie (
@@ -138,13 +113,16 @@ CREATE TABLE prawa_jazdy (
   numer_prawa_jazdy TEXT PRIMARY KEY,
   id_właściciela    INT REFERENCES kierowcy (id_kierowcy),
   data_wydania      DATE NOT NULL,
-  międzynarodowe    BOOL NOT NULL,
-  id_kategoria      INT REFERENCES prawa_jazdy_kategorie (id_kategoria)
+  międzynarodowe    BOOL NOT NULL
 );
 
+CREATE TABLE prawa_jazdy_kategorie_praw_jazdy(
+  id_prawa_jazdy    TEXT NOT NULL REFERENCES prawa_jazdy(numer_prawa_jazdy),
+  id_kategoria      INT NOT NULL REFERENCES prawa_jazdy_kategorie(id_kategoria),
+  data_wygasniecia  TIMESTAMP WITHOUT TIME ZONE
+);
 
 CREATE TYPE TYP_EGZAMINU AS ENUM ('teoria', 'praktyka');
-
 
 CREATE TABLE egzaminatorzy (
   id_egzaminatora SERIAL PRIMARY KEY,
@@ -156,10 +134,10 @@ CREATE TABLE egzaminatorzy (
 CREATE TABLE ośrodki (
   id_ośrodka      SERIAL PRIMARY KEY,
   nazwa           TEXT NOT NULL,
-  nr_ulicy        INT  NOT NULL REFERENCES ulice (id_ulicy),
+  ulica           TEXT,
   nr_budynku      TEXT,
   kod_pocztowy    TEXT,
-  nr_miejscowosci INT  NOT NULL REFERENCES miejscowosci (id_miejscowosci)
+  miejscowosc	  TEXT
 );
 
 CREATE TABLE egzaminy (
@@ -323,7 +301,7 @@ CREATE OR REPLACE FUNCTION pojazdy(id_k INT)
 $$
 SELECT id_pojazdu
 FROM historia_wlascicieli
-WHERE (typ_wlasciciela = 'osoba' AND id_wlasciciela = id_k AND od_kiedy < now() AND do_kiedy > now());
+WHERE (typ_wlasciciela = 'osoba' AND id_kierowcy = id_k AND od_kiedy < now() AND do_kiedy > now());
 $$ LANGUAGE SQL;
 
 --wypis numeru prawa jazdy kierowcy o id_k
@@ -527,7 +505,7 @@ CREATE OR REPLACE VIEW statystyki_egzaminow_w_zaleznosci_od_osrodka
 AS
   SELECT
     nazwa,
-    CONCAT(ulice.ulica, ' ', ośrodki.nr_budynku, ' ', miejscowosci.nazwa, ' ', ośrodki.kod_pocztowy) AS adres,
+    CONCAT(ulica, ' ', ośrodki.nr_budynku, ' ', miejscowosc, ' ', ośrodki.kod_pocztowy) AS adres,
     COUNT(
         CASE WHEN wynik = 'zdał'
           THEN 1
@@ -540,8 +518,6 @@ AS
         ELSE NULL
         END) / COUNT(wynik))                                                                         AS efektywnosc
   FROM ośrodki
-    NATURAL JOIN ulice
-    NATURAL JOIN miejscowosci
     NATURAL JOIN egzaminy
     NATURAL JOIN wyniki_egzaminów
   GROUP BY nazwa, adres
@@ -612,8 +588,8 @@ AS
     kategoria,
     COUNT(numer_prawa_jazdy) ilosc
   FROM prawa_jazdy
-    INNER JOIN prawa_jazdy_kategorie
-      ON prawa_jazdy_kategorie.id_kategoria = prawa_jazdy.id_kategoria
+    NATURAL JOIN prawa_jazdy_kategorie_praw_jazdy
+    NATURAL JOIN  prawa_jazdy_kategorie
   GROUP BY kategoria
   ORDER BY ilosc DESC, kategoria;
 END;
