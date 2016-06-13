@@ -56,7 +56,7 @@ public class MainController {
     @FXML
     public void showLicences(final ActionEvent event) {
         try {
-            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/examsWindow.fxml"));
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/examsMainWindow.fxml"));
             final Stage stage = new Stage();
             stage.setTitle("Egzaminy");
             stage.setScene(new Scene(root, 610, 500));
