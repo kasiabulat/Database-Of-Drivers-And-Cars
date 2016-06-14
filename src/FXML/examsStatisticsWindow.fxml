@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DriversMoreInfoController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ExamsStatisticsController">
    <children>
       <GridPane layoutX="70.0" layoutY="86.0" prefHeight="302.0" prefWidth="326.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -32,7 +32,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="id_kierowcy" promptText="id_kierowcy" GridPane.columnIndex="1" />
+                  <TextField fx:id="id_egzaminu" promptText="id_egzaminu" GridPane.columnIndex="1" />
                   <Button fx:id="showInfo" mnemonicParsing="false" onAction="#showInfo" text="wyświetl informacje" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
@@ -42,64 +42,64 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="222.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="12.5" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="51.0" minHeight="10.0" percentHeight="12.5" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="80.0" minHeight="3.0" percentHeight="12.5" prefHeight="43.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="114.0" minHeight="4.0" percentHeight="12.5" prefHeight="47.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="12.5" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="12.5" prefHeight="38.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Pojazdy: " />
-                  <Label GridPane.rowIndex="1" />
-                  <Label text="Prawo jazdy:" GridPane.rowIndex="1" />
-                  <Label prefHeight="34.0" prefWidth="102.0" text="Międzynarodowe prawo jazdy:" wrapText="true" GridPane.rowIndex="2" />
-                  <Label text="Podejścia do egzaminu:" GridPane.rowIndex="6" />
-                  <Label text="Liczba mandatów:" GridPane.rowIndex="3" />
-                  <Label text="Liczba punktów karnych:" GridPane.rowIndex="4">
+                  <Label text="Liczba egzaminowanych: " GridPane.rowIndex="2" />
+                  <Label GridPane.rowIndex="3" />
+                  <Label text="w tym kobiet:" GridPane.rowIndex="3" />
+                  <Label prefHeight="34.0" prefWidth="102.0" text="w tym mężczyzn:" wrapText="true" GridPane.rowIndex="4" />
+                  <Label text="w tym kobiet:" GridPane.rowIndex="6" />
+                  <Label text="Typ egzaminu:" />
+                  <Label text="Zdało:" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Label>
-                  <Label text="Ostatni egzamin:" GridPane.rowIndex="7" />
-                  <TextField fx:id="pojazdy" promptText="Lista id pojazdów" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Label text="w tym mężczyzn:" GridPane.rowIndex="7" />
+                  <TextField fx:id="liczba_zdajacychTextField" promptText="liczba zdających" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="prawa_jazdy" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <TextField fx:id="liczba_zdajacych_kobietTextField" promptText="liczba zdających kobiet" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="międzynarodowe_prawa_jazdy" promptText="Id międzynarodowego prawa jazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <TextField fx:id="liczba_zdajacych_mezczyznTextField" promptText="liczba zdających mężczyzn" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="ilość_mandatów" promptText="Liczba mandatów" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <TextField fx:id="typ_egzaminuTextField" promptText="teoria/praktyka" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Suma grzywn:" GridPane.rowIndex="5" />
-                  <TextField fx:id="suma_grzywn" promptText="Suma grzywn" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <Label text="Kategoria:" GridPane.rowIndex="1" />
+                  <TextField fx:id="kategoriaTextField" promptText="kategoria" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="ilość_podejść_do_egzaminu" promptText="Liczba podejść do egazminu na prawo jazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                  <TextField fx:id="ile_zdalo_kobietTextField" promptText="liczba pozytywnych wyników kobiet" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="ostatni_egzamin" promptText="Id ostatniego egzaminu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                  <TextField fx:id="ile_zdalo_mezczyznTextField" promptText="liczba pozytywnych wyników mężczyzn" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="ilość_punktów_karnych" promptText="Liczba punktów karnych " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <TextField fx:id="ile_zdaloTextField" promptText="liczba pozytywnych wyników" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>

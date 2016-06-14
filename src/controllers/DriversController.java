@@ -9,12 +9,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class DriversController {
-    // TODO: add fields
     @FXML
     private TableView<?> tableView;
     @FXML
@@ -23,8 +23,31 @@ public class DriversController {
     private Button moreInfoButton;
 
     @FXML
+    private TextField id_kierowcyTextField;
+    @FXML
+    private TextField peselTextField;
+    @FXML
+    private TextField imieTextField;
+    @FXML
+    private TextField nazwiskoTextField;
+    @FXML
+    private TextField plecTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private TextField nr_telefonuTextField;
+    @FXML
+    private TextField nr_ulicyTextField;
+    @FXML
+    private TextField nr_budynkuTextField;
+    @FXML
+    private TextField kod_pocztowyTextField;
+    @FXML
+    private TextField nr_miejscowosciTextField;
+
+    @FXML
     public void addDriver(final ActionEvent event) {
-        // TODO: adding driver to database
+        // TODO: adding driver to database using text fields
     }
 
     @FXML
@@ -33,7 +56,7 @@ public class DriversController {
         assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'driversWindow.fxml'.";
         assert addButton != null : "fx:id=\"addButton\" was not injected: check your FXML file 'driversWindow.fxml'.";
 
-        Database.instance.getDriversTable((TableView<Driver>) tableView);
+//        Database.instance.getDriversTable((TableView<Driver>) tableView);
     }
 
     @FXML

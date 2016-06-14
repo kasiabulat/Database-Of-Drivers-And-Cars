@@ -17,25 +17,28 @@ public class DriversMoreInfoController {
     private Button showInfo;
 
     @FXML
-    private TextArea ilość_punktów_karnych;
+    private TextField ilość_punktów_karnych;
 
     @FXML
-    private TextArea ilość_mandatów;
+    private TextField ilość_mandatów;
 
     @FXML
-    private TextArea ostatni_egzamin;
+    private TextField ostatni_egzamin;
 
     @FXML
-    private TextArea prawa_jazdy;
+    private TextField prawa_jazdy;
 
     @FXML
-    private TextArea ilość_podejść_do_egzaminu;
+    private TextField ilość_podejść_do_egzaminu;
 
     @FXML
-    private TextArea międzynarodowe_prawa_jazdy;
+    private TextField międzynarodowe_prawa_jazdy;
 
     @FXML
-    private TextArea pojazdy;
+    private TextField suma_grzywn;
+
+    @FXML
+    private TextField pojazdy;
 
     @FXML
     private TextField id_kierowcy;

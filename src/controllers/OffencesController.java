@@ -14,32 +14,23 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class OffencesController {
-    //TODO: add fields
     @FXML
     private TableView<?> tableView;
     @FXML
-    private Button addButton;
-    @FXML
-    private Button moreInfoButton;
-    @FXML
-    private Button statisticsButton;
+    private Button rankingButton;
 
     @FXML
     public void initialize() {
-        Database.instance.getOffenceTable((TableView<Offence>) tableView);
-    }
-
-    public void addOffence(final ActionEvent event) {
-        // TODO: adding offence to database
+        //Database.instance.getOffenceTable((TableView<Offence>) tableView);
     }
 
     @FXML
-    public void showMoreInfo(final ActionEvent event) {
+    public void showRanking(final ActionEvent event) {
         try {
-            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/offencesMoreInfoWindow.fxml"));
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/dangerousDriversWindow.fxml"));
             final Stage stage = new Stage();
-            stage.setTitle("Wykroczenia - szczegółowe informacje");
-            stage.setScene(new Scene(root, 450, 310));
+            stage.setTitle("Ranking niebezpiecznych kierowców");
+            stage.setScene(new Scene(root, 510, 480));
             stage.show();
 
         } catch (final IOException e) {
@@ -47,8 +38,4 @@ public class OffencesController {
         }
     }
 
-    @FXML
-    public void showStatistics(final ActionEvent event) {
-        // TODO: show how many offences in each type had been committed, how many which officer had registered etc.
-    }
 }

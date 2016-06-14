@@ -42,79 +42,68 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="272.0" minWidth="10.0" prefWidth="222.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="80.0" minHeight="3.0" prefHeight="27.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="114.0" minHeight="4.0" prefHeight="47.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.0" minHeight="10.0" percentHeight="12.5" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="80.0" minHeight="3.0" percentHeight="12.5" prefHeight="43.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="114.0" minHeight="4.0" percentHeight="12.5" prefHeight="47.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="12.5" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="12.5" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="114.0" minHeight="10.0" percentHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Pojazdy: " />
-                  <TextArea fx:id="pojazdy" editable="false" promptText="Lista id pojazdów, których właścicielem jest dany kierowca" GridPane.columnIndex="1">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <GridPane.margin>
-                        <Insets bottom="2.0" top="2.0" />
-                     </GridPane.margin>
-                  </TextArea>
                   <Label GridPane.rowIndex="1" />
                   <Label text="Prawo jazdy:" GridPane.rowIndex="1" />
-                  <TextArea fx:id="prawa_jazdy" editable="false" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <GridPane.margin>
-                        <Insets bottom="2.0" top="2.0" />
-                     </GridPane.margin>
-                  </TextArea>
                   <Label prefHeight="34.0" prefWidth="102.0" text="Międzynarodowe prawo jazdy:" wrapText="true" GridPane.rowIndex="2" />
-                  <TextArea fx:id="międzynarodowe_prawa_jazdy" editable="false" maxHeight="25.0" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <opaqueInsets>
+                  <Label text="Podejścia do egzaminu:" GridPane.rowIndex="6" />
+                  <Label text="Liczba mandatów:" GridPane.rowIndex="3" />
+                  <Label text="Liczba punktów karnych:" GridPane.rowIndex="4">
+                     <GridPane.margin>
                         <Insets />
-                     </opaqueInsets>
+                     </GridPane.margin></Label>
+                  <Label text="Ostatni egzamin:" GridPane.rowIndex="7" />
+                  <TextField fx:id="pojazdy" promptText="Lista id pojazdów" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
-                  </TextArea>
-                  <Label text="Podejścia do egzaminu:" GridPane.rowIndex="5" />
-                  <TextArea fx:id="ilość_podejść_do_egzaminu" editable="false" maxHeight="25.0" promptText="Ilość podejść do egazminu na prawo jazdy" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="prawa_jazdy" promptText="Id prawa jazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
-                  </TextArea>
-                  <Label text="Ilość mandatów:" GridPane.rowIndex="3" />
-                  <TextArea fx:id="ilość_mandatów" editable="false" maxHeight="25.0" promptText="Ilość mandatów" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="międzynarodowe_prawa_jazdy" promptText="Id międzynarodowego prawa jazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
-                  </TextArea>
-                  <Label text="Ilość punktów karnych:" GridPane.rowIndex="4" />
-                  <TextArea fx:id="ilość_punktów_karnych" editable="false" maxHeight="25.0" promptText="Ilość punktów karnych " GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="ilość_mandatów" promptText="Liczba mandatów" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
-                  </TextArea>
-                  <Label text="Ostatni egzamin:" GridPane.rowIndex="6" />
-                  <TextArea fx:id="ostatni_egzamin" editable="false" maxHeight="25.0" promptText="Id ostatniego egzaminu" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
+                  </TextField>
+                  <Label text="Suma grzywn:" GridPane.rowIndex="5" />
+                  <TextField fx:id="suma_grzywn" promptText="Suma grzywn" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
-                  </TextArea>
+                  </TextField>
+                  <TextField fx:id="ilość_podejść_do_egzaminu" promptText="Liczba podejść do egazminu na prawo jazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="ostatni_egzamin" promptText="Id ostatniego egzaminu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="ilość_punktów_karnych" promptText="Liczba punktów karnych " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="2.0" top="2.0" />
+                     </GridPane.margin>
+                  </TextField>
                </children>
             </GridPane>
          </children>
