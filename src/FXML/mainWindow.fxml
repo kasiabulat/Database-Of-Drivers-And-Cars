@@ -35,12 +35,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="driversButton" mnemonicParsing="false" onAction="#showDrivers" prefHeight="30.0" prefWidth="130.0" text="kierowcy" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="vehiclesButton" mnemonicParsing="false" onAction="#showVehicles" prefHeight="30.0" prefWidth="130.0" text="pojazdy" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Georgia" size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="vehiclesButton" mnemonicParsing="false" onAction="#showVehicles" prefHeight="30.0" prefWidth="130.0" text="pojazdy" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="ownersButton" mnemonicParsing="false" onAction="#showOwners" prefHeight="30.0" prefWidth="130.0" text="właściciele" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Georgia" size="15.0" />
                      </font>

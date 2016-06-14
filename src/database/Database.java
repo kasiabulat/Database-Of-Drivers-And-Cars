@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.sql.*;
@@ -51,6 +52,7 @@ final public class Database {
         table.getColumns().addAll(firstNameCol);
     }
 
+    @NotNull
     private ObservableList<Driver> getDriversList() {
         final Collection<Driver> data = new LinkedList<>();
 
@@ -78,6 +80,7 @@ final public class Database {
     }
 
 
+    @NotNull
     private ObservableList<Vehicle> getVehiclesList() {
         final Collection<Vehicle> data = new LinkedList<>();
 
@@ -103,6 +106,7 @@ final public class Database {
         vehiclesTable.setItems(getVehiclesList());
     }
 
+    @NotNull
     private ObservableList<Exam> getExamsList() {
         final Collection<Exam> data = new LinkedList<>();
 
@@ -131,6 +135,7 @@ final public class Database {
         examTable.setItems(getExamsList());
     }
 
+    @NotNull
     private ObservableList<Offence> getOffenceList() {
         final Collection<Offence> data = new LinkedList<>();
 
@@ -154,6 +159,7 @@ final public class Database {
         examTable.setItems(getOffenceList());
     }
 
+    @NotNull
     public String getDriversVehicles(final int driver) {
         String pojazdy = "";
         try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT pojazdy(?)")) {

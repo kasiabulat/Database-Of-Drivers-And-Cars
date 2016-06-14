@@ -13,20 +13,20 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-public class LicencesChoiceController {
+public class OwnersChoiceController {
     @FXML
     private AnchorPane anchorPane;
     @FXML
-    private Button examsButton;
+    private Button firmsButton;
     @FXML
-    private Button moreInfoButton;
+    private Button driversButton;
 
     @FXML
-    public void showExams(final ActionEvent event) {
+    public void showFirms(final ActionEvent event) {
         try {
-            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/examsWindow.fxml"));
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/firmsWindow.fxml"));
             final Stage stage = new Stage();
-            stage.setTitle("Egzaminy");
+            stage.setTitle("Firmy");
             stage.setScene(new Scene(root, 610, 500));
             stage.show();
 
@@ -36,8 +36,17 @@ public class LicencesChoiceController {
     }
 
     @FXML
-    public void showMoreInfo(final ActionEvent event) {
-        // TODO: show more info and some statistics about licences using tables prawa_jazdy, prawa_jazdy_kategorie
+    public void showDrivers(final ActionEvent event) {
+        try {
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/driversWindow.fxml"));
+            final Stage stage = new Stage();
+            stage.setTitle("Kierowcy");
+            stage.setScene(new Scene(root, 610, 500));
+            stage.show();
+
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

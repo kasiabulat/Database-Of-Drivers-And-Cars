@@ -12,20 +12,13 @@ public class ExamsController {
     @FXML
     private TableView<?> tableView;
     @FXML
-    private Button addButton;
-    @FXML
     private Button moreInfoButton;
     @FXML
     private Button statisticsButton;
 
     @FXML
     public void initialize() {
-        Database.instance.getExamsTable((TableView<Exam>) tableView);
-    }
-
-    @FXML
-    public void addResult(final ActionEvent event) {
-        // TODO: adding result of the exam to database
+        //Database.instance.getExamsTable((TableView<Exam>) tableView);
     }
 
     @FXML
