@@ -99,7 +99,7 @@
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="ilość_punktów_karnych" promptText="Liczba punktów karnych " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                  <TextField fx:id="suma_punktów_karnych" promptText="Liczba punktów karnych " GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="2.0" top="2.0" />
                      </GridPane.margin>

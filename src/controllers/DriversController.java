@@ -1,7 +1,7 @@
 package controllers;
 
 import database.Database;
-import database.Driver;
+import database.datatypes.Driver;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,11 +52,7 @@ public class DriversController {
 
     @FXML
     public void initialize() {
-        assert moreInfoButton != null : "fx:id=\"moreInfoButton\" was not injected: check your FXML file 'driversWindow.fxml'.";
-        assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'driversWindow.fxml'.";
-        assert addButton != null : "fx:id=\"addButton\" was not injected: check your FXML file 'driversWindow.fxml'.";
-
-//        Database.instance.getDriversTable((TableView<Driver>) tableView);
+        Database.instance.getDriversTable((TableView<Driver>) tableView);
     }
 
     @FXML

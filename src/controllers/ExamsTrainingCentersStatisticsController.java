@@ -1,13 +1,15 @@
 package controllers;
 
+import database.Database;
+import database.datatypes.ExamCenter;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableView;
 
 public class ExamsTrainingCentersStatisticsController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<ExamCenter> tableView;
     @FXML
     public void initialize() {
-        //TODO: fill tableview
+        Database.instance.getExamCenterTable(tableView);    //TODO: fill tableview
     }
 }

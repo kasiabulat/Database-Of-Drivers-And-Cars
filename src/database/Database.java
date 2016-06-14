@@ -1,5 +1,7 @@
 package database;
 
+import database.datatypes.*;
+import database.datatypes.Driver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
@@ -7,9 +9,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.jetbrains.annotations.NotNull;
 
-import java.math.BigDecimal;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -23,9 +23,9 @@ final public class Database {
     public static final Database instance = new Database();
     private static final String SERVER_ADRES = "localhost";
     private static final String PORT = "5432";
-    private static final String DB_NAME = "projektID";
-    private static final String USER_NAME = "rafalbyczek";
-    private static final String PASSWORD = "Rafciob.960";
+    private static final String DB_NAME = "kierowcy";
+    private static final String USER_NAME = "kierowcy";
+    private static final String PASSWORD = "test";
     /**
      * database to database
      */
@@ -45,9 +45,9 @@ final public class Database {
     }
 
 
-    private static <T, S> void insertColumn(final TableView<T> table, final Class<S> typeTag, final String name, final int minWidth) {
-        final TableColumn<T, S> firstNameCol = new TableColumn<>(name);
-        firstNameCol.setMinWidth(minWidth);
+    private static <T> void insertColumn(final TableView<T> table,final String name) {
+        final TableColumn<T, Object> firstNameCol = new TableColumn<>(name);
+        firstNameCol.setPrefWidth(100);
         firstNameCol.setCellValueFactory(new PropertyValueFactory<>(name));
         table.getColumns().addAll(firstNameCol);
     }
@@ -69,13 +69,13 @@ final public class Database {
     }
 
     public void getDriversTable(final TableView<Driver> driversTable) {
-        insertColumn(driversTable, Integer.class, "id_kierowcy", 3);
-        insertColumn(driversTable, String.class, "PESEL", 30);
-        insertColumn(driversTable, String.class, "imię", 20);
-        insertColumn(driversTable, String.class, "nazwisko", 20);
-        insertColumn(driversTable, String.class, "email", 30);
-        insertColumn(driversTable, String.class, "nr_telefonu", 10);
-        insertColumn(driversTable, String.class, "adres", 50);
+        insertColumn(driversTable,"id_kierowcy");
+        insertColumn(driversTable,"PESEL");
+        insertColumn(driversTable,"imię");
+        insertColumn(driversTable,"nazwisko");
+        insertColumn(driversTable,"email");
+        insertColumn(driversTable,"nr_telefonu");
+        insertColumn(driversTable,"adres");
         driversTable.setItems(getDriversList());
     }
 
@@ -97,12 +97,12 @@ final public class Database {
 
 
     public void getVehiclesTable(final TableView<Vehicle> vehiclesTable) {
-        insertColumn(vehiclesTable, Integer.class, "id_pojazdu", 3);
-        insertColumn(vehiclesTable, String.class, "nr_rejestracyjny", 30);
-        insertColumn(vehiclesTable, LocalDate.class, "data_rejestracji", 20);
-        insertColumn(vehiclesTable, String.class, "marka", 20);
-        insertColumn(vehiclesTable, String.class, "model", 30);
-        insertColumn(vehiclesTable, String.class, "typ", 10);
+        insertColumn(vehiclesTable,"id_pojazdu");
+        insertColumn(vehiclesTable,"nr_rejestracyjny");
+        insertColumn(vehiclesTable,"data_rejestracji");
+        insertColumn(vehiclesTable,"marka");
+        insertColumn(vehiclesTable,"model");
+        insertColumn(vehiclesTable,"typ");
         vehiclesTable.setItems(getVehiclesList());
     }
 
@@ -122,16 +122,16 @@ final public class Database {
     }
 
     public void getExamsTable(final TableView<Exam> examTable) {
-        insertColumn(examTable, String.class, "imię_zdającego", 30);
-        insertColumn(examTable, String.class, "nazwisko_zdającego", 10);
-        insertColumn(examTable, String.class, "wynik", 10);
-        insertColumn(examTable, Integer.class, "id_egzaminu", 3);
-        insertColumn(examTable, LocalDate.class, "data_przeprowadzenia", 30);
-        insertColumn(examTable, String.class, "typ", 20);
-        insertColumn(examTable, String.class, "nazwa_ośrodka", 20);
-        insertColumn(examTable, String.class, "adres_ośrodka", 30);
-        insertColumn(examTable, String.class, "imię_egzaminatora", 10);
-        insertColumn(examTable, String.class, "nazwisko_egzaminatora", 10);
+        insertColumn(examTable,"imię_zdającego");
+        insertColumn(examTable,"nazwisko_zdającego");
+        insertColumn(examTable,"wynik");
+        insertColumn(examTable,"id_egzaminu");
+        insertColumn(examTable,"data_przeprowadzenia");
+        insertColumn(examTable,"typ");
+        insertColumn(examTable,"nazwa_ośrodka");
+        insertColumn(examTable,"adres_ośrodka");
+        insertColumn(examTable,"imię_egzaminatora");
+        insertColumn(examTable,"nazwisko_egzaminatora");
         examTable.setItems(getExamsList());
     }
 
@@ -151,11 +151,11 @@ final public class Database {
     }
 
     public void getOffenceTable(final TableView<Offence> examTable) {
-        insertColumn(examTable, String.class, "imię_sprawcy", 30);
-        insertColumn(examTable, String.class, "nazwisko_sprawcy", 30);
-        insertColumn(examTable, String.class, "opis", 30);
-        insertColumn(examTable, BigDecimal.class, "grzywna", 30);
-        insertColumn(examTable, String.class, "punkty_karne", 30);
+        insertColumn(examTable,"imię_sprawcy");
+        insertColumn(examTable,"nazwisko_sprawcy");
+        insertColumn(examTable,"opis");
+        insertColumn(examTable,"grzywna");
+        insertColumn(examTable,"punkty_karne");
         examTable.setItems(getOffenceList());
     }
 
@@ -177,8 +177,7 @@ final public class Database {
     }
 
     public String getDriverSimpleStringInformation(final String query, final int driver) {
-        String result;
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+		try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, driver);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next())
@@ -190,88 +189,55 @@ final public class Database {
         throw new IllegalArgumentException("Query did not returned results");
     }
 
+	@NotNull
+	private ObservableList<DangerousDriver> getDangerousDriversList() {
+		final Collection<DangerousDriver> data = new LinkedList<>();
 
-
-
-	/*public static void main(String[] args) {
-        launch(args);
+		try (Statement statement = connection.createStatement();
+			 ResultSet resultSet = statement.executeQuery("SELECT * FROM statystyki_mandatow_najniebezpieczniejsi_kierowcy;")) {
+			while (resultSet.next()) {
+				data.add(new DangerousDriver(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4)));
+			}
+		} catch (final SQLException e) {
+			throw new DatabaseException(e);
+		}
+		return FXCollections.observableArrayList(data);
 	}
 
-	public void start() {
-
-		final Label label = new Label("Address Book");
-		label.setFont(new Font("Arial", 20));
-
-		table.setEditable(true);
-
-		TableColumn firstNameCol = new TableColumn("First Name");
-		firstNameCol.setMinWidth(100);
-		firstNameCol.setCellValueFactory(
-				new PropertyValueFactory<Person, String>("firstName"));
-
-		TableColumn lastNameCol = new TableColumn("Last Name");
-		lastNameCol.setMinWidth(100);
-		lastNameCol.setCellValueFactory(
-				new PropertyValueFactory<Person, String>("lastName"));
-
-		TableColumn emailCol = new TableColumn("Email");
-		emailCol.setMinWidth(200);
-		emailCol.setCellValueFactory(
-				new PropertyValueFactory<Person, String>("email"));
-
-		table.setItems(data);
-		table.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
-
-		final VBox vbox = new VBox();
-		vbox.setSpacing(5);
-		vbox.setPadding(new Insets(10, 0, 0, 10));
-		vbox.getChildren().addAll(label, table);
-
-		((Group) scene.getRoot()).getChildren().addAll(vbox);
-
-		stage.setScene(scene);
-		stage.show();
+	public void getDangerousDriversTable(final TableView<DangerousDriver> dangerousDriversTable) {
+		insertColumn(dangerousDriversTable,"imię");
+		insertColumn(dangerousDriversTable,"nazwisko");
+		insertColumn(dangerousDriversTable,"ilość_mandatów");
+		insertColumn(dangerousDriversTable,"suma_punktów_karnych");
+		dangerousDriversTable.setItems(getDangerousDriversList());
 	}
 
-	public static class Person {
+	@NotNull
+	private ObservableList<ExamCenter> getExamCentersList() {
+		final Collection<ExamCenter> data = new LinkedList<>();
 
-		private final SimpleStringProperty firstName;
-		private final SimpleStringProperty lastName;
-		private final SimpleStringProperty email;
-
-		private Person(String fName, String lName, String email) {
-			this.firstName = new SimpleStringProperty(fName);
-			this.lastName = new SimpleStringProperty(lName);
-			this.email = new SimpleStringProperty(email);
+		try (Statement statement = connection.createStatement();
+			 ResultSet resultSet = statement.executeQuery("SELECT * FROM statystyki_egzaminow_w_zaleznosci_od_osrodka;")) {
+			while (resultSet.next()) {
+				data.add(new ExamCenter(resultSet.getString(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4),resultSet.getDouble(5)));
+			}
+		} catch (final SQLException e) {
+			throw new DatabaseException(e);
 		}
-
-		public String getFirstName() {
-			return firstName.get();
-		}
-
-		public void setFirstName(String fName) {
-			firstName.set(fName);
-		}
-
-		public String getLastName() {
-			return lastName.get();
-		}
-
-		public void setLastName(String fName) {
-			lastName.set(fName);
-		}
-
-		public String getEmail() {
-			return email.get();
-		}
-
-		public void setEmail(String fName) {
-			email.set(fName);
-		}
+		return FXCollections.observableArrayList(data);
 	}
-*/
 
-    /**
+	public void getExamCenterTable(final TableView<ExamCenter> examCenterTable) {
+		insertColumn(examCenterTable,"nazwa");
+		insertColumn(examCenterTable,"adres");
+		insertColumn(examCenterTable,"zdało");
+		insertColumn(examCenterTable,"zdawało");
+		insertColumn(examCenterTable,"efektywność");
+		examCenterTable.setItems(getExamCentersList());
+	}
+
+
+	/**
      * Standard exception thrown when something wrong with database
      */
     private static class DatabaseException extends RuntimeException {

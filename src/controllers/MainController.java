@@ -83,7 +83,7 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        Image bg = new Image((new File("images/car2.jpg")).toURI().toString());
+        final Image bg = new Image(new File("images/car2.jpg").toURI().toString());
         anchorPane.setBackground(new Background(new BackgroundImage(bg, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 
     }

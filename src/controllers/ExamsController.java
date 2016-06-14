@@ -1,7 +1,7 @@
 package controllers;
 
 import database.Database;
-import database.Exam;
+import database.datatypes.Exam;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,7 +30,7 @@ public class ExamsController {
 
     @FXML
     public void initialize() {
-        //Database.instance.getExamsTable((TableView<Exam>) tableView);
+        Database.instance.getExamsTable((TableView<Exam>) tableView);
     }
 
     @FXML

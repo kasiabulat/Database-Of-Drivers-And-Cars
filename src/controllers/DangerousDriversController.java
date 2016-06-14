@@ -1,15 +1,15 @@
 package controllers;
 
-import javafx.event.ActionEvent;
+import database.Database;
+import database.datatypes.DangerousDriver;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 
 public class DangerousDriversController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<DangerousDriver> tableView; //to check if ok
     @FXML
     public void initialize() {
-        //TODO: fill tableview
+        Database.instance.getDangerousDriversTable(tableView);
     }
 }

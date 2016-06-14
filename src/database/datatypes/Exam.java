@@ -1,4 +1,4 @@
-package database;
+package database.datatypes;
 
 import java.time.LocalDate;
 
@@ -17,7 +17,7 @@ public class Exam {
     private String nazwisko_zdającego;
     private String wynik;
 
-    Exam(final int id_egzaminu, final LocalDate data_przeprowadzenia, final String typ, final String nazwa_ośrodka, final String adres_ośrodka, final String imię_egzaminatora, final String nazwisko_egzaminatora, final String imię_zdającego, final String nazwisko_zdającego, final String wynik) {
+    public Exam(final int id_egzaminu,final LocalDate data_przeprowadzenia,final String typ,final String nazwa_ośrodka,final String adres_ośrodka,final String imię_egzaminatora,final String nazwisko_egzaminatora,final String imię_zdającego,final String nazwisko_zdającego,final String wynik) {
         this.id_egzaminu = id_egzaminu;
         this.data_przeprowadzenia = data_przeprowadzenia;
         this.typ = typ;

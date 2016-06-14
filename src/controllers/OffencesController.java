@@ -1,7 +1,5 @@
 package controllers;
 
-import database.Database;
-import database.Offence;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
