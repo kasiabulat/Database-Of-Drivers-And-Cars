@@ -1,19 +1,17 @@
 package database.datatypes;
 
-import java.time.LocalDate;
-
 /**
  * Created by Kamil Rajtar on 03.06.16.
  */
 public class Vehicle {
     private int id_pojazdu;
     private String nr_rejestracyjny;
-    private LocalDate data_rejestracji;
+    private String data_rejestracji;
     private String marka;
     private String model;
     private String typ;
 
-    public Vehicle(final int id_pojazdu, final String nr_rejestracyjny, final LocalDate data_rejestracji, final String marka, final String model, final String typ) {
+    public Vehicle(final int id_pojazdu, final String nr_rejestracyjny, final String data_rejestracji, final String marka, final String model, final String typ) {
         this.id_pojazdu = id_pojazdu;
         this.nr_rejestracyjny = nr_rejestracyjny;
         this.data_rejestracji = data_rejestracji;
@@ -38,11 +36,11 @@ public class Vehicle {
         this.nr_rejestracyjny = nr_rejestracyjny;
     }
 
-    public LocalDate getData_rejestracji() {
+    public String getData_rejestracji() {
         return data_rejestracji;
     }
 
-    public void setData_rejestracji(final LocalDate data_rejestracji) {
+    public void setData_rejestracji(final String data_rejestracji) {
         this.data_rejestracji = data_rejestracji;
     }
 

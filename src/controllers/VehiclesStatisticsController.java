@@ -14,7 +14,7 @@ public class VehiclesStatisticsController {
     @FXML
     private BarChart<String, Number> typesBarChart;
     @FXML
-    private BarChart<Integer, Number> rejYearBarChart;
+    private BarChart<String, Number> rejYearBarChart;
 
     @FXML
     public void initialize() {
@@ -42,10 +42,10 @@ public class VehiclesStatisticsController {
         brandsBarChart.getData().addAll(brandsSeries);
         brandsBarChart.setCategoryGap(50.00);
 
-        final XYChart.Series<Integer,Number> rejSeries = new XYChart.Series<>();
+        final XYChart.Series<String,Number> rejSeries = new XYChart.Series<>();
 		for(final RegistrationYear registrationYear: Database.instance.getRegistrationYear())
 		{
-			rejSeries.getData().add(new XYChart.Data<>(registrationYear.year, registrationYear.count));
+			rejSeries.getData().add(new XYChart.Data<>(String.valueOf( registrationYear.year), registrationYear.count));
 		}
         //rejSeries.getData().add(new XYChart.Data("2012", 15));
         //rejSeries.getData().add(new XYChart.Data("2013", 30));

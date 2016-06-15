@@ -140,8 +140,7 @@ final public class Database
 		{
 			while(resultSet.next())
 			{
-				data.add(new Vehicle(resultSet.getInt(1),resultSet.getString(2),resultSet.getDate(3)
-						.toLocalDate(),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6)));
+				data.add(new Vehicle(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6)));
 			}
 		}catch(final SQLException e)
 		{
