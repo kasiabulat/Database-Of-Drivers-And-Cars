@@ -1,5 +1,7 @@
 package controllers;
 
+import database.Database;
+import database.datatypes.Offence;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,13 +15,13 @@ import java.io.IOException;
 
 public class OffencesController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<Offence> tableView;
     @FXML
     private Button rankingButton;
 
     @FXML
     public void initialize() {
-        //Database.instance.getOffenceTable((TableView<Offence>) tableView);
+        Database.instance.getOffenceTable( tableView);
     }
 
     @FXML

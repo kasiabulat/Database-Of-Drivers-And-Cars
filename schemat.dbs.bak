@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<project name="PostgreSQL" id="Project_20c9ff04" html="y" template="Default" database="PostgreSQL" >
+<project name="PostgreSQL" id="Project_36aa7cf0" html="y" template="Default" database="PostgreSQL" >
 	<schema name="public" catalogname="projektID" schemaname="public" >
 		<table name="egzaminatorzy" >
 			<column name="id_egzaminatora" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="imie" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="imię" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
 			<column name="nazwisko" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
 			<column name="numer_licencji" type="text" length="2147483647" decimal="0" jt="12" />
 			<index name="egzaminatorzy_pkey" unique="PRIMARY_KEY" >
@@ -15,21 +15,16 @@
 			<column name="data_przeprowadzenia" type="date" length="13" decimal="0" jt="91" mandatory="y" />
 			<column name="typ" type="typ_egzaminu" length="2147483647" decimal="0" jt="12" mandatory="y" />
 			<column name="id_egzaminatora" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="id_osrodka" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="id_ośrodka" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="id_kategoria" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="id_kierowcy" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="wynik" type="wynik_egzaminu" length="2147483647" decimal="0" jt="12" mandatory="y" />
 			<index name="egzaminy_pkey" unique="PRIMARY_KEY" >
 				<column name="id_egzaminu" />
 			</index>
 			<fk name="egzaminy_id_egzaminatora_fkey" to_schema="public" to_table="egzaminatorzy" >
 				<fk_column name="id_egzaminatora" pk="id_egzaminatora" />
 			</fk>
-			<fk name="egzaminy_id_kierowcy_fkey" to_schema="public" to_table="kierowcy" >
-				<fk_column name="id_kierowcy" pk="id_kierowcy" />
-			</fk>
-			<fk name="egzaminy_id_osrodka_fkey" to_schema="public" to_table="osrodki" >
-				<fk_column name="id_osrodka" pk="id_osrodka" />
+			<fk name="egzaminy_id_ośrodka_fkey" to_schema="public" to_table="ośrodki" >
+				<fk_column name="id_ośrodka" pk="id_ośrodka" />
 			</fk>
 			<fk name="egzaminy_id_kategoria_fkey" to_schema="public" to_table="prawa_jazdy_kategorie" >
 				<fk_column name="id_kategoria" pk="id_kategoria" />
@@ -46,13 +41,10 @@
 			<column name="ulica" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="nr_budynku" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="kod_pocztowy" type="text" length="2147483647" decimal="0" jt="12" />
-			<column name="id_miejscowosc" type="integer" length="10" decimal="0" jt="4" />
+			<column name="miejscowosc" type="text" length="2147483647" decimal="0" jt="12" />
 			<index name="firma_pkey" unique="PRIMARY_KEY" >
 				<column name="id_firmy" />
 			</index>
-			<fk name="firma_id_miejscowosc_fkey" to_schema="public" to_table="miejscowosc" >
-				<fk_column name="id_miejscowosc" pk="id_miejscowosc" />
-			</fk>
 		</table>
 		<table name="historia_przegladow_technicznych" >
 			<column name="nr_pojazdu" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
@@ -82,7 +74,7 @@
 		<table name="kierowcy" >
 			<column name="id_kierowcy" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="pesel" type="char" length="11" decimal="0" jt="1" mandatory="y" />
-			<column name="imie" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+			<column name="imię" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
 			<column name="nazwisko" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
 			<column name="plec" type="char" length="1" decimal="0" jt="1" mandatory="y" />
 			<column name="email" type="text" length="2147483647" decimal="0" jt="12" />
@@ -90,7 +82,7 @@
 			<column name="ulica" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="nr_domu" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="kod_pocztowy" type="text" length="2147483647" decimal="0" jt="12" />
-			<column name="id_miejscowosc" type="integer" length="10" decimal="0" jt="4" />
+			<column name="miejscowosc" type="text" length="2147483647" decimal="0" jt="12" />
 			<index name="kierowcy_pkey" unique="PRIMARY_KEY" >
 				<column name="id_kierowcy" />
 			</index>
@@ -100,88 +92,71 @@
 			<constraint name="kierowcy_plec_check" >
 				<string>(plec = &#039;K&#039;::bpchar) OR (plec = &#039;M&#039;::bpchar)</string>
 			</constraint>
-			<fk name="kierowcy_id_miejscowosc_fkey" to_schema="public" to_table="miejscowosc" >
-				<fk_column name="id_miejscowosc" pk="id_miejscowosc" />
-			</fk>
+		</table>
+		<table name="kraje" >
+			<column name="id_kraju" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="nazwa" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="kraje_pkey" unique="PRIMARY_KEY" >
+				<column name="id_kraju" />
+			</index>
 		</table>
 		<table name="mandaty" >
 			<column name="id_mandatu" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="id_kierowcy" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="id_wystawiajacego" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="id_wystawiającego" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="id_wykroczenia" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="data_wystawienia" type="timestamp" length="29" decimal="6" jt="93" />
 			<index name="mandaty_pkey" unique="PRIMARY_KEY" >
 				<column name="id_mandatu" />
 			</index>
 			<fk name="mandaty_id_kierowcy_fkey" to_schema="public" to_table="kierowcy" >
 				<fk_column name="id_kierowcy" pk="id_kierowcy" />
 			</fk>
-			<fk name="mandaty_id_wystawiajacego_fkey" to_schema="public" to_table="mandaty_wystawiajacy" >
-				<fk_column name="id_wystawiajacego" pk="id_wstawiajacego" />
+			<fk name="mandaty_id_wystawiającego_fkey" to_schema="public" to_table="mandaty_wystawiający" >
+				<fk_column name="id_wystawiającego" pk="id_wstawiającego" />
 			</fk>
 			<fk name="mandaty_id_wykroczenia_fkey" to_schema="public" to_table="wykroczenia" >
 				<fk_column name="id_wykroczenia" pk="id_wykroczenia" />
 			</fk>
 		</table>
-		<table name="mandaty_wystawiajacy" >
-			<column name="id_wstawiajacego" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="imie" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
+		<table name="mandaty_wystawiający" >
+			<column name="id_wstawiającego" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="imię" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
 			<column name="nazwisko" type="varchar" length="50" decimal="0" jt="12" mandatory="y" />
-			<index name="mandaty_wystawiajacy_pkey" unique="PRIMARY_KEY" >
-				<column name="id_wstawiajacego" />
+			<index name="mandaty_wystawiający_pkey" unique="PRIMARY_KEY" >
+				<column name="id_wstawiającego" />
 			</index>
 		</table>
-		<table name="marka" >
-			<column name="id_marka" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+		<table name="marka_model" >
+			<column name="id_marka_model" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="marka" type="text" length="2147483647" decimal="0" jt="12" />
-			<index name="marka_pkey" unique="PRIMARY_KEY" >
-				<column name="id_marka" />
-			</index>
-		</table>
-		<table name="miejscowosc" >
-			<column name="id_miejscowosc" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="nazwa" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
-			<index name="miejscowosc_pkey" unique="PRIMARY_KEY" >
-				<column name="id_miejscowosc" />
-			</index>
-		</table>
-		<table name="model" >
-			<column name="id_modelu" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
-			<column name="id_marki" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="model" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="sposob_zasilania" type="integer" length="10" decimal="0" jt="4" />
 			<column name="liczba_miejsc" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="typ_kierownicy" type="typ_kierownicy" length="2147483647" decimal="0" jt="12" mandatory="y" />
-			<index name="model_pkey" unique="PRIMARY_KEY" >
-				<column name="id_modelu" />
+			<index name="marka_model_pkey" unique="PRIMARY_KEY" >
+				<column name="id_marka_model" />
 			</index>
-			<fk name="model_id_marki_fkey" to_schema="public" to_table="marka" >
-				<fk_column name="id_marki" pk="id_marka" />
-			</fk>
-			<fk name="model_sposob_zasilania_fkey" to_schema="public" to_table="sposob_zasilania" >
+			<fk name="marka_model_sposob_zasilania_fkey" to_schema="public" to_table="sposob_zasilania" >
 				<fk_column name="sposob_zasilania" pk="id_sposob" />
 			</fk>
 		</table>
-		<table name="osrodki" >
-			<column name="id_osrodka" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+		<table name="ośrodki" >
+			<column name="id_ośrodka" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="nazwa" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
 			<column name="ulica" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="nr_budynku" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="kod_pocztowy" type="text" length="2147483647" decimal="0" jt="12" />
-			<column name="id_miejscowosc" type="integer" length="10" decimal="0" jt="4" />
-			<index name="osrodki_pkey" unique="PRIMARY_KEY" >
-				<column name="id_osrodka" />
+			<column name="miejscowosc" type="text" length="2147483647" decimal="0" jt="12" />
+			<index name="ośrodki_pkey" unique="PRIMARY_KEY" >
+				<column name="id_ośrodka" />
 			</index>
-			<fk name="osrodki_id_miejscowosc_fkey" to_schema="public" to_table="miejscowosc" >
-				<fk_column name="id_miejscowosc" pk="id_miejscowosc" />
-			</fk>
 		</table>
 		<table name="pojazdy" >
 			<column name="id_pojazdu" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="nr_rejestracyjny" type="char" length="7" decimal="0" jt="1" />
 			<column name="numer_vin" type="char" length="17" decimal="0" jt="1" />
 			<column name="data_rejestracji" type="date" length="13" decimal="0" jt="91" mandatory="y" />
-			<column name="id_model" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="id_marka_model" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="typ" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="kraj_produkcji" type="text" length="2147483647" decimal="0" jt="12" />
 			<column name="waga_samochodu" type="numeric" decimal="0" jt="2" />
@@ -191,8 +166,8 @@
 			<index name="pojazdy_nr_rejestracyjny_key" unique="UNIQUE" >
 				<column name="nr_rejestracyjny" />
 			</index>
-			<fk name="pojazdy_id_model_fkey" to_schema="public" to_table="model" >
-				<fk_column name="id_model" pk="id_modelu" />
+			<fk name="pojazdy_id_marka_model_fkey" to_schema="public" to_table="marka_model" >
+				<fk_column name="id_marka_model" pk="id_marka_model" />
 			</fk>
 		</table>
 		<table name="pojazdy_kierowcy" >
@@ -207,14 +182,14 @@
 		</table>
 		<table name="prawa_jazdy" >
 			<column name="numer_prawa_jazdy" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
-			<column name="id_wlasciciela" type="integer" length="10" decimal="0" jt="4" />
+			<column name="id_właściciela" type="integer" length="10" decimal="0" jt="4" />
 			<column name="data_wydania" type="date" length="13" decimal="0" jt="91" mandatory="y" />
-			<column name="miedzynarodowe" type="bool" length="1" decimal="0" jt="-7" mandatory="y" />
+			<column name="międzynarodowe" type="bool" length="1" decimal="0" jt="-7" mandatory="y" />
 			<index name="prawa_jazdy_pkey" unique="PRIMARY_KEY" >
 				<column name="numer_prawa_jazdy" />
 			</index>
-			<fk name="prawa_jazdy_id_wlasciciela_fkey" to_schema="public" to_table="kierowcy" >
-				<fk_column name="id_wlasciciela" pk="id_kierowcy" />
+			<fk name="prawa_jazdy_id_właściciela_fkey" to_schema="public" to_table="kierowcy" >
+				<fk_column name="id_właściciela" pk="id_kierowcy" />
 			</fk>
 		</table>
 		<table name="prawa_jazdy_kategorie" >
@@ -242,25 +217,47 @@
 				<column name="id_sposob" />
 			</index>
 		</table>
+		<table name="ulice" >
+			<column name="id_ulicy" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="ulica" type="text" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="ulice_pkey" unique="PRIMARY_KEY" >
+				<column name="id_ulicy" />
+			</index>
+		</table>
 		<table name="wykroczenia" >
 			<column name="id_wykroczenia" type="serial" length="10" decimal="0" jt="4" mandatory="y" />
 			<column name="opis" type="text" length="2147483647" decimal="0" jt="12" />
-			<column name="wysokosc_grzywny" type="numeric" length="7" decimal="2" jt="2" />
+			<column name="wysokość_grzywny" type="numeric" length="7" decimal="2" jt="2" />
 			<column name="punkty_karne" type="numeric" length="2" decimal="0" jt="2" mandatory="y" />
 			<index name="wykroczenia_pkey" unique="PRIMARY_KEY" >
 				<column name="id_wykroczenia" />
 			</index>
 		</table>
+		<table name="wyniki_egzaminów" >
+			<column name="id_egzaminu" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="id_kierowcy" type="integer" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="wynik" type="wynik_egzaminu" length="2147483647" decimal="0" jt="12" mandatory="y" />
+			<index name="wyniki_egzaminów_pkey" unique="PRIMARY_KEY" >
+				<column name="id_egzaminu" />
+				<column name="id_kierowcy" />
+			</index>
+			<fk name="wyniki_egzaminów_id_egzaminu_fkey" to_schema="public" to_table="egzaminy" >
+				<fk_column name="id_egzaminu" pk="id_egzaminu" />
+			</fk>
+			<fk name="wyniki_egzaminów_id_kierowcy_fkey" to_schema="public" to_table="kierowcy" >
+				<fk_column name="id_kierowcy" pk="id_kierowcy" />
+			</fk>
+		</table>
 		<view name="ranking_kierowcow_z_najwieksza_grzywna" >
-			<view_script><![CDATA[ SELECT kierowcy.imie,
+			<view_script><![CDATA[ SELECT kierowcy."imię",
     kierowcy.nazwisko,
-    sum(wykroczenia.wysokosc_grzywny) AS suma_grzywn
+    sum(wykroczenia."wysokość_grzywny") AS suma_grzywn
    FROM ((wykroczenia
      JOIN mandaty USING (id_wykroczenia))
      JOIN kierowcy USING (id_kierowcy))
-  GROUP BY kierowcy.imie, kierowcy.nazwisko
-  ORDER BY sum(wykroczenia.wysokosc_grzywny) DESC, kierowcy.nazwisko, kierowcy.imie;]]></view_script>
-			<column name="imie" type="varchar" />
+  GROUP BY kierowcy."imię", kierowcy.nazwisko
+  ORDER BY sum(wykroczenia."wysokość_grzywny") DESC, kierowcy.nazwisko, kierowcy."imię";]]></view_script>
+			<column name="imię" type="varchar" />
 			<column name="nazwisko" type="varchar" />
 			<column name="suma_grzywn" type="numeric" />
 		</view>
@@ -275,86 +272,87 @@
 			<column name="ilosc" type="bigint" />
 		</view>
 		<view name="statystyki_egzaminatorow" >
-			<view_script><![CDATA[ SELECT egzaminatorzy.imie,
+			<view_script><![CDATA[ SELECT egzaminatorzy."imię",
     egzaminatorzy.nazwisko,
     count(
         CASE
-            WHEN (egzaminy.wynik = 'zdal'::wynik_egzaminu) THEN 1
+            WHEN ("wyniki_egzaminów".wynik = 'zdał'::wynik_egzaminu) THEN 1
             ELSE NULL::integer
         END) AS ilu_zdalo
-   FROM (egzaminy
+   FROM ((egzaminy
+     JOIN "wyniki_egzaminów" USING (id_egzaminu))
      JOIN egzaminatorzy USING (id_egzaminatora))
-  GROUP BY egzaminatorzy.imie, egzaminatorzy.nazwisko
+  GROUP BY egzaminatorzy."imię", egzaminatorzy.nazwisko
   ORDER BY count(
         CASE
-            WHEN (egzaminy.wynik = 'zdal'::wynik_egzaminu) THEN 1
+            WHEN ("wyniki_egzaminów".wynik = 'zdał'::wynik_egzaminu) THEN 1
             ELSE NULL::integer
-        END) DESC, egzaminatorzy.nazwisko, egzaminatorzy.imie;]]></view_script>
-			<column name="imie" type="varchar" />
+        END) DESC, egzaminatorzy.nazwisko, egzaminatorzy."imię";]]></view_script>
+			<column name="imię" type="varchar" />
 			<column name="nazwisko" type="varchar" />
 			<column name="ilu_zdalo" type="bigint" />
 		</view>
 		<view name="statystyki_egzaminow_w_latach" >
 			<view_script><![CDATA[ SELECT date_part('year'::text, egzaminy.data_przeprowadzenia) AS rok,
     count(egzaminy.id_egzaminu) AS ilosc
-   FROM egzaminy
+   FROM (egzaminy
+     JOIN "wyniki_egzaminów" USING (id_egzaminu))
   GROUP BY date_part('year'::text, egzaminy.data_przeprowadzenia)
   ORDER BY date_part('year'::text, egzaminy.data_przeprowadzenia);]]></view_script>
 			<column name="rok" type="float8" />
 			<column name="ilosc" type="bigint" />
 		</view>
 		<view name="statystyki_egzaminow_w_zaleznosci_od_osrodka" >
-			<view_script><![CDATA[ SELECT osrodki.nazwa,
-    concat(osrodki.ulica, ' ', osrodki.nr_budynku, ' ', miejscowosc.nazwa, ' ', osrodki.kod_pocztowy) AS adres,
+			<view_script><![CDATA[ SELECT "ośrodki".nazwa,
+    concat("ośrodki".ulica, ' ', "ośrodki".nr_budynku, ' ', "ośrodki".miejscowosc, ' ', "ośrodki".kod_pocztowy) AS adres,
     count(
         CASE
-            WHEN (egzaminy.wynik = 'zdal'::wynik_egzaminu) THEN 1
+            WHEN ("wyniki_egzaminów".wynik = 'zdał'::wynik_egzaminu) THEN 1
             ELSE NULL::integer
-        END) AS zdalo,
-    count(egzaminy.wynik) AS zdawalo,
+        END) AS "zdało",
+    count("wyniki_egzaminów".wynik) AS "zdawało",
     round((((100 * count(
         CASE
-            WHEN (egzaminy.wynik = 'zdal'::wynik_egzaminu) THEN 1
+            WHEN ("wyniki_egzaminów".wynik = 'zdał'::wynik_egzaminu) THEN 1
             ELSE NULL::integer
-        END)) / count(egzaminy.wynik)))::double precision) AS efektywnosc
-   FROM ((osrodki
-     JOIN egzaminy USING (id_osrodka))
-     JOIN miejscowosc USING (nazwa, id_miejscowosc))
-  GROUP BY osrodki.nazwa, concat(osrodki.ulica, ' ', osrodki.nr_budynku, ' ', miejscowosc.nazwa, ' ', osrodki.kod_pocztowy)
+        END)) / count("wyniki_egzaminów".wynik)))::double precision) AS efektywnosc
+   FROM (("ośrodki"
+     JOIN egzaminy USING ("id_ośrodka"))
+     JOIN "wyniki_egzaminów" USING (id_egzaminu))
+  GROUP BY "ośrodki".nazwa, concat("ośrodki".ulica, ' ', "ośrodki".nr_budynku, ' ', "ośrodki".miejscowosc, ' ', "ośrodki".kod_pocztowy)
   ORDER BY round((((100 * count(
         CASE
-            WHEN (egzaminy.wynik = 'zdal'::wynik_egzaminu) THEN 1
+            WHEN ("wyniki_egzaminów".wynik = 'zdał'::wynik_egzaminu) THEN 1
             ELSE NULL::integer
-        END)) / count(egzaminy.wynik)))::double precision) DESC, osrodki.nazwa, concat(osrodki.ulica, ' ', osrodki.nr_budynku, ' ', miejscowosc.nazwa, ' ', osrodki.kod_pocztowy);]]></view_script>
+        END)) / count("wyniki_egzaminów".wynik)))::double precision) DESC, "ośrodki".nazwa, concat("ośrodki".ulica, ' ', "ośrodki".nr_budynku, ' ', "ośrodki".miejscowosc, ' ', "ośrodki".kod_pocztowy);]]></view_script>
 			<column name="nazwa" type="text" />
 			<column name="adres" type="text" />
-			<column name="zdalo" type="bigint" />
-			<column name="zdawalo" type="bigint" />
+			<column name="zdało" type="bigint" />
+			<column name="zdawało" type="bigint" />
 			<column name="efektywnosc" type="float8" />
 		</view>
 		<view name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" >
-			<view_script><![CDATA[ SELECT kierowcy.imie,
+			<view_script><![CDATA[ SELECT kierowcy."imię",
     kierowcy.nazwisko,
     count(mandaty.id_mandatu) AS ilosc_mandatow,
     sum(wykroczenia.punkty_karne) AS suma_punktow_karnych
    FROM ((wykroczenia
      JOIN mandaty USING (id_wykroczenia))
      JOIN kierowcy USING (id_kierowcy))
-  GROUP BY kierowcy.imie, kierowcy.nazwisko
+  GROUP BY kierowcy."imię", kierowcy.nazwisko
   ORDER BY count(mandaty.id_mandatu) DESC, sum(wykroczenia.punkty_karne) DESC;]]></view_script>
-			<column name="imie" type="varchar" />
+			<column name="imię" type="varchar" />
 			<column name="nazwisko" type="varchar" />
 			<column name="ilosc_mandatow" type="bigint" />
 			<column name="suma_punktow_karnych" type="numeric" />
 		</view>
 		<view name="statystyki_pojazdow_markamodel" >
-			<view_script><![CDATA[ SELECT marka.marka,
-    model.model,
+			<view_script><![CDATA[ SELECT marka_model.marka,
+    marka_model.model,
     count(pojazdy.id_pojazdu) AS count
-   FROM ((pojazdy
-     JOIN model ON ((model.id_modelu = pojazdy.id_model)))
-     JOIN marka ON ((marka.id_marka = model.id_marki)))
-  GROUP BY marka.marka, model.model;]]></view_script>
+   FROM (pojazdy
+     JOIN marka_model ON ((marka_model.id_marka_model = pojazdy.id_marka_model)))
+  GROUP BY marka_model.marka, marka_model.model;]]></view_script>
 			<column name="marka" type="text" />
 			<column name="model" type="text" />
 			<column name="count" type="bigint" />
@@ -389,11 +387,12 @@
 			<column name="ilosc" type="bigint" />
 		</view>
 		<view name="statystyki_zdawalnosci_egzaminow" >
-			<view_script><![CDATA[ SELECT egzaminy.wynik,
+			<view_script><![CDATA[ SELECT "wyniki_egzaminów".wynik,
     egzaminy.typ,
     count(egzaminy.id_egzaminu) AS count
-   FROM egzaminy
-  GROUP BY egzaminy.wynik, egzaminy.typ;]]></view_script>
+   FROM (egzaminy
+     JOIN "wyniki_egzaminów" USING (id_egzaminu))
+  GROUP BY "wyniki_egzaminów".wynik, egzaminy.typ;]]></view_script>
 			<column name="wynik" type="wynik_egzaminu" />
 			<column name="typ" type="typ_egzaminu" />
 			<column name="count" type="bigint" />
@@ -403,46 +402,45 @@
 		<sequence name="firma_id_firmy_seq" start="1" />
 		<sequence name="kierowcy_id_kierowcy_seq" start="1" />
 		<sequence name="mandaty_id_mandatu_seq" start="1" />
-		<sequence name="mandaty_wystawiajacy_id_wstawiajacego_seq" start="1" />
-		<sequence name="marka_id_marka_seq" start="1" />
-		<sequence name="miejscowosc_id_miejscowosc_seq" start="1" />
-		<sequence name="model_id_modelu_seq" start="1" />
-		<sequence name="osrodki_id_osrodka_seq" start="1" />
+		<sequence name="mandaty_wystawiający_id_wstawiającego_seq" start="1" />
+		<sequence name="marka_model_id_marka_model_seq" start="1" />
+		<sequence name="ośrodki_id_ośrodka_seq" start="1" />
 		<sequence name="pojazdy_id_pojazdu_seq" start="1" />
 		<sequence name="prawa_jazdy_kategorie_id_kategoria_seq" start="1" />
 		<sequence name="sposob_zasilania_id_sposob_seq" start="1" />
+		<sequence name="ulice_id_ulicy_seq" start="1" />
 		<sequence name="wykroczenia_id_wykroczenia_seq" start="1" />
-		<trigger name="czy_zdal" table="prawa_jazdy" id="Trigger_5fa1c98" isSystem="false" >
+		<trigger name="czy_zdal" table="prawa_jazdy" id="Trigger_33095381" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER czy_zdal BEFORE INSERT OR UPDATE ON prawa_jazdy FOR EACH ROW EXECUTE PROCEDURE czy_zdal()]]></string>
 		</trigger>
-		<trigger name="czy_zdal" table="prawa_jazdy" id="Trigger_4c32324" isSystem="false" >
+		<trigger name="czy_zdal" table="prawa_jazdy" id="Trigger_dc93ac5" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER czy_zdal BEFORE INSERT OR UPDATE ON prawa_jazdy FOR EACH ROW EXECUTE PROCEDURE czy_zdal()]]></string>
 		</trigger>
-		<trigger name="pesel_check" table="kierowcy" id="Trigger_eace2d8" isSystem="false" >
+		<trigger name="pesel_check" table="kierowcy" id="Trigger_afb636b" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER pesel_check BEFORE INSERT OR UPDATE ON kierowcy FOR EACH ROW EXECUTE PROCEDURE pesel_check()]]></string>
 		</trigger>
-		<trigger name="pesel_check" table="kierowcy" id="Trigger_18d0ec27" isSystem="false" >
+		<trigger name="pesel_check" table="kierowcy" id="Trigger_1c31b53" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER pesel_check BEFORE INSERT OR UPDATE ON kierowcy FOR EACH ROW EXECUTE PROCEDURE pesel_check()]]></string>
 		</trigger>
-		<trigger name="pj_kategorie" table="prawa_jazdy_kategorie" id="Trigger_2f05b27e" isSystem="false" >
+		<trigger name="pj_kategorie" table="prawa_jazdy_kategorie" id="Trigger_1e8a4a50" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie FOR EACH ROW EXECUTE PROCEDURE pj_kategorie()]]></string>
 		</trigger>
-		<trigger name="pj_kategorie" table="prawa_jazdy_kategorie" id="Trigger_eed8bf2" isSystem="false" >
+		<trigger name="pj_kategorie" table="prawa_jazdy_kategorie" id="Trigger_448756c" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie FOR EACH ROW EXECUTE PROCEDURE pj_kategorie()]]></string>
 		</trigger>
-		<trigger name="prawa_jazdy_check" table="prawa_jazdy" id="Trigger_ed5ea4e" isSystem="false" >
+		<trigger name="prawa_jazdy_check" table="prawa_jazdy" id="Trigger_169cbc1" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER prawa_jazdy_check BEFORE INSERT OR UPDATE ON prawa_jazdy FOR EACH ROW EXECUTE PROCEDURE prawa_jazdy_check()]]></string>
 		</trigger>
-		<trigger name="prawa_jazdy_check" table="prawa_jazdy" id="Trigger_3a3fae8f" isSystem="false" >
+		<trigger name="prawa_jazdy_check" table="prawa_jazdy" id="Trigger_1f79dfdc" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER prawa_jazdy_check BEFORE INSERT OR UPDATE ON prawa_jazdy FOR EACH ROW EXECUTE PROCEDURE prawa_jazdy_check()]]></string>
 		</trigger>
-		<trigger name="wykroczenia_check" table="wykroczenia" id="Trigger_10ba7644" isSystem="false" >
+		<trigger name="wykroczenia_check" table="wykroczenia" id="Trigger_2a4a2d4c" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER wykroczenia_check BEFORE INSERT OR UPDATE ON wykroczenia FOR EACH ROW EXECUTE PROCEDURE wykroczenia_check()]]></string>
 		</trigger>
-		<trigger name="wykroczenia_check" table="wykroczenia" id="Trigger_56ec89d" isSystem="false" >
+		<trigger name="wykroczenia_check" table="wykroczenia" id="Trigger_992eebc" isSystem="false" >
 			<string><![CDATA[CREATE TRIGGER wykroczenia_check BEFORE INSERT OR UPDATE ON wykroczenia FOR EACH ROW EXECUTE PROCEDURE wykroczenia_check()]]></string>
 		</trigger>
-		<function name="czy_zdal" id="Function_19c5236a" isSystem="false" >
+		<function name="czy_zdal" id="Function_22117913" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.czy_zdal()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -451,18 +449,19 @@ BEGIN
   IF NOT EXISTS(
       SELECT *
       FROM egzaminy
-      WHERE id_kierowcy = NEW.id_wlasciciela
-            AND typ = 'praktyka' AND wynik = 'zdal'
+        NATURAL JOIN wyniki_egzaminów
+      WHERE id_kierowcy = NEW.id_właściciela
+            AND typ = 'praktyka' AND wynik = 'zdał'
             AND data_przeprowadzenia <= NEW.data_wydania)
   THEN
-    RAISE EXCEPTION 'Ta osoba nie zdala prawa jazdy jeszcze';
+    RAISE EXCEPTION 'Ta osoba nie zdała prawa jazdy jeszcze';
   END IF;
   RETURN NEW;
 END;
 $function$
 ]]></string>
 		</function>
-		<function name="ile_punktow" id="Function_5ace068" isSystem="false" >
+		<function name="ile_punktow" id="Function_53129ec" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.ile_punktow(id_k integer)
  RETURNS numeric
  LANGUAGE sql
@@ -476,7 +475,7 @@ FROM (
 $function$
 ]]></string>
 		</function>
-		<function name="ilosc_egzaminow" id="Function_21579f6c" isSystem="false" >
+		<function name="ilosc_egzaminow" id="Function_28f3a328" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.ilosc_egzaminow(id_k integer)
  RETURNS integer
  LANGUAGE plpgsql
@@ -486,14 +485,14 @@ DECLARE
 BEGIN
   nr = (
     SELECT COUNT(id_egzaminu)
-    FROM egzaminy
+    FROM wyniki_egzaminów
     WHERE id_kierowcy = id_k);
   RETURN nr;
 END;
 $function$
 ]]></string>
 		</function>
-		<function name="ilosc_mandatow" id="Function_e219966" isSystem="false" >
+		<function name="ilosc_mandatow" id="Function_3235b424" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.ilosc_mandatow(id_k integer)
  RETURNS integer
  LANGUAGE plpgsql
@@ -510,7 +509,7 @@ END;
 $function$
 ]]></string>
 		</function>
-		<function name="nr_prawa_jazdy" id="Function_2d9aaf5" isSystem="false" >
+		<function name="nr_prawa_jazdy" id="Function_3a3dcd57" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.nr_prawa_jazdy(id_k integer)
  RETURNS text
  LANGUAGE plpgsql
@@ -520,14 +519,14 @@ DECLARE
 BEGIN
   nr = (SELECT numer_prawa_jazdy
         FROM prawa_jazdy
-        WHERE id_wlasciciela = id_k
+        WHERE id_właściciela = id_k
         LIMIT 1);
   RETURN COALESCE(nr, 'brak');
 END;
 $function$
 ]]></string>
 		</function>
-		<function name="nr_prawa_jazdy_m" id="Function_1ba547f5" isSystem="false" >
+		<function name="nr_prawa_jazdy_m" id="Function_248c8568" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.nr_prawa_jazdy_m(id_k integer)
  RETURNS text
  LANGUAGE plpgsql
@@ -537,14 +536,14 @@ DECLARE
 BEGIN
   nr = (SELECT numer_prawa_jazdy
         FROM prawa_jazdy
-        WHERE id_wlasciciela = id_k AND miedzynarodowe IS TRUE
+        WHERE id_właściciela = id_k AND międzynarodowe IS TRUE
         LIMIT 1);
   RETURN COALESCE(nr, 'brak');
 END;
 $function$
 ]]></string>
 		</function>
-		<function name="ostatni_egzamin" id="Function_32237d34" isSystem="false" >
+		<function name="ostatni_egzamin" id="Function_a322af3" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.ostatni_egzamin(id_k integer)
  RETURNS integer
  LANGUAGE plpgsql
@@ -554,7 +553,8 @@ DECLARE
 BEGIN
   nr = (
     SELECT egzaminy.id_egzaminu
-    FROM egzaminy
+    FROM wyniki_egzaminów
+      INNER JOIN egzaminy ON wyniki_egzaminów.id_egzaminu = egzaminy.id_egzaminu
     WHERE id_kierowcy = id_k
     ORDER BY data_przeprowadzenia DESC
     LIMIT 1);
@@ -563,7 +563,7 @@ END;
 $function$
 ]]></string>
 		</function>
-		<function name="pesel_check" id="Function_11eba397" isSystem="false" >
+		<function name="pesel_check" id="Function_2f023155" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.pesel_check()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -592,7 +592,7 @@ END;
 $function$
 ]]></string>
 		</function>
-		<function name="pj_kategorie" id="Function_2be3e20" isSystem="false" >
+		<function name="pj_kategorie" id="Function_126d52e4" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.pj_kategorie()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -609,7 +609,7 @@ END;
 $function$
 ]]></string>
 		</function>
-		<function name="pojazdy" id="Function_1f277f2f" isSystem="false" >
+		<function name="pojazdy" id="Function_39b6e044" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.pojazdy(id_k integer)
  RETURNS SETOF integer
  LANGUAGE sql
@@ -620,7 +620,7 @@ WHERE (typ_wlasciciela = 'osoba' AND id_kierowcy = id_k AND od_kiedy < now() AND
 $function$
 ]]></string>
 		</function>
-		<function name="prawa_jazdy_check" id="Function_2bd76a6c" isSystem="false" >
+		<function name="prawa_jazdy_check" id="Function_1ca67b3f" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.prawa_jazdy_check()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -628,8 +628,8 @@ AS $function$
 BEGIN
   IF EXISTS(SELECT numer_prawa_jazdy
             FROM prawa_jazdy
-            WHERE id_wlasciciela = NEW.id_wlasciciela
-                  AND miedzynarodowe != NEW.miedzynarodowe)
+            WHERE id_właściciela = NEW.id_właściciela
+                  AND międzynarodowe != NEW.międzynarodowe)
   THEN
     RAISE EXCEPTION 'Ten kierowca juz ma prawo jazdy';
   END IF;
@@ -638,7 +638,7 @@ END;
 $function$
 ]]></string>
 		</function>
-		<function name="spis_wykroczen_danego_kierowcy" id="Function_1996a07f" isSystem="false" >
+		<function name="spis_wykroczen_danego_kierowcy" id="Function_e63475c" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.spis_wykroczen_danego_kierowcy(id_k integer)
  RETURNS SETOF text
  LANGUAGE sql
@@ -650,7 +650,7 @@ WHERE id_kierowcy = id_k;
 $function$
 ]]></string>
 		</function>
-		<function name="wykroczenia_check" id="Function_2a169878" isSystem="false" >
+		<function name="wykroczenia_check" id="Function_9d9cdf" isSystem="false" >
 			<string><![CDATA[CREATE OR REPLACE FUNCTION public.wykroczenia_check()
  RETURNS trigger
  LANGUAGE plpgsql
@@ -667,70 +667,70 @@ $function$
 		</function>
 	</schema>
 	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-9.4-1203.jdbc41.jar" host="localhost" port="5432" instance="projektID" user="rafalbyczek" passwd="UmFmY2lvYi45NjA=" />
-	<layout id="Layout_3472e105" name="Default" show_relation_columns="y" >
-		<entity schema="public" name="firma" color="bef5b3" x="765" y="405" />
-		<entity schema="public" name="kierowcy" color="b3ccf5" x="465" y="405" />
-		<entity schema="public" name="pojazdy" color="b3b3f5" x="600" y="420" />
-		<entity schema="public" name="pojazdy_kierowcy" color="b3b3f5" x="525" y="690" />
-		<entity schema="public" name="historia_przegladow_technicznych" color="b3b3f5" x="675" y="675" />
-		<entity schema="public" name="prawa_jazdy_kategorie" color="cab3f5" x="285" y="420" />
-		<entity schema="public" name="egzaminy" color="b3ccf5" x="105" y="585" />
-		<entity schema="public" name="prawa_jazdy" color="cab3f5" x="60" y="435" />
-		<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" color="cab3f5" x="105" y="300" />
-		<entity schema="public" name="mandaty" color="f5d8b3" x="435" y="210" />
-		<entity schema="public" name="osrodki" color="bef5b3" x="45" y="765" />
-		<entity schema="public" name="model" color="b3ccf5" x="300" y="705" />
-		<entity schema="public" name="marka" color="b3ccf5" x="240" y="915" />
-		<entity schema="public" name="sposob_zasilania" color="b3ccf5" x="390" y="915" />
-		<entity schema="public" name="miejscowosc" color="bef5b3" x="525" y="810" />
-		<entity schema="public" name="historia_wlascicieli" color="bef5b3" x="645" y="225" />
-		<entity schema="public" name="egzaminatorzy" color="b3ccf5" x="300" y="525" />
-		<entity schema="public" name="wykroczenia" color="f5d8b3" x="180" y="180" />
-		<entity schema="public" name="mandaty_wystawiajacy" color="f5d8b3" x="435" y="45" />
-		<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" color="f5d8b3" x="945" y="900" />
-		<entity schema="public" name="statystyki_pojazdow_rokrejestracji" color="b3b3f5" x="945" y="810" />
-		<entity schema="public" name="statystyki_pojazdow_typ" color="b3b3f5" x="945" y="720" />
-		<entity schema="public" name="statystyki_pojazdow_markamodel" color="f5d8b3" x="945" y="615" />
-		<entity schema="public" name="ranking_wykroczen" color="bef5b3" x="945" y="525" />
-		<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" color="bef5b3" x="945" y="420" />
-		<entity schema="public" name="statystyki_egzaminatorow" color="bef5b3" x="945" y="315" />
-		<entity schema="public" name="statystyki_zdawalnosci_egzaminow" color="b3b3f5" x="1170" y="795" />
-		<entity schema="public" name="statystyki_praw_jazdy" color="b3b3f5" x="1170" y="705" />
-		<entity schema="public" name="statystyki_egzaminow_w_latach" color="f5d8b3" x="1200" y="615" />
-		<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" color="f5d8b3" x="945" y="180" />
+	<layout id="Layout_369c0a85" name="Default" show_relation_columns="y" >
+		<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" color="cab3f5" x="765" y="495" />
+		<entity schema="public" name="sposob_zasilania" color="cab3f5" x="585" y="645" />
+		<entity schema="public" name="prawa_jazdy_kategorie" color="f5d8b3" x="450" y="525" />
+		<entity schema="public" name="egzaminy" color="f5d8b3" x="210" y="495" />
+		<entity schema="public" name="egzaminatorzy" color="f5d8b3" x="420" y="645" />
+		<entity schema="public" name="wykroczenia" color="f5d8b3" x="45" y="360" />
+		<entity schema="public" name="ośrodki" color="f5d8b3" x="240" y="315" />
+		<entity schema="public" name="kierowcy" color="b3ccf5" x="390" y="255" />
+		<entity schema="public" name="pojazdy" color="b3b3f5" x="660" y="270" />
+		<entity schema="public" name="pojazdy_kierowcy" color="b3b3f5" x="525" y="330" />
+		<entity schema="public" name="firma" color="b3ccf5" x="840" y="255" />
+		<entity schema="public" name="historia_wlascicieli" color="b3ccf5" x="555" y="135" />
+		<entity schema="public" name="mandaty_wystawiający" color="f5d8b3" x="210" y="90" />
+		<entity schema="public" name="mandaty" color="f5d8b3" x="210" y="195" />
+		<entity schema="public" name="wyniki_egzaminów" color="b3ccf5" x="45" y="495" />
+		<entity schema="public" name="marka_model" color="cab3f5" x="615" y="465" />
+		<entity schema="public" name="prawa_jazdy" color="cab3f5" x="810" y="615" />
+		<entity schema="public" name="historia_przegladow_technicznych" color="b3b3f5" x="765" y="150" />
+		<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" color="b3ccf5" x="1020" y="660" />
+		<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" color="b3ccf5" x="1020" y="525" />
+		<entity schema="public" name="statystyki_pojazdow_markamodel" color="bef5b3" x="1020" y="420" />
+		<entity schema="public" name="statystyki_praw_jazdy" color="bef5b3" x="1020" y="330" />
+		<entity schema="public" name="statystyki_pojazdow_typ" color="bef5b3" x="1020" y="240" />
+		<entity schema="public" name="statystyki_pojazdow_rokrejestracji" color="bef5b3" x="1020" y="150" />
+		<entity schema="public" name="statystyki_zdawalnosci_egzaminow" color="f5d8b3" x="1020" y="45" />
+		<entity schema="public" name="ranking_wykroczen" color="bef5b3" x="1245" y="150" />
+		<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" color="bef5b3" x="1245" y="45" />
+		<entity schema="public" name="statystyki_egzaminow_w_latach" color="b3ccf5" x="1185" y="240" />
+		<entity schema="public" name="statystyki_egzaminatorow" color="b3ccf5" x="1185" y="330" />
 	</layout>
-	<layout id="Layout_3355d09c" name="Layout with Groups" show_relation_columns="y" >
-		<entity schema="public" name="egzaminatorzy" color="b3ccf5" x="735" y="780" />
-		<entity schema="public" name="egzaminy" color="b3ccf5" x="735" y="510" />
-		<entity schema="public" name="firma" color="bef5b3" x="1170" y="705" />
-		<entity schema="public" name="historia_przegladow_technicznych" color="b3b3f5" x="255" y="1215" />
-		<entity schema="public" name="historia_wlascicieli" color="bef5b3" x="990" y="510" />
-		<entity schema="public" name="kierowcy" color="b3ccf5" x="555" y="510" />
-		<entity schema="public" name="mandaty" color="f5d8b3" x="105" y="120" />
-		<entity schema="public" name="mandaty_wystawiajacy" color="f5d8b3" x="315" y="120" />
-		<entity schema="public" name="marka" color="b3ccf5" x="750" y="1185" />
-		<entity schema="public" name="miejscowosc" color="bef5b3" x="1170" y="510" />
-		<entity schema="public" name="model" color="b3ccf5" x="555" y="990" />
-		<entity schema="public" name="osrodki" color="bef5b3" x="990" y="705" />
-		<entity schema="public" name="pojazdy" color="b3b3f5" x="60" y="990" />
-		<entity schema="public" name="pojazdy_kierowcy" color="b3b3f5" x="255" y="990" />
-		<entity schema="public" name="prawa_jazdy" color="cab3f5" x="45" y="510" />
-		<entity schema="public" name="prawa_jazdy_kategorie" color="cab3f5" x="255" y="675" />
-		<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" color="cab3f5" x="255" y="510" />
-		<entity schema="public" name="sposob_zasilania" color="b3ccf5" x="750" y="990" />
-		<entity schema="public" name="wykroczenia" color="f5d8b3" x="315" y="300" />
-		<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" color="bef5b3" x="885" y="195" />
-		<entity schema="public" name="ranking_wykroczen" color="bef5b3" x="600" y="330" />
-		<entity schema="public" name="statystyki_egzaminatorow" color="bef5b3" x="555" y="45" />
-		<entity schema="public" name="statystyki_egzaminow_w_latach" color="f5d8b3" x="1755" y="660" />
-		<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" color="f5d8b3" x="2010" y="660" />
-		<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" color="f5d8b3" x="1380" y="795" />
-		<entity schema="public" name="statystyki_pojazdow_markamodel" color="f5d8b3" x="1485" y="510" />
-		<entity schema="public" name="statystyki_pojazdow_rokrejestracji" color="b3b3f5" x="1380" y="1020" />
-		<entity schema="public" name="statystyki_pojazdow_typ" color="b3b3f5" x="1650" y="1020" />
-		<entity schema="public" name="statystyki_praw_jazdy" color="b3b3f5" x="1650" y="1155" />
-		<entity schema="public" name="statystyki_zdawalnosci_egzaminow" color="b3b3f5" x="1380" y="1155" />
-		<callout x="555" y="390" pointer="NO" >
+	<layout id="Layout_354581cb" name="Layout with Groups" show_relation_columns="y" >
+		<entity schema="public" name="egzaminatorzy" color="f5d8b3" x="540" y="1200" />
+		<entity schema="public" name="egzaminy" color="f5d8b3" x="315" y="1005" />
+		<entity schema="public" name="firma" color="b3ccf5" x="780" y="690" />
+		<entity schema="public" name="historia_przegladow_technicznych" color="b3b3f5" x="1365" y="645" />
+		<entity schema="public" name="historia_wlascicieli" color="b3ccf5" x="960" y="420" />
+		<entity schema="public" name="kierowcy" color="b3ccf5" x="780" y="420" />
+		<entity schema="public" name="kraje" color="bef5b3" x="300" y="90" />
+		<entity schema="public" name="mandaty" color="f5d8b3" x="330" y="420" />
+		<entity schema="public" name="mandaty_wystawiający" color="f5d8b3" x="540" y="420" />
+		<entity schema="public" name="marka_model" color="cab3f5" x="1620" y="1005" />
+		<entity schema="public" name="ośrodki" color="f5d8b3" x="540" y="585" />
+		<entity schema="public" name="pojazdy" color="b3b3f5" x="1170" y="420" />
+		<entity schema="public" name="pojazdy_kierowcy" color="b3b3f5" x="1365" y="420" />
+		<entity schema="public" name="prawa_jazdy" color="cab3f5" x="1350" y="1155" />
+		<entity schema="public" name="prawa_jazdy_kategorie" color="f5d8b3" x="540" y="1005" />
+		<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" color="cab3f5" x="1350" y="1005" />
+		<entity schema="public" name="sposob_zasilania" color="cab3f5" x="1170" y="1155" />
+		<entity schema="public" name="ulice" color="bef5b3" x="435" y="90" />
+		<entity schema="public" name="wykroczenia" color="f5d8b3" x="330" y="585" />
+		<entity schema="public" name="wyniki_egzaminów" color="b3ccf5" x="960" y="690" />
+		<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" color="bef5b3" x="435" y="225" />
+		<entity schema="public" name="ranking_wykroczen" color="bef5b3" x="120" y="225" />
+		<entity schema="public" name="statystyki_egzaminatorow" color="b3ccf5" x="1155" y="45" />
+		<entity schema="public" name="statystyki_egzaminow_w_latach" color="b3ccf5" x="1380" y="45" />
+		<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" color="b3ccf5" x="1380" y="195" />
+		<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" color="b3ccf5" x="780" y="195" />
+		<entity schema="public" name="statystyki_pojazdow_markamodel" color="bef5b3" x="1665" y="420" />
+		<entity schema="public" name="statystyki_pojazdow_rokrejestracji" color="bef5b3" x="1935" y="420" />
+		<entity schema="public" name="statystyki_pojazdow_typ" color="bef5b3" x="1935" y="570" />
+		<entity schema="public" name="statystyki_praw_jazdy" color="bef5b3" x="1665" y="570" />
+		<entity schema="public" name="statystyki_zdawalnosci_egzaminow" color="f5d8b3" x="45" y="1200" />
+		<callout x="780" y="300" pointer="NO" >
 			<comment><![CDATA[This layout demonstrates the grouping of tables and creation of multiple layouts. 
 Layouts and the schema structure will be saved to project file.
 Layouts can be closed by clicking the 'x' on the layout tab.
@@ -739,93 +739,93 @@ Delete this callout from its right-click pop-up.]]></comment>
 		</callout>
 		<group name="kierowcy" color="f0f3f7" >
 			<entity schema="public" name="kierowcy" />
-			<entity schema="public" name="egzaminy" />
-			<entity schema="public" name="egzaminatorzy" />
-		</group>
-		<group name="historia_wlascicieli" color="f1f7f0" >
 			<entity schema="public" name="historia_wlascicieli" />
-			<entity schema="public" name="miejscowosc" />
+			<entity schema="public" name="wyniki_egzaminów" />
 			<entity schema="public" name="firma" />
-			<entity schema="public" name="osrodki" />
 		</group>
 		<group name="pojazdy" color="f0f0f7" >
 			<entity schema="public" name="pojazdy" />
 			<entity schema="public" name="pojazdy_kierowcy" />
 			<entity schema="public" name="historia_przegladow_technicznych" />
 		</group>
-		<group name="prawa_jazdy" color="f3f0f7" >
-			<entity schema="public" name="prawa_jazdy" />
+		<group name="prawa_jazdy_kategorie_praw_jazdy" color="f3f0f7" >
 			<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" />
+			<entity schema="public" name="marka_model" />
+			<entity schema="public" name="prawa_jazdy" />
+			<entity schema="public" name="sposob_zasilania" />
+		</group>
+		<group name="egzaminy" color="f7f4f0" >
+			<entity schema="public" name="egzaminy" />
 			<entity schema="public" name="prawa_jazdy_kategorie" />
+			<entity schema="public" name="egzaminatorzy" />
+			<entity schema="public" name="statystyki_zdawalnosci_egzaminow" />
 		</group>
 		<group name="mandaty" color="f7f4f0" >
 			<entity schema="public" name="mandaty" />
-			<entity schema="public" name="mandaty_wystawiajacy" />
+			<entity schema="public" name="mandaty_wystawiający" />
+			<entity schema="public" name="ośrodki" />
 			<entity schema="public" name="wykroczenia" />
 		</group>
-		<group name="model" color="f0f3f7" >
-			<entity schema="public" name="model" />
-			<entity schema="public" name="sposob_zasilania" />
-			<entity schema="public" name="marka" />
-		</group>
-		<group name="tab" color="f1f7f0" >
+		<group name="kraje" color="f1f7f0" >
+			<entity schema="public" name="kraje" />
+			<entity schema="public" name="ulice" />
 			<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" />
 			<entity schema="public" name="ranking_wykroczen" />
-			<entity schema="public" name="statystyki_egzaminatorow" />
 		</group>
-		<group name="statystyki_egzaminow_w_latach" color="f7f4f0" >
+		<group name="statystyki_egzaminatorow" color="f0f3f7" >
+			<entity schema="public" name="statystyki_egzaminatorow" />
 			<entity schema="public" name="statystyki_egzaminow_w_latach" />
 			<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" />
 			<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
-			<entity schema="public" name="statystyki_pojazdow_markamodel" />
 		</group>
-		<group name="statystyki_pojazdow_rokrejestracji" color="f0f0f7" >
+		<group name="statystyki_pojazdow_markamodel" color="f1f7f0" >
+			<entity schema="public" name="statystyki_pojazdow_markamodel" />
 			<entity schema="public" name="statystyki_pojazdow_rokrejestracji" />
 			<entity schema="public" name="statystyki_pojazdow_typ" />
 			<entity schema="public" name="statystyki_praw_jazdy" />
-			<entity schema="public" name="statystyki_zdawalnosci_egzaminow" />
 		</group>
 	</layout>
-	<layout id="Layout_2c5434ab" name="Layout with Relational Data Browse" show_relation_columns="y" >
-		<entity schema="public" name="egzaminatorzy" color="b3ccf5" x="735" y="780" />
-		<entity schema="public" name="egzaminy" color="b3ccf5" x="735" y="510" />
-		<entity schema="public" name="firma" color="bef5b3" x="1170" y="705" />
-		<entity schema="public" name="historia_przegladow_technicznych" color="b3b3f5" x="255" y="1215" />
-		<entity schema="public" name="historia_wlascicieli" color="bef5b3" x="990" y="510" />
-		<entity schema="public" name="kierowcy" color="b3ccf5" x="555" y="510" />
-		<entity schema="public" name="mandaty" color="f5d8b3" x="105" y="120" />
-		<entity schema="public" name="mandaty_wystawiajacy" color="f5d8b3" x="315" y="120" />
-		<entity schema="public" name="marka" color="b3ccf5" x="750" y="1185" />
-		<entity schema="public" name="miejscowosc" color="bef5b3" x="1170" y="510" />
-		<entity schema="public" name="model" color="b3ccf5" x="555" y="990" />
-		<entity schema="public" name="osrodki" color="bef5b3" x="990" y="705" />
-		<entity schema="public" name="pojazdy" color="b3b3f5" x="60" y="990" />
-		<entity schema="public" name="pojazdy_kierowcy" color="b3b3f5" x="255" y="990" />
-		<entity schema="public" name="prawa_jazdy" color="cab3f5" x="45" y="510" />
-		<entity schema="public" name="prawa_jazdy_kategorie" color="cab3f5" x="255" y="675" />
-		<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" color="cab3f5" x="255" y="510" />
-		<entity schema="public" name="sposob_zasilania" color="b3ccf5" x="750" y="990" />
-		<entity schema="public" name="wykroczenia" color="f5d8b3" x="315" y="300" />
-		<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" color="bef5b3" x="885" y="195" />
-		<entity schema="public" name="ranking_wykroczen" color="bef5b3" x="600" y="330" />
-		<entity schema="public" name="statystyki_egzaminatorow" color="bef5b3" x="555" y="45" />
-		<entity schema="public" name="statystyki_egzaminow_w_latach" color="f5d8b3" x="1755" y="660" />
-		<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" color="f5d8b3" x="2010" y="660" />
-		<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" color="f5d8b3" x="1380" y="795" />
-		<entity schema="public" name="statystyki_pojazdow_markamodel" color="f5d8b3" x="1485" y="510" />
-		<entity schema="public" name="statystyki_pojazdow_rokrejestracji" color="b3b3f5" x="1380" y="1020" />
-		<entity schema="public" name="statystyki_pojazdow_typ" color="b3b3f5" x="1650" y="1020" />
-		<entity schema="public" name="statystyki_praw_jazdy" color="b3b3f5" x="1650" y="1155" />
-		<entity schema="public" name="statystyki_zdawalnosci_egzaminow" color="b3b3f5" x="1380" y="1155" />
-		<callout x="555" y="390" pointer="NO" >
+	<layout id="Layout_17af0e57" name="Layout with Relational Data Browse" show_relation_columns="y" >
+		<entity schema="public" name="egzaminatorzy" color="f5d8b3" x="540" y="1200" />
+		<entity schema="public" name="egzaminy" color="f5d8b3" x="315" y="1005" />
+		<entity schema="public" name="firma" color="b3ccf5" x="780" y="690" />
+		<entity schema="public" name="historia_przegladow_technicznych" color="b3b3f5" x="1365" y="645" />
+		<entity schema="public" name="historia_wlascicieli" color="b3ccf5" x="960" y="420" />
+		<entity schema="public" name="kierowcy" color="b3ccf5" x="780" y="420" />
+		<entity schema="public" name="kraje" color="bef5b3" x="300" y="90" />
+		<entity schema="public" name="mandaty" color="f5d8b3" x="330" y="420" />
+		<entity schema="public" name="mandaty_wystawiający" color="f5d8b3" x="540" y="420" />
+		<entity schema="public" name="marka_model" color="cab3f5" x="1620" y="1005" />
+		<entity schema="public" name="ośrodki" color="f5d8b3" x="540" y="585" />
+		<entity schema="public" name="pojazdy" color="b3b3f5" x="1170" y="420" />
+		<entity schema="public" name="pojazdy_kierowcy" color="b3b3f5" x="1365" y="420" />
+		<entity schema="public" name="prawa_jazdy" color="cab3f5" x="1350" y="1155" />
+		<entity schema="public" name="prawa_jazdy_kategorie" color="f5d8b3" x="540" y="1005" />
+		<entity schema="public" name="prawa_jazdy_kategorie_praw_jazdy" color="cab3f5" x="1350" y="1005" />
+		<entity schema="public" name="sposob_zasilania" color="cab3f5" x="1170" y="1155" />
+		<entity schema="public" name="ulice" color="bef5b3" x="435" y="90" />
+		<entity schema="public" name="wykroczenia" color="f5d8b3" x="330" y="585" />
+		<entity schema="public" name="wyniki_egzaminów" color="b3ccf5" x="960" y="690" />
+		<entity schema="public" name="ranking_kierowcow_z_najwieksza_grzywna" color="bef5b3" x="435" y="225" />
+		<entity schema="public" name="ranking_wykroczen" color="bef5b3" x="120" y="225" />
+		<entity schema="public" name="statystyki_egzaminatorow" color="b3ccf5" x="1155" y="45" />
+		<entity schema="public" name="statystyki_egzaminow_w_latach" color="b3ccf5" x="1380" y="45" />
+		<entity schema="public" name="statystyki_egzaminow_w_zaleznosci_od_osrodka" color="b3ccf5" x="1380" y="195" />
+		<entity schema="public" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy" color="b3ccf5" x="780" y="195" />
+		<entity schema="public" name="statystyki_pojazdow_markamodel" color="bef5b3" x="1665" y="420" />
+		<entity schema="public" name="statystyki_pojazdow_rokrejestracji" color="bef5b3" x="1935" y="420" />
+		<entity schema="public" name="statystyki_pojazdow_typ" color="bef5b3" x="1935" y="570" />
+		<entity schema="public" name="statystyki_praw_jazdy" color="bef5b3" x="1665" y="570" />
+		<entity schema="public" name="statystyki_zdawalnosci_egzaminow" color="f5d8b3" x="45" y="1200" />
+		<callout x="780" y="300" pointer="NO" >
 			<comment><![CDATA[Using the Relational Data Browse you can explore data from multiple tables at a time, avoiding complicated queries. 
 The tables should be bind by foreign keys. Press the arrow icon near the title to descend into further tables. 
 If your schema misses foreign keys, create VIRTUAL foreign keys by drag and drop of a column over another column.
 Right-click the table header to set filters.]]></comment>
 		</callout>
-		<browser id="Browse_395e76af" name="Sample Relational Data Browse" >
+		<browser id="Browse_2025ead0" name="Sample Relational Data Browse" >
 			<browse_table schema="public" entity="kierowcy" x="10" y="10" width="400" height="300" >
-				<browse_table schema="public" entity="miejscowosc" fk="kierowcy_id_miejscowosc_fkey" x="420" y="10" width="400" height="300" record_view="y" />
+				<browse_table schema="public" entity="historia_wlascicieli" fk="historia_wlascicieli_id_kierowcy_fkey" x="420" y="10" width="400" height="300" />
 			</browse_table>
 		</browser>
 	</layout>

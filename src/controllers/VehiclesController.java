@@ -41,7 +41,6 @@ public class VehiclesController {
     @FXML
     private DatePicker data_rejestracjiPicker;
 
-
     @FXML
     public void addVehicle(final ActionEvent event) {
       String query =
