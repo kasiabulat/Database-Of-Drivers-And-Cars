@@ -105,8 +105,7 @@
                     </rowConstraints>
                      <children>
                         <Button fx:id="addButton" mnemonicParsing="false" onAction="#addVehicle" text="dodaj pojazd" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
-                        <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#showStatistics" text="wyświetl statystyki pojazdów" GridPane.columnIndex="1" />
-                        <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#showMoreInfo" text="więcej informacji o pojeździe" />
+                        <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#showStatistics" text="wyświetl statystyki pojazdów" />
                      </children>
                   </GridPane>
                </children>

@@ -109,7 +109,7 @@ final public class Database
 			while(resultSet.next())
 			{
 				data.add(new Driver(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet
-						.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7)));
+						.getString(4),resultSet.getString(6),resultSet.getString(7),resultSet.getString(8)));
 			}
 		}catch(final SQLException e)
 		{
@@ -126,7 +126,7 @@ final public class Database
 		insertColumn(driversTable,"nazwisko");
 		insertColumn(driversTable,"email");
 		insertColumn(driversTable,"nr_telefonu");
-		insertColumn(driversTable,"adres");
+		//insertColumn(driversTable,"adres");
 		driversTable.setItems(getDriversList());
 	}
 
@@ -134,13 +134,15 @@ final public class Database
 	private ObservableList<Vehicle> getVehiclesList()
 	{
 		final Collection<Vehicle> data=new LinkedList<>();
-
+		System.err.println("IM");
 		try(Statement statement=connection.createStatement();
-			ResultSet resultSet=statement.executeQuery("SELECT * FROM pojazdy;"))
+			ResultSet resultSet=statement.executeQuery("SELECT * FROM pojazdy JOIN model ON pojazdy.id_model = model.id_modelu  JOIN marka ON model.id_marki = marka.id_marka;"))
 		{
+			System.err.println("IM1.5");
 			while(resultSet.next())
 			{
-				data.add(new Vehicle(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6)));
+				System.err.println("IM2");
+				data.add(new Vehicle(resultSet.getInt("id_pojazdu"),resultSet.getString("nr_rejestracyjny"),resultSet.getString("data_rejestracji"),resultSet.getString("marka"),resultSet.getString("model"),resultSet.getString("typ")));
 			}
 		}catch(final SQLException e)
 		{
@@ -192,7 +194,7 @@ final public class Database
 		insertColumn(examTable,"data_przeprowadzenia");
 		insertColumn(examTable,"typ");
 		insertColumn(examTable,"nazwa_ośrodka");
-		insertColumn(examTable,"adres_ośrodka");
+		//insertColumn(examTable,"adres_ośrodka");
 		insertColumn(examTable,"imię_egzaminatora");
 		insertColumn(examTable,"nazwisko_egzaminatora");
 		examTable.setItems(getExamsList());
