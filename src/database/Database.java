@@ -173,8 +173,8 @@ final public class Database {
 
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(
-                     "SELECT K.imię,K.nazwisko,W.opis," +
-                             "W.wysokość_grzywny,W.punkty_karne " +
+                     "SELECT K.imie,K.nazwisko,W.opis," +
+                             "W.wysokosc_grzywny,W.punkty_karne " +
                              "FROM kierowcy K NATURAL JOIN " +
                              "mandaty M NATURAL JOIN wykroczenia W")) {
             while (resultSet.next()) {
