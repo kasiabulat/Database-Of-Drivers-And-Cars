@@ -6,11 +6,11 @@ public class ExamCenter
 {
 	String nazwa;
 	String adres;
-	Integer zdawało;
 	Integer zdało;
+	Integer zdawało;
 	Double efektywność;
 
-	public ExamCenter(final String nazwa,final String adres,final Integer zdawało,final Integer zdało,final Double efektywność)
+	public ExamCenter(final String nazwa,final String adres,final Integer zdało,final Integer zdawało,final Double efektywność)
 	{
 		this.nazwa=nazwa;
 		this.adres=adres;

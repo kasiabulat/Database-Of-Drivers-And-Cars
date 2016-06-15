@@ -510,7 +510,7 @@ DROP VIEW IF EXISTS statystyki_egzaminow_w_zaleznosci_od_osrodka;
 CREATE OR REPLACE VIEW statystyki_egzaminow_w_zaleznosci_od_osrodka
 AS
   SELECT
-    nazwa,
+    osrodki.nazwa,
     CONCAT(ulica, ' ', osrodki.nr_budynku, ' ', miejscowosc.nazwa, ' ', osrodki.kod_pocztowy) AS adres,
     COUNT(
         CASE WHEN wynik = 'zdal'
@@ -524,9 +524,11 @@ AS
         ELSE NULL
         END) / COUNT(wynik))                                                                         AS efektywnosc
   FROM osrodki
-    NATURAL JOIN egzaminy
-    NATURAL JOIN miejscowosc
-  GROUP BY nazwa, adres
+    JOIN egzaminy
+      ON osrodki.id_osrodka=egzaminy.id_osrodka
+    JOIN miejscowosc
+      ON osrodki.id_miejscowosc=miejscowosc.id_miejscowosc
+  GROUP BY osrodki.nazwa, adres
   ORDER BY efektywnosc DESC, nazwa, 2;
 
 --spis wykroczen danego kierowcy o id_k
@@ -3115,3 +3117,4 @@ INSERT INTO mandaty VALUES (157, 99, 3, 9);
 INSERT INTO mandaty VALUES (158, 99, 9, 20);
 INSERT INTO mandaty VALUES (159, 100, 16, 17);
 INSERT INTO mandaty VALUES (160, 100, 1, 2);
+

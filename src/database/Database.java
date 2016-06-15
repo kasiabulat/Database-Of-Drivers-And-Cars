@@ -134,14 +134,11 @@ final public class Database
 	private ObservableList<Vehicle> getVehiclesList()
 	{
 		final Collection<Vehicle> data=new LinkedList<>();
-		System.err.println("IM");
 		try(Statement statement=connection.createStatement();
 			ResultSet resultSet=statement.executeQuery("SELECT * FROM pojazdy JOIN model ON pojazdy.id_model = model.id_modelu  JOIN marka ON model.id_marki = marka.id_marka;"))
 		{
-			System.err.println("IM1.5");
 			while(resultSet.next())
 			{
-				System.err.println("IM2");
 				data.add(new Vehicle(resultSet.getInt("id_pojazdu"),resultSet.getString("nr_rejestracyjny"),resultSet.getString("data_rejestracji"),resultSet.getString("marka"),resultSet.getString("model"),resultSet.getString("typ")));
 			}
 		}catch(final SQLException e)
