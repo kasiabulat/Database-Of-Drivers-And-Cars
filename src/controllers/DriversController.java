@@ -18,7 +18,7 @@ import java.sql.Statement;
 
 public class DriversController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<Driver> tableView;
     @FXML
     private Button addButton;
     @FXML
@@ -48,7 +48,7 @@ public class DriversController {
 
     @FXML
     public void addDriver(final ActionEvent event) {
-        String query =
+        final String query =
                 "INSERT INTO kierowcy VALUES(" +
                         id_kierowcyTextField.getText() + ", '" + peselTextField.getText() + "', '" + imieTextField.getText() + "', '" +
                         nazwiskoTextField.getText() + "', '" + plecTextField.getText() + "', '" + emailTextField.getText() + "', '" +
@@ -56,16 +56,16 @@ public class DriversController {
                         kod_pocztowyTextField.getText() + "', " + nr_miejscowosciTextField.getText() + ")";
 
         try {
-            Statement stmt = Database.instance.connection.createStatement();
+            final Statement stmt = Database.instance.connection.createStatement();
             stmt.executeUpdate(query);
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             e.printStackTrace();
         }
     }
 
     @FXML
     public void initialize() {
-        Database.instance.getDriversTable((TableView<Driver>) tableView);
+        Database.instance.getDriversTable( tableView);
     }
 
     @FXML

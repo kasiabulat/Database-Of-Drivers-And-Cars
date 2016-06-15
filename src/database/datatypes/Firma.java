@@ -16,7 +16,7 @@ public class Firma {
     private String kod_pocztowy;
     private String miejscowosc;
 
-    public Firma(int id_firmy, String nip, String regon, String numerkrs, String nazwa_firmy, String email, String nr_telefonu, String ulica, String nr_budynku, String kod_pocztowy, String miejscowosc) {
+    public Firma(final int id_firmy,final String nip,final String regon,final String numerkrs,final String nazwa_firmy,final String email,final String nr_telefonu,final String ulica,final String nr_budynku,final String kod_pocztowy,final String miejscowosc) {
         this.id_firmy = id_firmy;
         this.nip = nip;
         this.regon = regon;
@@ -34,7 +34,7 @@ public class Firma {
         return miejscowosc;
     }
 
-    public void setMiejscowosc(String miejscowosc) {
+    public void setMiejscowosc(final String miejscowosc) {
         this.miejscowosc = miejscowosc;
     }
 
@@ -42,7 +42,7 @@ public class Firma {
         return id_firmy;
     }
 
-    public void setId_firmy(int id_firmy) {
+    public void setId_firmy(final int id_firmy) {
         this.id_firmy = id_firmy;
     }
 
@@ -50,7 +50,7 @@ public class Firma {
         return nip;
     }
 
-    public void setNip(String nip) {
+    public void setNip(final String nip) {
         this.nip = nip;
     }
 
@@ -58,7 +58,7 @@ public class Firma {
         return regon;
     }
 
-    public void setRegon(String regon) {
+    public void setRegon(final String regon) {
         this.regon = regon;
     }
 
@@ -66,7 +66,7 @@ public class Firma {
         return numerkrs;
     }
 
-    public void setNumerkrs(String numerkrs) {
+    public void setNumerkrs(final String numerkrs) {
         this.numerkrs = numerkrs;
     }
 
@@ -74,7 +74,7 @@ public class Firma {
         return nazwa_firmy;
     }
 
-    public void setNazwa_firmy(String nazwa_firmy) {
+    public void setNazwa_firmy(final String nazwa_firmy) {
         this.nazwa_firmy = nazwa_firmy;
     }
 
@@ -82,7 +82,7 @@ public class Firma {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(final String email) {
         this.email = email;
     }
 
@@ -90,7 +90,7 @@ public class Firma {
         return nr_telefonu;
     }
 
-    public void setNr_telefonu(String nr_telefonu) {
+    public void setNr_telefonu(final String nr_telefonu) {
         this.nr_telefonu = nr_telefonu;
     }
 
@@ -98,7 +98,7 @@ public class Firma {
         return ulica;
     }
 
-    public void setUlica(String ulica) {
+    public void setUlica(final String ulica) {
         this.ulica = ulica;
     }
 
@@ -106,7 +106,7 @@ public class Firma {
         return nr_budynku;
     }
 
-    public void setNr_budynku(String nr_budynku) {
+    public void setNr_budynku(final String nr_budynku) {
         this.nr_budynku = nr_budynku;
     }
 
@@ -114,7 +114,7 @@ public class Firma {
         return kod_pocztowy;
     }
 
-    public void setKod_pocztowy(String kod_pocztowy) {
+    public void setKod_pocztowy(final String kod_pocztowy) {
         this.kod_pocztowy = kod_pocztowy;
     }
 

@@ -21,7 +21,7 @@
           <RowConstraints maxHeight="269.0" minHeight="10.0" percentHeight="100.0" prefHeight="269.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <BarChart fx:id="caterogiresBarChart" title="Ilość egzaminów na daną kategorię">
+            <BarChart fx:id="categoriesBarChart" title="Ilość egzaminów na daną kategorię">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>

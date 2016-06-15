@@ -2,12 +2,13 @@ package database.datatypes;
 
 /**
  Created by Kamil Rajtar on 15.06.16. */
+@SuppressWarnings("LocalCanBeFinal")
 public class LicenseCategory
 {
-	public String name;
-	public Integer count;
+	public final String name;
+	public final Integer count;
 
-	public LicenseCategory(String name,Integer count)
+	public LicenseCategory(final String name,final Integer count)
 	{
 		this.name=name;
 		this.count=count;

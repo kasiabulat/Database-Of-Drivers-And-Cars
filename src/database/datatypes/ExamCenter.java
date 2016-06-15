@@ -10,7 +10,7 @@ public class ExamCenter
 	Integer zdało;
 	Double efektywność;
 
-	public ExamCenter(String nazwa,String adres,Integer zdawało,Integer zdało,Double efektywność)
+	public ExamCenter(final String nazwa,final String adres,final Integer zdawało,final Integer zdało,final Double efektywność)
 	{
 		this.nazwa=nazwa;
 		this.adres=adres;
@@ -24,7 +24,7 @@ public class ExamCenter
 		return nazwa;
 	}
 
-	public void setNazwa(String nazwa)
+	public void setNazwa(final String nazwa)
 	{
 		this.nazwa=nazwa;
 	}
@@ -34,7 +34,7 @@ public class ExamCenter
 		return adres;
 	}
 
-	public void setAdres(String adres)
+	public void setAdres(final String adres)
 	{
 		this.adres=adres;
 	}
@@ -44,7 +44,7 @@ public class ExamCenter
 		return zdawało;
 	}
 
-	public void setZdawało(Integer zdawało)
+	public void setZdawało(final Integer zdawało)
 	{
 		this.zdawało=zdawało;
 	}
@@ -54,7 +54,7 @@ public class ExamCenter
 		return zdało;
 	}
 
-	public void setZdało(Integer zdało)
+	public void setZdało(final Integer zdało)
 	{
 		this.zdało=zdało;
 	}
@@ -64,7 +64,7 @@ public class ExamCenter
 		return efektywność;
 	}
 
-	public void setEfektywność(Double efektywność)
+	public void setEfektywność(final Double efektywność)
 	{
 		this.efektywność=efektywność;
 	}

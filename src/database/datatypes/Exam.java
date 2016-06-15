@@ -21,7 +21,7 @@ public class Exam {
     private String nazwisko_zdającego;
     private String wynik;
 
-	public Exam(int id_egzaminu,LocalDate data_przeprowadzenia,String typ,String nazwa_ośrodka,String ulica,String nr_budynku,String kod_pocztowy,String miejscowość,String imię_egzaminatora,String nazwisko_egzaminatora,String imię_zdającego,String nazwisko_zdającego,String wynik)
+	public Exam(final int id_egzaminu,final LocalDate data_przeprowadzenia,final String typ,final String nazwa_ośrodka,final String ulica,final String nr_budynku,final String kod_pocztowy,final String miejscowość,final String imię_egzaminatora,final String nazwisko_egzaminatora,final String imię_zdającego,final String nazwisko_zdającego,final String wynik)
 	{
 		this.id_egzaminu=id_egzaminu;
 		this.data_przeprowadzenia=data_przeprowadzenia;
@@ -43,7 +43,7 @@ public class Exam {
 		return id_egzaminu;
 	}
 
-	public void setId_egzaminu(int id_egzaminu)
+	public void setId_egzaminu(@SuppressWarnings("LocalCanBeFinal") final int id_egzaminu)
 	{
 		this.id_egzaminu=id_egzaminu;
 	}
@@ -53,7 +53,7 @@ public class Exam {
 		return data_przeprowadzenia;
 	}
 
-	public void setData_przeprowadzenia(LocalDate data_przeprowadzenia)
+	public void setData_przeprowadzenia(final LocalDate data_przeprowadzenia)
 	{
 		this.data_przeprowadzenia=data_przeprowadzenia;
 	}
@@ -63,7 +63,7 @@ public class Exam {
 		return typ;
 	}
 
-	public void setTyp(String typ)
+	public void setTyp(final String typ)
 	{
 		this.typ=typ;
 	}
@@ -73,7 +73,7 @@ public class Exam {
 		return nazwa_ośrodka;
 	}
 
-	public void setNazwa_ośrodka(String nazwa_ośrodka)
+	public void setNazwa_ośrodka(final String nazwa_ośrodka)
 	{
 		this.nazwa_ośrodka=nazwa_ośrodka;
 	}
@@ -83,7 +83,7 @@ public class Exam {
 		return ulica;
 	}
 
-	public void setUlica(String ulica)
+	public void setUlica(final String ulica)
 	{
 		this.ulica=ulica;
 	}
@@ -93,7 +93,7 @@ public class Exam {
 		return nr_budynku;
 	}
 
-	public void setNr_budynku(String nr_budynku)
+	public void setNr_budynku(final String nr_budynku)
 	{
 		this.nr_budynku=nr_budynku;
 	}
@@ -103,7 +103,7 @@ public class Exam {
 		return kod_pocztowy;
 	}
 
-	public void setKod_pocztowy(String kod_pocztowy)
+	public void setKod_pocztowy(final String kod_pocztowy)
 	{
 		this.kod_pocztowy=kod_pocztowy;
 	}
@@ -113,7 +113,7 @@ public class Exam {
 		return miejscowość;
 	}
 
-	public void setMiejscowość(String miejscowość)
+	public void setMiejscowość(final String miejscowość)
 	{
 		this.miejscowość=miejscowość;
 	}
@@ -123,7 +123,7 @@ public class Exam {
 		return imię_egzaminatora;
 	}
 
-	public void setImię_egzaminatora(String imię_egzaminatora)
+	public void setImię_egzaminatora(final String imię_egzaminatora)
 	{
 		this.imię_egzaminatora=imię_egzaminatora;
 	}
@@ -133,7 +133,7 @@ public class Exam {
 		return nazwisko_egzaminatora;
 	}
 
-	public void setNazwisko_egzaminatora(String nazwisko_egzaminatora)
+	public void setNazwisko_egzaminatora(final String nazwisko_egzaminatora)
 	{
 		this.nazwisko_egzaminatora=nazwisko_egzaminatora;
 	}
@@ -143,7 +143,7 @@ public class Exam {
 		return imię_zdającego;
 	}
 
-	public void setImię_zdającego(String imię_zdającego)
+	public void setImię_zdającego(final String imię_zdającego)
 	{
 		this.imię_zdającego=imię_zdającego;
 	}
@@ -153,7 +153,7 @@ public class Exam {
 		return nazwisko_zdającego;
 	}
 
-	public void setNazwisko_zdającego(String nazwisko_zdającego)
+	public void setNazwisko_zdającego(final String nazwisko_zdającego)
 	{
 		this.nazwisko_zdającego=nazwisko_zdającego;
 	}
@@ -163,7 +163,7 @@ public class Exam {
 		return wynik;
 	}
 
-	public void setWynik(String wynik)
+	public void setWynik(final String wynik)
 	{
 		this.wynik=wynik;
 	}

@@ -13,7 +13,7 @@ import java.sql.Statement;
 
 public class FirmsController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<Firma> tableView;
     @FXML
     private Button addButton;
 
@@ -42,7 +42,7 @@ public class FirmsController {
 
     @FXML
     public void addFirm(final ActionEvent event) {
-        String query =
+        final String query =
                 "INSERT INTO firma VALUES(" + id_firmyTextField.getText() + ", '" +
                         NIPTextField.getText() + "', '" + REGONTextField.getText() + "', '" +
                         numerKRSTextField.getText() + "', '" + nazwa_firmyTextField.getText() +"', '" +
@@ -51,15 +51,15 @@ public class FirmsController {
                         kod_pocztowyTextField.getText() + "', " + nr_miejscowosciTextField.getText() + ")";
 
         try {
-            Statement stmt = Database.instance.connection.createStatement();
+            final Statement stmt = Database.instance.connection.createStatement();
             stmt.executeUpdate(query);
-        } catch (SQLException e) {
+        } catch (@SuppressWarnings("LocalCanBeFinal") final SQLException e) {
             e.printStackTrace();
         }
     }
 
     @FXML
     public void initialize() {
-        Database.instance.getFirmsTable((TableView<Firma>) tableView);
+        Database.instance.getFirmsTable(tableView);
     }
 }

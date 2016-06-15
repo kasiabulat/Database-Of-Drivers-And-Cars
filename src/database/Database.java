@@ -39,14 +39,14 @@ final public class Database
 
 	public void loadParams()
 	{
-		Properties props=new Properties();
+		final Properties props=new Properties();
 		InputStream is=null;
 
 		try
 		{
-			File f=new File("config.properties");
+			final File f=new File("config.properties");
 			is=new FileInputStream(f);
-		}catch(Exception e)
+		}catch(final Exception e)
 		{
 			is=null;
 		}
@@ -59,7 +59,7 @@ final public class Database
 			}
 
 			props.load(is);
-		}catch(Exception e)
+		}catch(final Exception e)
 		{
 
 		}
@@ -439,6 +439,33 @@ final public class Database
 			throw new DatabaseException(e);
 		}
 		return data;
+	}
+
+	@NotNull
+	private ObservableList<Examiner> getExaminersList()
+	{
+		final Collection<Examiner> data=new LinkedList<>();
+
+		try(Statement statement=connection.createStatement();
+			ResultSet resultSet=statement.executeQuery("SELECT * FROM statystyki_egzaminatorow;"))
+		{
+			while(resultSet.next())
+			{
+				data.add(new Examiner(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3)));
+			}
+		}catch(final SQLException e)
+		{
+			throw new DatabaseException(e);
+		}
+		return FXCollections.observableArrayList(data);
+	}
+
+	public void getExaminerTable(final TableView<Examiner> egzaminersTable)
+	{
+		insertColumn(egzaminersTable,"imię");
+		insertColumn(egzaminersTable,"nazwisko");
+		insertColumn(egzaminersTable,"ilu_zdało");
+		egzaminersTable.setItems(getExaminersList());
 	}
 
 	/**

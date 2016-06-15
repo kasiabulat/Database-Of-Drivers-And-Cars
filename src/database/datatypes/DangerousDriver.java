@@ -9,7 +9,7 @@ public class DangerousDriver
 	private Integer ilość_mandatów;
 	private Integer suma_punktów_karnych;
 
-	public DangerousDriver(String imię,String nazwisko,Integer ilość_mandatów,Integer suma_punktów_karnych)
+	public DangerousDriver(final String imię,final String nazwisko,final Integer ilość_mandatów,final Integer suma_punktów_karnych)
 	{
 		this.imię=imię;
 		this.nazwisko=nazwisko;
@@ -22,7 +22,7 @@ public class DangerousDriver
 		return imię;
 	}
 
-	public void setImię(String imię)
+	public void setImię(final String imię)
 	{
 		this.imię=imię;
 	}
@@ -32,7 +32,7 @@ public class DangerousDriver
 		return nazwisko;
 	}
 
-	public void setNazwisko(String nazwisko)
+	public void setNazwisko(final String nazwisko)
 	{
 		this.nazwisko=nazwisko;
 	}
@@ -42,7 +42,7 @@ public class DangerousDriver
 		return ilość_mandatów;
 	}
 
-	public void setIlość_mandatów(Integer ilość_mandatów)
+	public void setIlość_mandatów(final Integer ilość_mandatów)
 	{
 		this.ilość_mandatów=ilość_mandatów;
 	}
@@ -52,7 +52,7 @@ public class DangerousDriver
 		return suma_punktów_karnych;
 	}
 
-	public void setSuma_punktów_karnych(Integer suma_punktów_karnych)
+	public void setSuma_punktów_karnych(final Integer suma_punktów_karnych)
 	{
 		this.suma_punktów_karnych=suma_punktów_karnych;
 	}

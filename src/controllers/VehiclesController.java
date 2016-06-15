@@ -16,7 +16,7 @@ import java.sql.Statement;
 
 public class VehiclesController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<Vehicle> tableView;
     @FXML
     private Button addButton;
     @FXML
@@ -43,7 +43,7 @@ public class VehiclesController {
 
     @FXML
     public void addVehicle(final ActionEvent event) {
-      String query =
+      final String query =
                 "INSERT INTO pojazdy VALUES(" +
                         id_pojazduTextField.getText() + ", '" +
                         nr_rejestracjiTextField.getText() +  "', '" +
@@ -54,16 +54,16 @@ public class VehiclesController {
                         id_krajuTextField.getText() + "', " +
                         waga_samochoduTextField.getText() + ")";
         try {
-            Statement stmt = Database.instance.connection.createStatement();
+            final Statement stmt = Database.instance.connection.createStatement();
             stmt.executeUpdate(query);
-        } catch (SQLException e) {
+        } catch (final SQLException e) {
             e.printStackTrace();
         }
     }
 
     public void initialize() {
 		data_rejestracjiPicker.setTooltip(new Tooltip("Data rejestracji pojazdu"));
-	    Database.instance.getVehiclesTable((TableView<Vehicle>) tableView);
+	    Database.instance.getVehiclesTable( tableView);
 
     }
 

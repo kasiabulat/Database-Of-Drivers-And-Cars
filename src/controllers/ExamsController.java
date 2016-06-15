@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class ExamsController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<Exam> tableView;
     @FXML
     private Button moreInfoButton;
     @FXML
@@ -29,7 +29,7 @@ public class ExamsController {
 
     @FXML
     public void initialize() {
-        Database.instance.getExamsTable((TableView<Exam>) tableView);
+        Database.instance.getExamsTable( tableView);
     }
 
     @FXML
