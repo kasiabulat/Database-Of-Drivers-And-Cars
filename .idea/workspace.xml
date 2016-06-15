@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f045022-2726-4e20-9621-016b0062f21e" name="Default" comment="">
+<<<<<<< HEAD
       <change type="DELETED" beforePath="$PROJECT_DIR$/schemat.pdf" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/FirmsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/FirmsController.class" />
@@ -10,6 +11,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/database/Database$DatabaseException.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/database/Database$DatabaseException.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
     </list>
     <ignored path="Projekt ID.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,6 +37,33 @@
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
+<<<<<<< HEAD
+=======
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -39,6 +71,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,11 +175,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+=======
+      <file leaf-file-name="create.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/create.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="74" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="601" selection-end-column="0" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="FirmsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/FirmsController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -170,6 +211,213 @@
                 <marker date="1466006068958" expanded="true" signature="1101:1633" ph="INSERT INTO firmy... " />
                 <marker date="1466006068958" expanded="true" signature="1101:1634" ph="INSERT INTO firmy... " />
                 <marker date="1466006068958" expanded="true" signature="1101:1677" ph="INSERT INTO firma... " />
+=======
+      <file leaf-file-name="DATABASE/dfe5b7df-913c-4a7f-80a6-f7e881152cc5" pinned="false" current-in-tab="false">
+        <entry file="uml://DATABASE/dfe5b7df-913c-4a7f-80a6-f7e881152cc5">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>dfe5b7df-913c-4a7f-80a6-f7e881152cc5</OriginalElement>
+              <nodes>
+                <node x="856.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiający</node>
+                <node x="343.16666666666674" y="0.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.marka</node>
+                <node x="0.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_kierowcow_z_najwieksza_grzywna</node>
+                <node x="0.0" y="761.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_przegladow_technicznych</node>
+                <node x="482.72775017169647" y="347.8981941582839">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma</node>
+                <node x="677.2960317460318" y="773.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy</node>
+                <node x="1450.9511904761905" y="442.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia</node>
+                <node x="130.66666666666674" y="394.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy</node>
+                <node x="378.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_zdawalnosci_egzaminow</node>
+                <node x="417.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_mandatow_najniebezpieczniejsi_kierowcy</node>
+                <node x="1291.1666666666667" y="772.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie</node>
+                <node x="123.16666666666674" y="0.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.sposob_zasilania</node>
+                <node x="152.66666666666674" y="131.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model</node>
+                <node x="701.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_markamodel</node>
+                <node x="2195.9511904761907" y="748.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminatorzy</node>
+                <node x="921.8793650793652" y="358.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy</node>
+                <node x="1531.1666666666667" y="736.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty</node>
+                <node x="1671.6472222222224" y="951.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy</node>
+                <node x="1273.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_rokrejestracji</node>
+                <node x="1748.9511904761905" y="454.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiajacy</node>
+                <node x="371.29603174603176" y="725.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli</node>
+                <node x="1058.9166666666667" y="1011.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy</node>
+                <node x="776.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_wykroczen</node>
+                <node x="999.3793650793652" y="179.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc</node>
+                <node x="301.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_typ</node>
+                <node x="0.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_zaleznosci_od_osrodka</node>
+                <node x="1174.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.ośrodki</node>
+                <node x="0.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_latach</node>
+                <node x="2041.9511904761907" y="418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki</node>
+                <node x="1013.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminatorow</node>
+                <node x="975.3793650793652" y="748.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy</node>
+                <node x="548.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_praw_jazdy</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.sposob_zasilania">
+                  <point x="-70.5" y="-88.5" />
+                  <point x="0.0" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma">
+                  <point x="0.0" y="-88.0" />
+                  <point x="514.2960317460318" y="685.0" />
+                  <point x="659.1666666666667" y="685.0" />
+                  <point x="0.0" y="148.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia">
+                  <point x="0.0" y="-76.5" />
+                  <point x="1667.1666666666667" y="705.0" />
+                  <point x="1589.9511904761905" y="705.0" />
+                  <point x="0.0" y="64.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
+                  <point x="-53.25" y="-40.0" />
+                  <point x="730.5460317460318" y="675.0" />
+                  <point x="402.3333333333335" y="675.0" />
+                  <point x="108.66666666666669" y="112.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiajacy">
+                  <point x="90.66666666666674" y="-76.5" />
+                  <point x="1757.8333333333335" y="705.0" />
+                  <point x="1885.4511904761905" y="705.0" />
+                  <point x="0.0" y="52.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminatorzy">
+                  <point x="126.75" y="-112.5" />
+                  <point x="1967.3972222222224" y="931.0" />
+                  <point x="2339.4511904761907" y="931.0" />
+                  <point x="0.0" y="64.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
+                  <point x="0.0" y="-148.5" />
+                  <point x="659.1666666666667" y="333.0" />
+                  <point x="1039.046031746032" y="333.0" />
+                  <point x="-79.33333333333326" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
+                  <point x="-90.66666666666674" y="-76.5" />
+                  <point x="1576.5" y="695.0" />
+                  <point x="1275.5793650793653" y="695.0" />
+                  <point x="157.20000000000005" y="148.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki">
+                  <point x="42.25" y="-112.5" />
+                  <point x="1882.8972222222224" y="921.0" />
+                  <point x="2185.4511904761907" y="921.0" />
+                  <point x="0.0" y="88.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.marka">
+                  <point x="70.5" y="-88.5" />
+                  <point x="364.16666666666674" y="106.0" />
+                  <point x="439.66666666666674" y="106.0" />
+                  <point x="0.0" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
+                  <point x="-42.25" y="-112.5" />
+                  <point x="1798.3972222222224" y="921.0" />
+                  <point x="1520.6666666666667" y="921.0" />
+                  <point x="1520.6666666666667" y="705.0" />
+                  <point x="1196.9793650793654" y="705.0" />
+                  <point x="78.60000000000014" y="148.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
+                  <point x="0.0" y="-148.5" />
+                  <point x="0.0" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie">
+                  <point x="-126.75" y="-112.5" />
+                  <point x="1713.8972222222224" y="931.0" />
+                  <point x="1455.4166666666667" y="931.0" />
+                  <point x="54.75" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
+                  <point x="53.25" y="-40.0" />
+                  <point x="837.0460317460318" y="705.0" />
+                  <point x="1039.7793650793653" y="705.0" />
+                  <point x="-78.59999999999991" y="148.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_przegladow_technicznych" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
+                  <point x="0.0" y="-52.0" />
+                  <point x="137.0" y="705.0" />
+                  <point x="185.0" y="705.0" />
+                  <point x="-108.66666666666669" y="112.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie">
+                  <point x="69.25" y="-52.0" />
+                  <point x="1266.6666666666667" y="931.0" />
+                  <point x="1345.9166666666667" y="931.0" />
+                  <point x="-54.75" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model">
+                  <point x="0.0" y="-112.5" />
+                  <point x="0.0" y="88.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
+                  <point x="-95.33333333333331" y="-88.0" />
+                  <point x="418.9626984126985" y="705.0" />
+                  <point x="293.66666666666674" y="705.0" />
+                  <point x="0.0" y="112.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
+                  <point x="0.0" y="-88.5" />
+                  <point x="2185.4511904761907" y="333.0" />
+                  <point x="1197.7126984126985" y="333.0" />
+                  <point x="79.33333333333326" y="40.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy">
+                  <point x="-69.25" y="-52.0" />
+                  <point x="1128.1666666666667" y="931.0" />
+                  <point x="1118.3793650793652" y="931.0" />
+                  <point x="0.0" y="64.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
+                  <point x="95.33333333333337" y="-88.0" />
+                  <point x="609.6293650793651" y="695.0" />
+                  <point x="961.1793650793652" y="695.0" />
+                  <point x="-157.20000000000005" y="148.5" />
+                </edge>
+                <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
+                  <point x="0.0" y="-64.5" />
+                  <point x="0.0" y="148.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.4949610077984403" x="1269.8866804023755" y="705.8866804023755" />
+              <SelectedNodes>
+                <node>dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/datatypes/Exam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+              <folding>
+                <marker date="1466011493146" expanded="true" signature="2690:2712" ph="SELECT * FRO... kierowcy" />
+                <marker date="1466011493146" expanded="true" signature="3840:3861" ph="SELECT * FRO... pojazdy" />
+                <marker date="1466011493146" expanded="true" signature="4946:5146" ph="SELECT id_eg... egzaminy" />
+                <marker date="1466011493146" expanded="true" signature="6537:6770" ph="SELECT K.imi... kierowcy" />
+                <marker date="1466011493146" expanded="true" signature="7680:7697" ph="SELECT pojaz... " />
+                <marker date="1466011493146" expanded="true" signature="8991:9054" ph="SELECT * FRO... statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
+                <marker date="1466011493146" expanded="true" signature="9961:10019" ph="SELECT * FRO... statystyki_egzaminow_w_zaleznosci_od_osrodka" />
+                <marker date="1466011493146" expanded="true" signature="10926:10970" ph="SELECT * FRO... firma" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
               </folding>
             </state>
           </provider>
@@ -226,6 +474,10 @@
         <option value="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ExamsExaminersStatisticsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/clear.sql" />
         <option value="$PROJECT_DIR$/src/database/datatypes/Vehicle.java" />
@@ -237,11 +489,15 @@
         <option value="$PROJECT_DIR$/src/controllers/OwnersChoiceController.java" />
         <option value="$PROJECT_DIR$/src/controllers/MainController.java" />
         <option value="$PROJECT_DIR$/config.properties" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/controllers/DriversController.java" />
         <option value="$PROJECT_DIR$/src/database/datatypes/Firma.java" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
         <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
         <option value="$PROJECT_DIR$/src/database/Database.java" />
       </list>
     </option>
@@ -284,6 +540,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -376,7 +633,10 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -387,6 +647,7 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="prop_add_unversioned_files" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -855,9 +1116,14 @@
       <workItem from="1465839081741" duration="8021000" />
       <workItem from="1465847987444" duration="303000" />
       <workItem from="1465929468256" duration="4278000" />
+<<<<<<< HEAD
       <workItem from="1465934113129" duration="5000" />
       <workItem from="1465934315476" duration="737000" />
       <workItem from="1466000166020" duration="7284000" />
+=======
+      <workItem from="1465934503996" duration="155000" />
+      <workItem from="1466000666844" duration="2792000" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
     </task>
     <task id="LOCAL-00001" summary="drobne zmiany w create.sql">
       <created>1465648610842</created>
@@ -901,11 +1167,22 @@
       <option name="project" value="LOCAL" />
       <updated>1465929527039</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tabela egzaminy działa">
+      <created>1466011469116</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1466011469116</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="45483000" />
+=======
+    <option name="totallyTimeSpent" value="40404000" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -917,16 +1194,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
+=======
+    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5849387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33099824" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32564104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -934,6 +1216,15 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5053192" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32564104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23589744" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32564104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28744122" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14707857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -947,6 +1238,7 @@
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32435897" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+<<<<<<< HEAD
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -975,6 +1267,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+=======
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -994,7 +1288,8 @@
     <MESSAGE value="kierowcy więcej informacji poprawki (text fields)" />
     <MESSAGE value="statystyki w prawach jazdy (do uzupełnienia po wygenerowaniu danych)" />
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/projektid/projekt-id&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;create.sql&#10;#&#9;out/production/projekt-id/FXML/vehiclesWindow.fxml&#10;#&#9;out/production/projekt-id/database/Database.class&#10;&#10;merge after pull" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://bitbucket.org/projektid/projekt-id&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;create.sql&#10;#&#9;out/production/projekt-id/FXML/vehiclesWindow.fxml&#10;#&#9;out/production/projekt-id/database/Database.class&#10;&#10;merge after pull" />
+    <MESSAGE value="tabela egzaminy działa" />
+    <option name="LAST_COMMIT_MESSAGE" value="tabela egzaminy działa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1005,6 +1300,23 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/data_gen/src/Wykroczenia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_gen/src/WynikiEgzaminow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
     <entry file="file://$PROJECT_DIR$/src/FXML/licencesChoiceWindow.fxml" />
     <entry file="file://$PROJECT_DIR$/src/controllers/OffencesMoreInfoController.java" />
     <entry file="file://$PROJECT_DIR$/src/FXML/mainWindow.fxml">
@@ -1043,6 +1355,10 @@
     <entry file="file://$PROJECT_DIR$/src/controllers/FirmsMoreInfoController.java" />
     <entry file="file://$PROJECT_DIR$/diagram.png" />
     <entry file="file://$PROJECT_DIR$/src/FXML/offencesMoreInfoWindow.fxml" />
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/FXML/examsMainWindow.fxml" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
     <entry file="file://$PROJECT_DIR$/src/FXML/examsWindow.fxml" />
     <entry file="file://$PROJECT_DIR$/src/FXML/driversWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1119,6 +1435,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/create.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1133,10 +1450,67 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/datatypes/Offence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/datatypes/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/datatypes/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="0" selection-start-line="7" selection-start-column="4" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
     <entry file="file://$PROJECT_DIR$/src/database/datatypes/ExamCenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+            <element signature="e#865#866#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#978#979#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+          </folding>
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
         </state>
       </provider>
     </entry>
@@ -1144,13 +1518,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="e#390#391#0" expanded="false" />
+          </folding>
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="180">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+=======
+        <state relative-caret-position="150">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/OwnersChoiceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="85" column="48" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/dfe5b7df-913c-4a7f-80a6-f7e881152cc5/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
         </state>
       </provider>
     </entry>
@@ -1166,8 +1580,8 @@
             <node x="0.0" y="761.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_przegladow_technicznych</node>
             <node x="476.66666666666674" y="358.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma</node>
             <node x="671.5976190476192" y="773.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy</node>
-            <node x="1451.2369047619047" y="442.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia</node>
             <node x="130.66666666666674" y="394.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy</node>
+            <node x="1451.2369047619047" y="442.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia</node>
             <node x="1234.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_zdawalnosci_egzaminow</node>
             <node x="417.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_mandatow_najniebezpieczniejsi_kierowcy</node>
             <node x="1286.3476190476192" y="772.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie</node>
@@ -1183,8 +1597,8 @@
             <node x="365.5976190476192" y="725.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli</node>
             <node x="1058.9166666666667" y="1011.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy</node>
             <node x="228.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_wykroczen</node>
-            <node x="993.6809523809525" y="179.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc</node>
             <node x="1189.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_typ</node>
+            <node x="993.6809523809525" y="179.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc</node>
             <node x="0.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_zaleznosci_od_osrodka</node>
             <node x="888.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_latach</node>
             <node x="2043.3476190476194" y="418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki</node>
@@ -1204,17 +1618,17 @@
               <point x="659.1666666666667" y="685.0" />
               <point x="0.0" y="148.5" />
             </edge>
-            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia">
-              <point x="0.0" y="-76.5" />
-              <point x="1662.3476190476192" y="705.0" />
-              <point x="1590.2369047619047" y="705.0" />
-              <point x="0.0" y="64.5" />
-            </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
               <point x="-53.25" y="-40.0" />
               <point x="724.8476190476192" y="675.0" />
               <point x="402.3333333333335" y="675.0" />
               <point x="108.66666666666669" y="112.5" />
+            </edge>
+            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia">
+              <point x="0.0" y="-76.5" />
+              <point x="1662.3476190476192" y="705.0" />
+              <point x="1590.2369047619047" y="705.0" />
+              <point x="0.0" y="64.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiajacy">
               <point x="90.66666666666674" y="-76.5" />
@@ -1234,17 +1648,17 @@
               <point x="1033.3476190476192" y="333.0" />
               <point x="-79.33333333333326" y="40.5" />
             </edge>
-            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki">
-              <point x="126.75" y="-112.5" />
-              <point x="1890.6829365079366" y="931.0" />
-              <point x="2186.8476190476194" y="931.0" />
-              <point x="0.0" y="88.5" />
-            </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
               <point x="-90.66666666666674" y="-76.5" />
               <point x="1571.6809523809525" y="695.0" />
               <point x="1269.8809523809525" y="695.0" />
               <point x="157.20000000000005" y="148.5" />
+            </edge>
+            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki">
+              <point x="126.75" y="-112.5" />
+              <point x="1890.6829365079366" y="931.0" />
+              <point x="2186.8476190476194" y="931.0" />
+              <point x="0.0" y="88.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.marka">
               <point x="70.5" y="-88.5" />
@@ -1298,27 +1712,27 @@
               <point x="293.66666666666674" y="705.0" />
               <point x="0.0" y="112.5" />
             </edge>
-            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
-              <point x="0.0" y="-88.5" />
-              <point x="2186.8476190476194" y="333.0" />
-              <point x="1192.0142857142857" y="333.0" />
-              <point x="79.33333333333326" y="40.5" />
-            </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy">
               <point x="-69.25" y="-52.0" />
               <point x="1128.1666666666667" y="931.0" />
               <point x="1112.6809523809525" y="931.0" />
               <point x="0.0" y="64.5" />
             </edge>
+            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
+              <point x="0.0" y="-88.5" />
+              <point x="2186.8476190476194" y="333.0" />
+              <point x="1192.0142857142857" y="333.0" />
+              <point x="79.33333333333326" y="40.5" />
+            </edge>
+            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
+              <point x="0.0" y="-64.5" />
+              <point x="0.0" y="148.5" />
+            </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
               <point x="95.33333333333337" y="-88.0" />
               <point x="603.9309523809526" y="695.0" />
               <point x="955.4809523809524" y="695.0" />
               <point x="-157.20000000000005" y="148.5" />
-            </edge>
-            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
-              <point x="0.0" y="-64.5" />
-              <point x="0.0" y="148.5" />
             </edge>
           </edges>
           <settings layout="Hierarchic Group" zoom="0.4824330072309655" x="487.0" y="407.0" />
@@ -1330,6 +1744,147 @@
             <Category>Key columns</Category>
           </Categories>
           <SCOPE>All</SCOPE>
+<<<<<<< HEAD
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/datatypes/DangerousDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#DangerousDriver#0" expanded="false" />
+            <element signature="e#496#497#0" expanded="false" />
+            <element signature="e#514#515#0" expanded="false" />
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="false" />
+            <element signature="e#606#607#0" expanded="false" />
+            <element signature="e#628#629#0" expanded="false" />
+            <element signature="e#674#675#0" expanded="false" />
+            <element signature="e#703#704#0" expanded="false" />
+            <element signature="e#743#744#0" expanded="false" />
+            <element signature="e#771#772#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#871#872#0" expanded="false" />
+            <element signature="e#917#918#0" expanded="false" />
+            <element signature="e#951#952#0" expanded="false" />
+            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#1075#1076#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DangerousDriversController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DriversController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsExaminersStatisticsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/FirmsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/OffencesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="74" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="601" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+          <folding>
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/datatypes/Exam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
         </state>
       </provider>
     </entry>
@@ -1339,36 +1894,38 @@
           <ID>DATABASE</ID>
           <OriginalElement>dfe5b7df-913c-4a7f-80a6-f7e881152cc5</OriginalElement>
           <nodes>
+            <node x="856.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiający</node>
             <node x="343.16666666666674" y="0.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.marka</node>
-            <node x="856.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_kierowcow_z_najwieksza_grzywna</node>
+            <node x="0.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_kierowcow_z_najwieksza_grzywna</node>
             <node x="0.0" y="761.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_przegladow_technicznych</node>
-            <node x="476.66666666666674" y="358.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma</node>
-            <node x="671.5976190476192" y="773.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy</node>
-            <node x="1451.2369047619047" y="442.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia</node>
+            <node x="482.72775017169647" y="347.8981941582839">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma</node>
+            <node x="677.2960317460318" y="773.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy</node>
+            <node x="1450.9511904761905" y="442.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia</node>
             <node x="130.66666666666674" y="394.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy</node>
-            <node x="1234.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_zdawalnosci_egzaminow</node>
+            <node x="378.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_zdawalnosci_egzaminow</node>
             <node x="417.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_mandatow_najniebezpieczniejsi_kierowcy</node>
-            <node x="1286.3476190476192" y="772.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie</node>
-            <node x="161.25134496944918" y="137.86774264222595">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model</node>
+            <node x="1291.1666666666667" y="772.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie</node>
             <node x="123.16666666666674" y="0.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.sposob_zasilania</node>
-            <node x="0.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_markamodel</node>
-            <node x="1838.613888888889" y="748.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminatorzy</node>
-            <node x="916.1809523809525" y="358.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy</node>
-            <node x="1526.3476190476192" y="736.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty</node>
-            <node x="1594.9329365079366" y="951.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy</node>
-            <node x="572.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_rokrejestracji</node>
-            <node x="1749.2369047619047" y="454.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiajacy</node>
-            <node x="365.5976190476192" y="725.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli</node>
+            <node x="152.66666666666674" y="131.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model</node>
+            <node x="701.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_markamodel</node>
+            <node x="2195.9511904761907" y="748.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminatorzy</node>
+            <node x="921.8793650793652" y="358.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy</node>
+            <node x="1531.1666666666667" y="736.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty</node>
+            <node x="1671.6472222222224" y="951.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy</node>
+            <node x="1273.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_rokrejestracji</node>
+            <node x="1748.9511904761905" y="454.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiajacy</node>
+            <node x="371.29603174603176" y="725.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli</node>
             <node x="1058.9166666666667" y="1011.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy</node>
-            <node x="228.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_wykroczen</node>
-            <node x="993.6809523809525" y="179.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc</node>
-            <node x="1189.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_typ</node>
+            <node x="776.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.ranking_wykroczen</node>
+            <node x="999.3793650793652" y="179.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc</node>
+            <node x="301.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_pojazdow_typ</node>
             <node x="0.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_zaleznosci_od_osrodka</node>
-            <node x="888.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_latach</node>
-            <node x="2043.3476190476194" y="418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki</node>
-            <node x="312.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminatorow</node>
-            <node x="969.6809523809525" y="748.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy</node>
-            <node x="0.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_praw_jazdy</node>
+            <node x="1174.0" y="1221.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.ośrodki</node>
+            <node x="0.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminow_w_latach</node>
+            <node x="2041.9511904761907" y="418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki</node>
+            <node x="1013.0" y="1418.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_egzaminatorow</node>
+            <node x="975.3793650793652" y="748.5">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy</node>
+            <node x="548.0" y="1567.0">dfe5b7df-913c-4a7f-80a6-f7e881152cc5.VIEW:kierowcy.public.statystyki_praw_jazdy</node>
           </nodes>
           <notes />
           <edges>
@@ -1378,51 +1935,51 @@
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma">
               <point x="0.0" y="-88.0" />
-              <point x="508.5976190476192" y="685.0" />
+              <point x="514.2960317460318" y="685.0" />
               <point x="659.1666666666667" y="685.0" />
               <point x="0.0" y="148.5" />
             </edge>
+            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia">
+              <point x="0.0" y="-76.5" />
+              <point x="1667.1666666666667" y="705.0" />
+              <point x="1589.9511904761905" y="705.0" />
+              <point x="0.0" y="64.5" />
+            </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
               <point x="-53.25" y="-40.0" />
-              <point x="724.8476190476192" y="675.0" />
+              <point x="730.5460317460318" y="675.0" />
               <point x="402.3333333333335" y="675.0" />
               <point x="108.66666666666669" y="112.5" />
             </edge>
-            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.wykroczenia">
-              <point x="0.0" y="-76.5" />
-              <point x="1662.3476190476192" y="705.0" />
-              <point x="1590.2369047619047" y="705.0" />
-              <point x="0.0" y="64.5" />
-            </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty_wystawiajacy">
               <point x="90.66666666666674" y="-76.5" />
-              <point x="1753.014285714286" y="705.0" />
-              <point x="1885.7369047619047" y="705.0" />
+              <point x="1757.8333333333335" y="705.0" />
+              <point x="1885.4511904761905" y="705.0" />
               <point x="0.0" y="52.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminatorzy">
-              <point x="42.25" y="-112.5" />
-              <point x="1806.1829365079366" y="921.0" />
-              <point x="1982.113888888889" y="921.0" />
+              <point x="126.75" y="-112.5" />
+              <point x="1967.3972222222224" y="931.0" />
+              <point x="2339.4511904761907" y="931.0" />
               <point x="0.0" y="64.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
               <point x="0.0" y="-148.5" />
               <point x="659.1666666666667" y="333.0" />
-              <point x="1033.3476190476192" y="333.0" />
+              <point x="1039.046031746032" y="333.0" />
               <point x="-79.33333333333326" y="40.5" />
-            </edge>
-            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki">
-              <point x="126.75" y="-112.5" />
-              <point x="1890.6829365079366" y="931.0" />
-              <point x="2186.8476190476194" y="931.0" />
-              <point x="0.0" y="88.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.mandaty" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
               <point x="-90.66666666666674" y="-76.5" />
-              <point x="1571.6809523809525" y="695.0" />
-              <point x="1269.8809523809525" y="695.0" />
+              <point x="1576.5" y="695.0" />
+              <point x="1275.5793650793653" y="695.0" />
               <point x="157.20000000000005" y="148.5" />
+            </edge>
+            <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki">
+              <point x="42.25" y="-112.5" />
+              <point x="1882.8972222222224" y="921.0" />
+              <point x="2185.4511904761907" y="921.0" />
+              <point x="0.0" y="88.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.marka">
               <point x="70.5" y="-88.5" />
@@ -1432,11 +1989,11 @@
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
               <point x="-42.25" y="-112.5" />
-              <point x="1721.6829365079366" y="921.0" />
-              <point x="1515.8476190476192" y="921.0" />
-              <point x="1515.8476190476192" y="705.0" />
-              <point x="1191.2809523809524" y="705.0" />
-              <point x="78.59999999999991" y="148.5" />
+              <point x="1798.3972222222224" y="921.0" />
+              <point x="1520.6666666666667" y="921.0" />
+              <point x="1520.6666666666667" y="705.0" />
+              <point x="1196.9793650793654" y="705.0" />
+              <point x="78.60000000000014" y="148.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
               <point x="0.0" y="-148.5" />
@@ -1444,14 +2001,14 @@
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.egzaminy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie">
               <point x="-126.75" y="-112.5" />
-              <point x="1637.1829365079366" y="931.0" />
-              <point x="1450.5976190476192" y="931.0" />
+              <point x="1713.8972222222224" y="931.0" />
+              <point x="1455.4166666666667" y="931.0" />
               <point x="54.75" y="40.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy_kierowcy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
               <point x="53.25" y="-40.0" />
-              <point x="831.3476190476192" y="705.0" />
-              <point x="1034.0809523809526" y="705.0" />
+              <point x="837.0460317460318" y="705.0" />
+              <point x="1039.7793650793653" y="705.0" />
               <point x="-78.59999999999991" y="148.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_przegladow_technicznych" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
@@ -1463,7 +2020,7 @@
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie">
               <point x="69.25" y="-52.0" />
               <point x="1266.6666666666667" y="931.0" />
-              <point x="1341.0976190476192" y="931.0" />
+              <point x="1345.9166666666667" y="931.0" />
               <point x="-54.75" y="40.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model">
@@ -1472,26 +2029,26 @@
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.pojazdy">
               <point x="-95.33333333333331" y="-88.0" />
-              <point x="413.26428571428596" y="705.0" />
+              <point x="418.9626984126985" y="705.0" />
               <point x="293.66666666666674" y="705.0" />
               <point x="0.0" y="112.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.osrodki" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.miejscowosc">
               <point x="0.0" y="-88.5" />
-              <point x="2186.8476190476194" y="333.0" />
-              <point x="1192.0142857142857" y="333.0" />
+              <point x="2185.4511904761907" y="333.0" />
+              <point x="1197.7126984126985" y="333.0" />
               <point x="79.33333333333326" y="40.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy_kategorie_praw_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy">
               <point x="-69.25" y="-52.0" />
               <point x="1128.1666666666667" y="931.0" />
-              <point x="1112.6809523809525" y="931.0" />
+              <point x="1118.3793650793652" y="931.0" />
               <point x="0.0" y="64.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.historia_wlascicieli" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
               <point x="95.33333333333337" y="-88.0" />
-              <point x="603.9309523809526" y="695.0" />
-              <point x="955.4809523809524" y="695.0" />
+              <point x="609.6293650793651" y="695.0" />
+              <point x="961.1793650793652" y="695.0" />
               <point x="-157.20000000000005" y="148.5" />
             </edge>
             <edge source="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.prawa_jazdy" target="dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.kierowcy">
@@ -1499,9 +2056,13 @@
               <point x="0.0" y="148.5" />
             </edge>
           </edges>
+<<<<<<< HEAD
           <settings layout="Hierarchic Group" zoom="0.5824330072309655" x="652.0" y="586.0" />
+=======
+          <settings layout="Hierarchic Group" zoom="0.4949610077984403" x="1269.8866804023755" y="705.8866804023755" />
+>>>>>>> 89aedf5d4094c9183094ea130d78dffb320f8211
           <SelectedNodes>
-            <node>dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.model</node>
+            <node>dfe5b7df-913c-4a7f-80a6-f7e881152cc5.TABLE:kierowcy.public.firma</node>
           </SelectedNodes>
           <Categories>
             <Category>Columns</Category>
@@ -1794,6 +2355,23 @@
         <state relative-caret-position="-97">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="176" column="52" selection-start-line="176" selection-start-column="52" selection-end-line="176" selection-end-column="52" />
+          <folding>
+            <marker date="1466011493146" expanded="true" signature="2690:2712" ph="SELECT * FRO... kierowcy" />
+            <marker date="1466011493146" expanded="true" signature="3840:3861" ph="SELECT * FRO... pojazdy" />
+            <marker date="1466011493146" expanded="true" signature="4946:5146" ph="SELECT id_eg... egzaminy" />
+            <marker date="1466011493146" expanded="true" signature="6537:6770" ph="SELECT K.imi... kierowcy" />
+            <marker date="1466011493146" expanded="true" signature="7680:7697" ph="SELECT pojaz... " />
+            <marker date="1466011493146" expanded="true" signature="8991:9054" ph="SELECT * FRO... statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
+            <marker date="1466011493146" expanded="true" signature="9961:10019" ph="SELECT * FRO... statystyki_egzaminow_w_zaleznosci_od_osrodka" />
+            <marker date="1466011493146" expanded="true" signature="10926:10970" ph="SELECT * FRO... firma" />
+          </folding>
         </state>
       </provider>
     </entry>

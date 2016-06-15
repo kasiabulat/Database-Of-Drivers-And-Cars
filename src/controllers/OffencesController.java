@@ -15,13 +15,13 @@ import java.io.IOException;
 
 public class OffencesController {
     @FXML
-    private TableView<?> tableView;
+    private TableView<Offence> tableView;
     @FXML
     private Button rankingButton;
 
     @FXML
     public void initialize() {
-        Database.instance.getOffenceTable((TableView<Offence>) tableView);
+        Database.instance.getOffenceTable( tableView);
     }
 
     @FXML

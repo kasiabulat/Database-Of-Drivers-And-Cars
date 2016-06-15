@@ -143,7 +143,7 @@ final public class Database {
         final Collection<Exam> data = new LinkedList<>();
 
         try (Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT id_egzaminu,data_przeprowadzenia,typ,nazwa,O.adres,E.imię,E.nazwisko,K.imię,K.nazwisko,wynik FROM egzaminy NATURAL JOIN egzaminatorzy E NATURAL JOIN ośrodki O NATURAL JOIN wyniki_egzaminów JOIN kierowcy K USING(id_kierowcy);")) {
+             ResultSet resultSet = statement.executeQuery("SELECT id_egzaminu,data_przeprowadzenia,typ,nazwa,O.adres,E.imie,E.nazwisko,K.imie,K.nazwisko,wynik FROM egzaminy NATURAL JOIN egzaminatorzy E NATURAL JOIN ośrodki O JOIN kierowcy K USING(id_kierowcy);")) {
             while (resultSet.next()) {
                 data.add(new Exam(resultSet.getInt(1), resultSet.getDate(2).toLocalDate(), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6), resultSet.getString(7), resultSet.getString(8), resultSet.getString(9), resultSet.getString(10)));
             }
@@ -173,8 +173,8 @@ final public class Database {
 
         try (Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(
-                     "SELECT K.imię,K.nazwisko,W.opis," +
-                             "W.wysokość_grzywny,W.punkty_karne " +
+                     "SELECT K.imie,K.nazwisko,W.opis," +
+                             "W.wysokosc_grzywny,W.punkty_karne " +
                              "FROM kierowcy K NATURAL JOIN " +
                              "mandaty M NATURAL JOIN wykroczenia W")) {
             while (resultSet.next()) {
