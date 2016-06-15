@@ -41,19 +41,21 @@ public class FirmsController {
     private TextField nr_miejscowosciTextField;
 
     @FXML
-    public void addFirm(final ActionEvent event) {
-        final String query =
-                "INSERT INTO firma VALUES(" + id_firmyTextField.getText() + ", '" +
-                        NIPTextField.getText() + "', '" + REGONTextField.getText() + "', '" +
-                        numerKRSTextField.getText() + "', '" + nazwa_firmyTextField.getText() +"', '" +
-                        emailTextField.getText() + "', '" + nr_telefonuTextField.getText() + "', '" +
-                        nr_ulicyTextField.getText() + "', '" + nr_budynkuTextField.getText() + "', '" +
-                        kod_pocztowyTextField.getText() + "', " + nr_miejscowosciTextField.getText() + ")";
+    public void addFirm(final ActionEvent event)
+    {
+        final String query=
+                "INSERT INTO firma VALUES("+id_firmyTextField.getText()+", '"+
+                        NIPTextField.getText()+"', '"+REGONTextField.getText()+"', '"+
+                        numerKRSTextField.getText()+"', '"+nazwa_firmyTextField.getText()+"', '"+
+                        emailTextField.getText()+"', '"+nr_telefonuTextField.getText()+"', '"+
+                        nr_ulicyTextField.getText()+"', '"+nr_budynkuTextField.getText()+"', '"+
+                        kod_pocztowyTextField.getText()+"', "+nr_miejscowosciTextField.getText()+")";
 
-        try {
-            final Statement stmt = Database.instance.connection.createStatement();
+        try(Statement stmt=Database.instance.connection.createStatement())
+        {
             stmt.executeUpdate(query);
-        } catch (@SuppressWarnings("LocalCanBeFinal") final SQLException e) {
+        }catch(final SQLException e)
+        {
             e.printStackTrace();
         }
     }

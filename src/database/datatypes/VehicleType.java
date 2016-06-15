@@ -7,7 +7,7 @@ public class VehicleType
 	public final String name;
 	public final Integer count;
 
-	public VehicleType(String name,final Integer count)
+	public VehicleType(final String name,final Integer count)
 	{
 		this.name=name;
 		this.count=count;

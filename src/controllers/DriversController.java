@@ -47,18 +47,23 @@ public class DriversController {
     private TextField nr_miejscowosciTextField;
 
     @FXML
-    public void addDriver(final ActionEvent event) {
-        final String query =
-                "INSERT INTO kierowcy VALUES(" +
-                        id_kierowcyTextField.getText() + ", '" + peselTextField.getText() + "', '" + imieTextField.getText() + "', '" +
-                        nazwiskoTextField.getText() + "', '" + plecTextField.getText() + "', '" + emailTextField.getText() + "', '" +
-                        nr_telefonuTextField.getText() + "', '" + nr_ulicyTextField.getText() + "', '" + nr_budynkuTextField.getText() + "', '" +
-                        kod_pocztowyTextField.getText() + "', " + nr_miejscowosciTextField.getText() + ")";
+    public void addDriver(final ActionEvent event)
+    {
+        final String query=
+                "INSERT INTO kierowcy VALUES("+
+                        id_kierowcyTextField.getText()+", '"+peselTextField.getText()+"', '"+imieTextField
+                        .getText()+"', '"+
+                        nazwiskoTextField.getText()+"', '"+plecTextField.getText()+"', '"+emailTextField
+                        .getText()+"', '"+
+                        nr_telefonuTextField.getText()+"', '"+nr_ulicyTextField.getText()+"', '"+nr_budynkuTextField
+                        .getText()+"', '"+
+                        kod_pocztowyTextField.getText()+"', "+nr_miejscowosciTextField.getText()+")";
 
-        try {
-            final Statement stmt = Database.instance.connection.createStatement();
+        try(Statement stmt=Database.instance.connection.createStatement())
+        {
             stmt.executeUpdate(query);
-        } catch (final SQLException e) {
+        }catch(final SQLException e)
+        {
             e.printStackTrace();
         }
     }

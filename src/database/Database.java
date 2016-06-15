@@ -46,7 +46,7 @@ final public class Database
 		{
 			final File f=new File("config.properties");
 			is=new FileInputStream(f);
-		}catch(final Exception e)
+		}catch(final Exception ignored)
 		{
 			is=null;
 		}
@@ -369,7 +369,7 @@ final public class Database
 		getFirmsTable.setItems(getFirmsList());
 	}
 
-	public List<VehicleType> getVehicleTypes()
+	public Iterable<VehicleType> getVehicleTypes()
 	{
 		final List<VehicleType> data=new LinkedList<>();
 
@@ -387,7 +387,7 @@ final public class Database
 		return data;
 	}
 
-	public List<VehicleMarkModel> getMarkTypes()
+	public Iterable<VehicleMarkModel> getMarkTypes()
 	{
 		final List<VehicleMarkModel> data=new LinkedList<>();
 
@@ -405,7 +405,7 @@ final public class Database
 		return data;
 	}
 
-	public List<RegistrationYear> getRegistrationYear()
+	public Iterable<RegistrationYear> getRegistrationYear()
 	{
 		final List<RegistrationYear> data=new LinkedList<>();
 
@@ -423,7 +423,7 @@ final public class Database
 		return data;
 	}
 
-	public List<LicenseCategory> getLicenseCategory()
+	public Iterable<LicenseCategory> getLicenseCategory()
 	{
 		final List<LicenseCategory> data=new LinkedList<>();
 

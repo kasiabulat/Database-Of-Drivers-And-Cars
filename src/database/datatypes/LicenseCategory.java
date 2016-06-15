@@ -2,7 +2,6 @@ package database.datatypes;
 
 /**
  Created by Kamil Rajtar on 15.06.16. */
-@SuppressWarnings("LocalCanBeFinal")
 public class LicenseCategory
 {
 	public final String name;

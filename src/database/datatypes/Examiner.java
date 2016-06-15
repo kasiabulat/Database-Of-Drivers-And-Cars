@@ -8,7 +8,7 @@ public class Examiner
 	String nazwisko;
 	Integer ilu_zdało;
 
-	public Examiner(String imię,String nazwisko,Integer ilu_zdało)
+	public Examiner(final String imię,final String nazwisko,final Integer ilu_zdało)
 	{
 		this.imię=imię;
 		this.nazwisko=nazwisko;
@@ -20,7 +20,7 @@ public class Examiner
 		return imię;
 	}
 
-	public void setImię(String imię)
+	public void setImię(final String imię)
 	{
 		this.imię=imię;
 	}
@@ -30,7 +30,7 @@ public class Examiner
 		return nazwisko;
 	}
 
-	public void setNazwisko(String nazwisko)
+	public void setNazwisko(final String nazwisko)
 	{
 		this.nazwisko=nazwisko;
 	}
@@ -40,7 +40,7 @@ public class Examiner
 		return ilu_zdało;
 	}
 
-	public void setIlu_zdało(Integer ilu_zdało)
+	public void setIlu_zdało(final Integer ilu_zdało)
 	{
 		this.ilu_zdało=ilu_zdało;
 	}

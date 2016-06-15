@@ -42,21 +42,23 @@ public class VehiclesController {
     private DatePicker data_rejestracjiPicker;
 
     @FXML
-    public void addVehicle(final ActionEvent event) {
-      final String query =
-                "INSERT INTO pojazdy VALUES(" +
-                        id_pojazduTextField.getText() + ", '" +
-                        nr_rejestracjiTextField.getText() +  "', '" +
-                        nr_VINTextField.getText() + "', '" +
-                        data_rejestracjiPicker.getValue() + "', " +
-                        id_markiTextField.getText() + ", '" +
-                        typTextField.getText() + "', '" +
-                        id_krajuTextField.getText() + "', " +
-                        waga_samochoduTextField.getText() + ")";
-        try {
-            final Statement stmt = Database.instance.connection.createStatement();
+    public void addVehicle(final ActionEvent event)
+    {
+        final String query=
+                "INSERT INTO pojazdy VALUES("+
+                        id_pojazduTextField.getText()+", '"+
+                        nr_rejestracjiTextField.getText()+"', '"+
+                        nr_VINTextField.getText()+"', '"+
+                        data_rejestracjiPicker.getValue()+"', "+
+                        id_markiTextField.getText()+", '"+
+                        typTextField.getText()+"', '"+
+                        id_krajuTextField.getText()+"', "+
+                        waga_samochoduTextField.getText()+")";
+        try(Statement stmt=Database.instance.connection.createStatement())
+        {
             stmt.executeUpdate(query);
-        } catch (final SQLException e) {
+        }catch(final SQLException e)
+        {
             e.printStackTrace();
         }
     }

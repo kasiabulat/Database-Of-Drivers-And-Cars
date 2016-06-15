@@ -43,7 +43,7 @@ public class Exam {
 		return id_egzaminu;
 	}
 
-	public void setId_egzaminu(@SuppressWarnings("LocalCanBeFinal") final int id_egzaminu)
+	public void setId_egzaminu(final int id_egzaminu)
 	{
 		this.id_egzaminu=id_egzaminu;
 	}
