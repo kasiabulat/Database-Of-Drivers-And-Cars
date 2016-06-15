@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -302,6 +303,51 @@ final public class Database {
         insertColumn(getFirmsTable, "miejscowosc");
         getFirmsTable.setItems(getFirmsList());
     }
+
+    public List<VehicleType> getVehicleTypes()
+	{
+		final List<VehicleType> data = new LinkedList<>();
+
+		try (Statement statement = connection.createStatement();
+			 ResultSet resultSet = statement.executeQuery("SELECT * FROM statystyki_pojazdow_typ")) {
+			while (resultSet.next()) {
+				data.add(new VehicleType(resultSet.getString(1),resultSet.getInt(2)));
+			}
+		} catch (final SQLException e) {
+			throw new DatabaseException(e);
+		}
+		return data;
+	}
+
+	public List<VehicleMarkModel> getMarkTypes()
+	{
+		final List<VehicleMarkModel> data = new LinkedList<>();
+
+		try (Statement statement = connection.createStatement();
+			 ResultSet resultSet = statement.executeQuery("SELECT * FROM statystyki_pojazdow_markamodel")) {
+			while (resultSet.next()) {
+				data.add(new VehicleMarkModel(resultSet.getString(1),resultSet.getString(2),resultSet.getInt(3)));
+			}
+		} catch (final SQLException e) {
+			throw new DatabaseException(e);
+		}
+		return data;
+	}
+
+	public List<RegistrationYear> getRegistrationYear()
+	{
+		final List<RegistrationYear> data = new LinkedList<>();
+
+		try (Statement statement = connection.createStatement();
+			 ResultSet resultSet = statement.executeQuery("SELECT * FROM statystyki_pojazdow_rokrejestracji")) {
+			while (resultSet.next()) {
+				data.add(new RegistrationYear(resultSet.getInt(1),resultSet.getInt(2)));
+			}
+		} catch (final SQLException e) {
+			throw new DatabaseException(e);
+		}
+		return data;
+	}
 
 	/**
      * Standard exception thrown when something wrong with database
