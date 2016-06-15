@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f045022-2726-4e20-9621-016b0062f21e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/datatypes/RegistrationYear.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/datatypes/VehicleMarkModel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/datatypes/VehicleType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/database/Database$DatabaseException.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/database/Database$DatabaseException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/datatypes/LicenseCategory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/VehiclesStatisticsController.java" afterPath="$PROJECT_DIR$/src/controllers/VehiclesStatisticsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" afterPath="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
     </list>
     <ignored path="Projekt ID.iws" />
@@ -86,24 +80,46 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="348" column="20" selection-start-line="348" selection-start-column="20" selection-end-line="348" selection-end-column="20" />
+            <state relative-caret-position="664">
+              <caret line="489" column="1" selection-start-line="489" selection-start-column="1" selection-end-line="489" selection-end-column="1" />
               <folding>
-                <marker date="1466016402921" expanded="true" signature="2713:2735" ph="SELECT * FRO... kierowcy" />
-                <marker date="1466016402921" expanded="true" signature="3863:3884" ph="SELECT * FRO... pojazdy" />
-                <marker date="1466016402921" expanded="true" signature="4969:5265" ph="SELECT id_eg... egzaminy" />
-                <marker date="1466016402921" expanded="true" signature="6728:6961" ph="SELECT K.imi... kierowcy" />
-                <marker date="1466016402921" expanded="true" signature="7871:7888" ph="SELECT pojaz... " />
-                <marker date="1466016402921" expanded="true" signature="9182:9245" ph="SELECT * FRO... statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
-                <marker date="1466016402921" expanded="true" signature="10152:10210" ph="SELECT * FRO... statystyki_egzaminow_w_zaleznosci_od_osrodka" />
-                <marker date="1466016402921" expanded="true" signature="11117:11161" ph="SELECT * FRO... firma" />
-                <marker date="1466016402921" expanded="true" signature="12574:12611" ph="SELECT * FRO... firma" />
-                <marker date="1466016402921" expanded="true" signature="13037:13051" ph="SELECT * FRO... firma" />
-                <marker date="1466016402921" expanded="true" signature="13037:13081" ph="SELECT * FRO... statystyki_pojazdow_markamodel" />
-                <marker date="1466016402921" expanded="true" signature="13542:13556" ph="SELECT * FRO... statystyki_pojazdow_typ" />
-                <marker date="1466016402921" expanded="true" signature="13542:13575" ph="SELECT * FRO... statystyki_pojazdow" />
-                <marker date="1466016402921" expanded="true" signature="13542:13590" ph="SELECT * FRO... statystyki_pojazdow_rokrejestracji" />
+                <marker date="1466016817118" expanded="true" signature="2360:2382" ph="SELECT * FRO... kierowcy" />
+                <marker date="1466016817118" expanded="true" signature="3367:3388" ph="SELECT * FRO... pojazdy" />
+                <marker date="1466016817118" expanded="true" signature="4343:4639" ph="SELECT id_eg... egzaminy" />
+                <marker date="1466016817118" expanded="true" signature="5937:6101" ph="SELECT K.imi... kierowcy" />
+                <marker date="1466016817118" expanded="true" signature="6895:6912" ph="SELECT pojaz... " />
+                <marker date="1466016817118" expanded="true" signature="8008:8071" ph="SELECT * FRO... statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
+                <marker date="1466016817118" expanded="true" signature="8980:9038" ph="SELECT * FRO... statystyki_egzaminow_w_zaleznosci_od_osrodka" />
+                <marker date="1466016817118" expanded="true" signature="9920:9964" ph="SELECT * FRO... firma" />
+                <marker date="1466016817118" expanded="true" signature="11210:11247" ph="SELECT * FRO... firma" />
+                <marker date="1466016817118" expanded="true" signature="11669:11683" ph="SELECT * FRO... firma" />
+                <marker date="1466016817118" expanded="true" signature="11669:11713" ph="SELECT * FRO... statystyki_pojazdow_markamodel" />
+                <marker date="1466016817118" expanded="true" signature="12170:12184" ph="SELECT * FRO... statystyki_pojazdow_typ" />
+                <marker date="1466016817118" expanded="true" signature="12170:12203" ph="SELECT * FRO... statystyki_pojazdow" />
+                <marker date="1466016817118" expanded="true" signature="12170:12218" ph="SELECT * FRO... statystyki_pojazdow_rokrejestracji" />
+                <marker date="1466016817118" expanded="true" signature="12646:12660" ph="SELECT * FRO... statystyki_pojazdow_rokrejestracji" />
+                <marker date="1466016817118" expanded="true" signature="12646:12681" ph="SELECT * FRO... statystyki_praw_jazdy" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExamsCategoriesStatisticsController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LicenseCategory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/datatypes/LicenseCategory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,11 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VehiclesStatisticsController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VehiclesStatisticsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesStatisticsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
+            <state relative-caret-position="286">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="48" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -178,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Database/Database.java" />
         <option value="$PROJECT_DIR$/src/FXML/offencesWindow.fxml" />
         <option value="$PROJECT_DIR$/src/database/Driver.java" />
         <option value="$PROJECT_DIR$/src/database/Exam.java" />
@@ -206,7 +221,6 @@
         <option value="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/ExamsExaminersStatisticsController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -226,9 +240,11 @@
         <option value="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
         <option value="$PROJECT_DIR$/src/database/datatypes/VehicleType.java" />
         <option value="$PROJECT_DIR$/src/database/datatypes/VehicleMarkModel.java" />
-        <option value="$PROJECT_DIR$/src/database/Database.java" />
         <option value="$PROJECT_DIR$/src/database/datatypes/RegistrationYear.java" />
         <option value="$PROJECT_DIR$/src/controllers/VehiclesStatisticsController.java" />
+        <option value="$PROJECT_DIR$/src/database/datatypes/LicenseCategory.java" />
+        <option value="$PROJECT_DIR$/src/database/Database.java" />
+        <option value="$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java" />
       </list>
     </option>
   </component>
@@ -861,7 +877,7 @@
       <workItem from="1465929468256" duration="4278000" />
       <workItem from="1466002200066" duration="137000" />
       <workItem from="1466010016819" duration="3803000" />
-      <workItem from="1466015006273" duration="1502000" />
+      <workItem from="1466015006273" duration="1839000" />
     </task>
     <task id="LOCAL-00001" summary="drobne zmiany w create.sql">
       <created>1465648610842</created>
@@ -919,11 +935,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466015062774</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Statystyki poprawione">
+      <created>1466016524019</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1466016524019</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42899000" />
+    <option name="totallyTimeSpent" value="43236000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -945,7 +968,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32179487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32307693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3576923" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32564104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1014,7 +1037,8 @@
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/projektid/projekt-id&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;create.sql&#10;#&#9;out/production/projekt-id/FXML/vehiclesWindow.fxml&#10;#&#9;out/production/projekt-id/database/Database.class&#10;&#10;merge after pull" />
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/projektid/projekt-id&#10;Vehicles statictics added" />
     <MESSAGE value="Tabela prawa jazdy działa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tabela prawa jazdy działa" />
+    <MESSAGE value="Statystyki poprawione" />
+    <option name="LAST_COMMIT_MESSAGE" value="Statystyki poprawione" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1025,16 +1049,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/FXML/ownersChoiceWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/LicencesChoiceController.java" />
     <entry file="file://$PROJECT_DIR$/src/FXML/firmsWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1433,14 +1447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ExamsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1563,29 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="348" column="20" selection-start-line="348" selection-start-column="20" selection-end-line="348" selection-end-column="20" />
-          <folding>
-            <marker date="1466016402921" expanded="true" signature="2713:2735" ph="SELECT * FRO... kierowcy" />
-            <marker date="1466016402921" expanded="true" signature="3863:3884" ph="SELECT * FRO... pojazdy" />
-            <marker date="1466016402921" expanded="true" signature="4969:5265" ph="SELECT id_eg... egzaminy" />
-            <marker date="1466016402921" expanded="true" signature="6728:6961" ph="SELECT K.imi... kierowcy" />
-            <marker date="1466016402921" expanded="true" signature="7871:7888" ph="SELECT pojaz... " />
-            <marker date="1466016402921" expanded="true" signature="9182:9245" ph="SELECT * FRO... statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
-            <marker date="1466016402921" expanded="true" signature="10152:10210" ph="SELECT * FRO... statystyki_egzaminow_w_zaleznosci_od_osrodka" />
-            <marker date="1466016402921" expanded="true" signature="11117:11161" ph="SELECT * FRO... firma" />
-            <marker date="1466016402921" expanded="true" signature="12574:12611" ph="SELECT * FRO... firma" />
-            <marker date="1466016402921" expanded="true" signature="13037:13051" ph="SELECT * FRO... firma" />
-            <marker date="1466016402921" expanded="true" signature="13037:13081" ph="SELECT * FRO... statystyki_pojazdow_markamodel" />
-            <marker date="1466016402921" expanded="true" signature="13542:13556" ph="SELECT * FRO... statystyki_pojazdow_typ" />
-            <marker date="1466016402921" expanded="true" signature="13542:13575" ph="SELECT * FRO... statystyki_pojazdow" />
-            <marker date="1466016402921" expanded="true" signature="13542:13590" ph="SELECT * FRO... statystyki_pojazdow_rokrejestracji" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/datatypes/RegistrationYear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1594,10 +1577,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/datatypes/LicenseCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="489" column="1" selection-start-line="489" selection-start-column="1" selection-end-line="489" selection-end-column="1" />
+          <folding>
+            <marker date="1466016817118" expanded="true" signature="2360:2382" ph="SELECT * FRO... kierowcy" />
+            <marker date="1466016817118" expanded="true" signature="3367:3388" ph="SELECT * FRO... pojazdy" />
+            <marker date="1466016817118" expanded="true" signature="4343:4639" ph="SELECT id_eg... egzaminy" />
+            <marker date="1466016817118" expanded="true" signature="5937:6101" ph="SELECT K.imi... kierowcy" />
+            <marker date="1466016817118" expanded="true" signature="6895:6912" ph="SELECT pojaz... " />
+            <marker date="1466016817118" expanded="true" signature="8008:8071" ph="SELECT * FRO... statystyki_mandatow_najniebezpieczniejsi_kierowcy" />
+            <marker date="1466016817118" expanded="true" signature="8980:9038" ph="SELECT * FRO... statystyki_egzaminow_w_zaleznosci_od_osrodka" />
+            <marker date="1466016817118" expanded="true" signature="9920:9964" ph="SELECT * FRO... firma" />
+            <marker date="1466016817118" expanded="true" signature="11210:11247" ph="SELECT * FRO... firma" />
+            <marker date="1466016817118" expanded="true" signature="11669:11683" ph="SELECT * FRO... firma" />
+            <marker date="1466016817118" expanded="true" signature="11669:11713" ph="SELECT * FRO... statystyki_pojazdow_markamodel" />
+            <marker date="1466016817118" expanded="true" signature="12170:12184" ph="SELECT * FRO... statystyki_pojazdow_typ" />
+            <marker date="1466016817118" expanded="true" signature="12170:12203" ph="SELECT * FRO... statystyki_pojazdow" />
+            <marker date="1466016817118" expanded="true" signature="12170:12218" ph="SELECT * FRO... statystyki_pojazdow_rokrejestracji" />
+            <marker date="1466016817118" expanded="true" signature="12646:12660" ph="SELECT * FRO... statystyki_pojazdow_rokrejestracji" />
+            <marker date="1466016817118" expanded="true" signature="12646:12681" ph="SELECT * FRO... statystyki_praw_jazdy" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/VehiclesStatisticsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="47" column="79" selection-start-line="47" selection-start-column="79" selection-end-line="47" selection-end-column="79" />
+        <state relative-caret-position="286">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/ExamsCategoriesStatisticsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
