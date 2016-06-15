@@ -44,7 +44,7 @@ public class MainController {
         try {
             final Parent root = FXMLLoader.load(getClass().getResource("../FXML/offencesWindow.fxml"));
             final Stage stage = new Stage();
-            stage.setTitle("Wyroczenia");
+            stage.setTitle("Wykroczenia");
             stage.setScene(new Scene(root, 620, 500));
             stage.show();
 
