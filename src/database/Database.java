@@ -172,7 +172,11 @@ final public class Database {
         final Collection<Offence> data = new LinkedList<>();
 
         try (Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT K.imię,K.nazwisko,W.opis,W.wysokość_grzywny,W.punkty_karne FROM kierowcy K NATURAL JOIN mandaty M NATURAL JOIN wykroczenia W")) {
+             ResultSet resultSet = statement.executeQuery(
+                     "SELECT K.imię,K.nazwisko,W.opis," +
+                             "W.wysokość_grzywny,W.punkty_karne " +
+                             "FROM kierowcy K NATURAL JOIN " +
+                             "mandaty M NATURAL JOIN wykroczenia W")) {
             while (resultSet.next()) {
                 data.add(new Offence(resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), resultSet.getBigDecimal(4), resultSet.getInt(5)));
             }
