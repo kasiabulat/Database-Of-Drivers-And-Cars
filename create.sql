@@ -266,7 +266,7 @@ CREATE OR REPLACE FUNCTION pj_kategorie()
 BEGIN
   IF NOT EXISTS(SELECT *
                 FROM prawa_jazdy
-                WHERE numer_prawa_jazdy = NEW.numer_prawa_jazdy)
+                WHERE numer_prawa_jazdy = NEW.id_prawa_jazdy)
   THEN
     RAISE EXCEPTION 'Brak tego prawa jazdy w tabeli prawa jazdy';
   END IF;
@@ -599,5 +599,3 @@ AS
   GROUP BY kategoria
   ORDER BY ilosc DESC, kategoria;
 END;
-
-INSERT INTO prawa_jazdy_kategorie VALUES (1, 'A1');
