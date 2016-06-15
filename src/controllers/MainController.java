@@ -73,7 +73,7 @@ public class MainController {
             final Parent root = FXMLLoader.load(getClass().getResource("../FXML/ownersChoiceWindow.fxml"));
             final Stage stage = new Stage();
             stage.setTitle("Właściciele pojazdów");
-            stage.setScene(new Scene(root, 620, 220));
+            stage.setScene(new Scene(root, 300, 220));
             stage.show();
 
         } catch (final IOException e) {

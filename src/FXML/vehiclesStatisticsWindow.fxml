@@ -23,7 +23,7 @@
             <RowConstraints maxHeight="269.0" minHeight="10.0" percentHeight="100.0" prefHeight="269.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <BarChart fx:id="typesBarChart" title="Ilość samochodów danego typu">
+            <BarChart fx:id="typesBarChart" title="Ilość pojazdów danego typu">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -31,7 +31,7 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
-            <BarChart fx:id="brandsBarChart" title="Ilość samochodów danej marki i modelu" GridPane.rowIndex="1">
+            <BarChart fx:id="brandsBarChart" title="Ilość pojazdów danej marki i modelu" GridPane.rowIndex="1">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -39,7 +39,7 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
-            <BarChart fx:id="rejYearBarChart" title="Ilość zarejestowanych w danym roku pojazdów" GridPane.rowIndex="2">
+            <BarChart fx:id="rejYearBarChart" title="Ilość pojazdów zarejestowanych w danym roku" GridPane.rowIndex="2">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>

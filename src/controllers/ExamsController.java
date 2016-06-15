@@ -29,7 +29,7 @@ public class ExamsController {
 
     @FXML
     public void initialize() {
-        //Database.instance.getExamsTable((TableView<Exam>) tableView);
+        Database.instance.getExamsTable((TableView<Exam>) tableView);
     }
 
     @FXML
