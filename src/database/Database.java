@@ -268,6 +268,36 @@ final public class Database {
 		examCenterTable.setItems(getExamCentersList());
 	}
 
+    @NotNull
+    private ObservableList<Firma> getFirmsList() {
+        final Collection<Firma> data = new LinkedList<>();
+
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery("SELECT * FROM firma NATURAL JOIN miejscowosc")) {
+            while (resultSet.next()) {
+                data.add(new Firma(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5),
+                        resultSet.getString(6), resultSet.getString(7), resultSet.getString(8), resultSet.getString(9), resultSet.getString(10), resultSet.getString(11)));
+            }
+        } catch (final SQLException e) {
+            throw new DatabaseException(e);
+        }
+        return FXCollections.observableArrayList(data);
+    }
+
+    public void getFirmsTable(final TableView<Firma> getFirmsTable) {
+        insertColumn(getFirmsTable,"id");
+        insertColumn(getFirmsTable, "nip");
+        insertColumn(getFirmsTable, "regon");
+        insertColumn(getFirmsTable, "numer krs");
+        insertColumn(getFirmsTable, "nazwa firmy");
+        insertColumn(getFirmsTable, "email");
+        insertColumn(getFirmsTable, "nr telefonu");
+        insertColumn(getFirmsTable, "ulica");
+        insertColumn(getFirmsTable, "nr budynku");
+        insertColumn(getFirmsTable, "kod pocztowy");
+        insertColumn(getFirmsTable, "miejscowosc");
+        getFirmsTable.setItems(getFirmsList());
+    }
 
 	/**
      * Standard exception thrown when something wrong with database
