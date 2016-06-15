@@ -274,9 +274,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie;
+DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie_praw_jazdy;
 
-CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie
+CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie_praw_jazdy
 FOR EACH ROW EXECUTE PROCEDURE pj_kategorie();
 
 --sprawdzenie czy jak dodajemy kogos do tabeli prawa jazdy to czy on wczesniej zdal egzamin wogole
@@ -599,3 +599,5 @@ AS
   GROUP BY kategoria
   ORDER BY ilosc DESC, kategoria;
 END;
+
+INSERT INTO prawa_jazdy_kategorie VALUES (1, 'A1');

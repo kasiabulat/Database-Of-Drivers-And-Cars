@@ -10,302 +10,302 @@
       <schema id="2" parent="1" name="public">
         <object-id>2200</object-id>
         <comment>standard public schema</comment>
-        <introspection-state-number>56756</introspection-state-number>
-        <introspection-timestamp>2016-06-15.21:47:46.631</introspection-timestamp>
+        <introspection-state-number>56860</introspection-state-number>
+        <introspection-timestamp>2016-06-15.22:09:42.630</introspection-timestamp>
       </schema>
       <sequence id="3" parent="2" name="egzaminatorzy_id_egzaminatora_seq">
-        <object-id>25027</object-id>
-        <state-number>56756</state-number>
+        <object-id>26521</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="4" parent="2" name="egzaminy_id_egzaminu_seq">
-        <object-id>25061</object-id>
-        <state-number>56756</state-number>
+        <object-id>26555</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="5" parent="2" name="firma_id_firmy_seq">
-        <object-id>24915</object-id>
-        <state-number>56756</state-number>
+        <object-id>26409</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="6" parent="2" name="kierowcy_id_kierowcy_seq">
-        <object-id>24931</object-id>
-        <state-number>56756</state-number>
+        <object-id>26425</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="7" parent="2" name="mandaty_id_mandatu_seq">
-        <object-id>25108</object-id>
-        <state-number>56756</state-number>
+        <object-id>26602</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="8" parent="2" name="mandaty_wystawiajacy_id_wstawiajacego_seq">
-        <object-id>25089</object-id>
-        <state-number>56756</state-number>
+        <object-id>26583</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="9" parent="2" name="marka_id_marka_seq">
-        <object-id>24857</object-id>
-        <state-number>56756</state-number>
+        <object-id>26351</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="10" parent="2" name="miejscowosc_id_miejscowosc_seq">
-        <object-id>24821</object-id>
-        <state-number>56756</state-number>
+        <object-id>26316</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="11" parent="2" name="model_id_modelu_seq">
-        <object-id>24868</object-id>
-        <state-number>56756</state-number>
+        <object-id>26362</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="12" parent="2" name="osrodki_id_osrodka_seq">
-        <object-id>25038</object-id>
-        <state-number>56756</state-number>
+        <object-id>26532</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="13" parent="2" name="pojazdy_id_pojazdu_seq">
-        <object-id>24889</object-id>
-        <state-number>56756</state-number>
+        <object-id>26383</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="14" parent="2" name="prawa_jazdy_kategorie_id_kategoria_seq">
-        <object-id>24981</object-id>
-        <state-number>56756</state-number>
+        <object-id>26475</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="15" parent="2" name="sposob_zasilania_id_sposob_seq">
-        <object-id>24832</object-id>
-        <state-number>56756</state-number>
+        <object-id>26327</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <sequence id="16" parent="2" name="wykroczenia_id_wykroczenia_seq">
-        <object-id>25097</object-id>
-        <state-number>56756</state-number>
+        <object-id>26591</object-id>
+        <state-number>56860</state-number>
       </sequence>
       <object-type id="17" parent="2" name="typ_kierownicy">
-        <object-id>24844</object-id>
-        <state-number>56756</state-number>
+        <object-id>26339</object-id>
+        <state-number>56860</state-number>
         <sub-kind>ENUM</sub-kind>
         <sub-category>ENUM</sub-category>
         <labels>po prawej,po  lewej</labels>
       </object-type>
       <object-type id="18" parent="2" name="typ_wlasciciela">
-        <object-id>24850</object-id>
-        <state-number>56756</state-number>
+        <object-id>26344</object-id>
+        <state-number>56860</state-number>
         <sub-kind>ENUM</sub-kind>
         <sub-category>ENUM</sub-category>
         <labels>firma,osoba,brak</labels>
       </object-type>
       <object-type id="19" parent="2" name="typ_egzaminu">
-        <object-id>25022</object-id>
-        <state-number>56756</state-number>
+        <object-id>26516</object-id>
+        <state-number>56860</state-number>
         <sub-kind>ENUM</sub-kind>
         <sub-category>ENUM</sub-category>
         <labels>teoria,praktyka</labels>
       </object-type>
       <object-type id="20" parent="2" name="wynik_egzaminu">
-        <object-id>25055</object-id>
-        <state-number>56756</state-number>
+        <object-id>26549</object-id>
+        <state-number>56860</state-number>
         <sub-kind>ENUM</sub-kind>
         <sub-category>ENUM</sub-category>
         <labels>zdal,nie zdal,nie stawil sie</labels>
       </object-type>
       <table id="21" parent="2" name="egzaminatorzy">
-        <object-id>25029</object-id>
-        <state-number>56756</state-number>
+        <object-id>26523</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="22" parent="2" name="egzaminy">
-        <object-id>25063</object-id>
-        <state-number>56756</state-number>
+        <object-id>26557</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="23" parent="2" name="firma">
-        <object-id>24917</object-id>
-        <state-number>56756</state-number>
+        <object-id>26411</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="24" parent="2" name="historia_przegladow_technicznych">
-        <object-id>24907</object-id>
-        <state-number>56756</state-number>
+        <object-id>26401</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="25" parent="2" name="historia_wlascicieli">
-        <object-id>24950</object-id>
-        <state-number>56756</state-number>
+        <object-id>26444</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="26" parent="2" name="kierowcy">
-        <object-id>24933</object-id>
-        <state-number>56756</state-number>
+        <object-id>26427</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="27" parent="2" name="mandaty">
-        <object-id>25110</object-id>
-        <state-number>56756</state-number>
+        <object-id>26604</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="28" parent="2" name="mandaty_wystawiajacy">
-        <object-id>25091</object-id>
-        <state-number>56756</state-number>
+        <object-id>26585</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="29" parent="2" name="marka">
-        <object-id>24859</object-id>
-        <state-number>56756</state-number>
+        <object-id>26353</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="30" parent="2" name="miejscowosc">
-        <object-id>24823</object-id>
-        <state-number>56756</state-number>
+        <object-id>26318</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="31" parent="2" name="model">
-        <object-id>24870</object-id>
-        <state-number>56756</state-number>
+        <object-id>26364</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="32" parent="2" name="osrodki">
-        <object-id>25040</object-id>
-        <state-number>56756</state-number>
+        <object-id>26534</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="33" parent="2" name="pojazdy">
-        <object-id>24891</object-id>
-        <state-number>56756</state-number>
+        <object-id>26385</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="34" parent="2" name="pojazdy_kierowcy">
-        <object-id>24968</object-id>
-        <state-number>56756</state-number>
+        <object-id>26462</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="35" parent="2" name="prawa_jazdy">
-        <object-id>24992</object-id>
-        <state-number>56756</state-number>
+        <object-id>26486</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="36" parent="2" name="prawa_jazdy_kategorie">
-        <object-id>24983</object-id>
-        <state-number>56756</state-number>
+        <object-id>26477</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="37" parent="2" name="prawa_jazdy_kategorie_praw_jazdy">
-        <object-id>25005</object-id>
-        <state-number>56756</state-number>
+        <object-id>26499</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="38" parent="2" name="sposob_zasilania">
-        <object-id>24834</object-id>
-        <state-number>56756</state-number>
+        <object-id>26329</object-id>
+        <state-number>56860</state-number>
       </table>
       <table id="39" parent="2" name="wykroczenia">
-        <object-id>25099</object-id>
-        <state-number>56756</state-number>
+        <object-id>26593</object-id>
+        <state-number>56860</state-number>
       </table>
       <view id="40" parent="2" name="ranking_kierowcow_z_najwieksza_grzywna">
-        <object-id>25188</object-id>
-        <state-number>56756</state-number>
+        <object-id>26682</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="41" parent="2" name="ranking_wykroczen">
-        <object-id>25184</object-id>
-        <state-number>56756</state-number>
+        <object-id>26678</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="42" parent="2" name="statystyki_egzaminatorow">
-        <object-id>25169</object-id>
-        <state-number>56756</state-number>
+        <object-id>26663</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="43" parent="2" name="statystyki_egzaminow_w_latach">
-        <object-id>25165</object-id>
-        <state-number>56756</state-number>
+        <object-id>26659</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="44" parent="2" name="statystyki_egzaminow_w_zaleznosci_od_osrodka">
-        <object-id>25173</object-id>
-        <state-number>56756</state-number>
+        <object-id>26667</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="45" parent="2" name="statystyki_mandatow_najniebezpieczniejsi_kierowcy">
-        <object-id>25179</object-id>
-        <state-number>56756</state-number>
+        <object-id>26673</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="46" parent="2" name="statystyki_pojazdow_markamodel">
-        <object-id>25148</object-id>
-        <state-number>56756</state-number>
+        <object-id>26642</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="47" parent="2" name="statystyki_pojazdow_rokrejestracji">
-        <object-id>25153</object-id>
-        <state-number>56756</state-number>
+        <object-id>26647</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="48" parent="2" name="statystyki_pojazdow_typ">
-        <object-id>25157</object-id>
-        <state-number>56756</state-number>
+        <object-id>26651</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="49" parent="2" name="statystyki_praw_jazdy">
-        <object-id>25193</object-id>
-        <state-number>56756</state-number>
+        <object-id>26687</object-id>
+        <state-number>56860</state-number>
       </view>
       <view id="50" parent="2" name="statystyki_zdawalnosci_egzaminow">
-        <object-id>25161</object-id>
-        <state-number>56756</state-number>
+        <object-id>26655</object-id>
+        <state-number>56860</state-number>
       </view>
       <routine id="51" parent="2" name="czy_zdal">
-        <object-id>25139</object-id>
-        <state-number>56756</state-number>
+        <object-id>26633</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="52" parent="2" name="ile_punktow">
-        <object-id>25145</object-id>
-        <state-number>56756</state-number>
+        <object-id>26639</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="53" parent="2" name="ilosc_egzaminow">
-        <object-id>25146</object-id>
-        <state-number>56756</state-number>
+        <object-id>26640</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="54" parent="2" name="ilosc_mandatow">
-        <object-id>25144</object-id>
-        <state-number>56756</state-number>
+        <object-id>26638</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="55" parent="2" name="nr_prawa_jazdy_m">
-        <object-id>25143</object-id>
-        <state-number>56756</state-number>
+        <object-id>26637</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="56" parent="2" name="nr_prawa_jazdy">
-        <object-id>25142</object-id>
-        <state-number>56756</state-number>
+        <object-id>26636</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="57" parent="2" name="ostatni_egzamin">
-        <object-id>25147</object-id>
-        <state-number>56756</state-number>
+        <object-id>26641</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="58" parent="2" name="pesel_check">
-        <object-id>25131</object-id>
-        <state-number>56756</state-number>
+        <object-id>26625</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="59" parent="2" name="pj_kategorie">
-        <object-id>25137</object-id>
-        <state-number>56756</state-number>
+        <object-id>26631</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="60" parent="2" name="pojazdy">
-        <object-id>25141</object-id>
-        <state-number>56756</state-number>
+        <object-id>26635</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
         <returns-set>1</returns-set>
       </routine>
       <routine id="61" parent="2" name="prawa_jazdy_check">
-        <object-id>25135</object-id>
-        <state-number>56756</state-number>
+        <object-id>26629</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <routine id="62" parent="2" name="spis_wykroczen_danego_kierowcy">
-        <object-id>25178</object-id>
-        <state-number>56756</state-number>
+        <object-id>26672</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
         <returns-set>1</returns-set>
       </routine>
       <routine id="63" parent="2" name="wykroczenia_check">
-        <object-id>25133</object-id>
-        <state-number>56756</state-number>
+        <object-id>26627</object-id>
+        <state-number>56860</state-number>
         <routine-kind>FUNCTION</routine-kind>
       </routine>
       <column id="64" parent="21" name="id_egzaminatora">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;egzaminatorzy_id_egzaminatora_seq&apos;::regclass)</default-expression>
       </column>
       <column id="65" parent="21" name="imie">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="66" parent="21" name="nazwisko">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="67" parent="21" name="numer_licencji">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <index id="68" parent="21" name="egzaminatorzy_pkey">
-        <object-id>25036</object-id>
+        <object-id>26530</object-id>
         <columns>id_egzaminatora</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -316,48 +316,48 @@
         <primary>1</primary>
       </key>
       <column id="70" parent="22" name="id_egzaminu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;egzaminy_id_egzaminu_seq&apos;::regclass)</default-expression>
       </column>
       <column id="71" parent="22" name="data_przeprowadzenia">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
       <column id="72" parent="22" name="typ">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>typ_egzaminu</data-type>
       </column>
       <column id="73" parent="22" name="id_egzaminatora">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="74" parent="22" name="id_osrodka">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="75" parent="22" name="id_kategoria">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="76" parent="22" name="id_kierowcy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="77" parent="22" name="wynik">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>wynik_egzaminu</data-type>
       </column>
       <index id="78" parent="22" name="egzaminy_pkey">
-        <object-id>25067</object-id>
+        <object-id>26561</object-id>
         <columns>id_egzaminu</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -392,54 +392,54 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="84" parent="23" name="id_firmy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;firma_id_firmy_seq&apos;::regclass)</default-expression>
       </column>
       <column id="85" parent="23" name="nip">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>char(10)</data-type>
       </column>
       <column id="86" parent="23" name="regon">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>char(9)</data-type>
       </column>
       <column id="87" parent="23" name="numerkrs">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="88" parent="23" name="nazwa_firmy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
       <column id="89" parent="23" name="email">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="90" parent="23" name="nr_telefonu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>char(9)</data-type>
       </column>
       <column id="91" parent="23" name="ulica">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="92" parent="23" name="nr_budynku">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="93" parent="23" name="kod_pocztowy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="94" parent="23" name="id_miejscowosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <index id="95" parent="23" name="firma_pkey">
-        <object-id>24924</object-id>
+        <object-id>26418</object-id>
         <columns>id_firmy</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -456,16 +456,16 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="98" parent="24" name="nr_pojazdu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="99" parent="24" name="data_przegladu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>timestamp</data-type>
       </column>
       <column id="100" parent="24" name="data_wygasniecia">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>timestamp</data-type>
       </column>
       <foreign-key id="101" parent="24" name="historia_przegladow_technicznych_nr_pojazdu_fkey">
@@ -475,29 +475,29 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="102" parent="25" name="id_pojazdu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="103" parent="25" name="typ_wlasciciela">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>typ_wlasciciela</data-type>
       </column>
       <column id="104" parent="25" name="id_firmy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <column id="105" parent="25" name="id_kierowcy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <column id="106" parent="25" name="od_kiedy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>timestamp</data-type>
       </column>
       <column id="107" parent="25" name="do_kiedy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>timestamp</data-type>
       </column>
       <foreign-key id="108" parent="25" name="historia_wlascicieli_id_pojazdu_fkey">
@@ -519,63 +519,63 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="111" parent="26" name="id_kierowcy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;kierowcy_id_kierowcy_seq&apos;::regclass)</default-expression>
       </column>
       <column id="112" parent="26" name="pesel">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>char(11)</data-type>
       </column>
       <column id="113" parent="26" name="imie">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="114" parent="26" name="nazwisko">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="115" parent="26" name="plec">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>char</data-type>
       </column>
       <column id="116" parent="26" name="email">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="117" parent="26" name="nr_telefonu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>char(9)</data-type>
       </column>
       <column id="118" parent="26" name="ulica">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="119" parent="26" name="nr_domu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="120" parent="26" name="kod_pocztowy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="121" parent="26" name="id_miejscowosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <index id="122" parent="26" name="kierowcy_pkey">
-        <object-id>24941</object-id>
+        <object-id>26435</object-id>
         <columns>id_kierowcy</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
       <index id="123" parent="26" name="kierowcy_pesel_key">
-        <object-id>24943</object-id>
+        <object-id>26437</object-id>
         <columns>pesel</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -600,32 +600,32 @@
         <predicate>(plec = &apos;K&apos;::bpchar) OR (plec = &apos;M&apos;::bpchar)</predicate>
       </check>
       <column id="128" parent="27" name="id_mandatu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;mandaty_id_mandatu_seq&apos;::regclass)</default-expression>
       </column>
       <column id="129" parent="27" name="id_kierowcy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="130" parent="27" name="id_wystawiajacego">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="131" parent="27" name="id_wykroczenia">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="132" parent="27" name="data_wystawienia">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>timestamp</data-type>
       </column>
       <index id="133" parent="27" name="mandaty_pkey">
-        <object-id>25114</object-id>
+        <object-id>26608</object-id>
         <columns>id_mandatu</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -654,23 +654,23 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="138" parent="28" name="id_wstawiajacego">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;mandaty_wystawiajacy_id_wstawiajacego_seq&apos;::regclass)</default-expression>
       </column>
       <column id="139" parent="28" name="imie">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="140" parent="28" name="nazwisko">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>varchar(50)</data-type>
       </column>
       <index id="141" parent="28" name="mandaty_wystawiajacy_pkey">
-        <object-id>25095</object-id>
+        <object-id>26589</object-id>
         <columns>id_wstawiajacego</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -681,17 +681,17 @@
         <primary>1</primary>
       </key>
       <column id="143" parent="29" name="id_marka">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;marka_id_marka_seq&apos;::regclass)</default-expression>
       </column>
       <column id="144" parent="29" name="marka">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <index id="145" parent="29" name="marka_pkey">
-        <object-id>24866</object-id>
+        <object-id>26360</object-id>
         <columns>id_marka</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -702,18 +702,18 @@
         <primary>1</primary>
       </key>
       <column id="147" parent="30" name="id_miejscowosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;miejscowosc_id_miejscowosc_seq&apos;::regclass)</default-expression>
       </column>
       <column id="148" parent="30" name="nazwa">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
       <index id="149" parent="30" name="miejscowosc_pkey">
-        <object-id>24830</object-id>
+        <object-id>26325</object-id>
         <columns>id_miejscowosc</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -724,36 +724,36 @@
         <primary>1</primary>
       </key>
       <column id="151" parent="31" name="id_modelu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;model_id_modelu_seq&apos;::regclass)</default-expression>
       </column>
       <column id="152" parent="31" name="id_marki">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="153" parent="31" name="model">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="154" parent="31" name="sposob_zasilania">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <column id="155" parent="31" name="liczba_miejsc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="156" parent="31" name="typ_kierownicy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>typ_kierownicy</data-type>
       </column>
       <index id="157" parent="31" name="model_pkey">
-        <object-id>24877</object-id>
+        <object-id>26371</object-id>
         <columns>id_modelu</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -776,34 +776,34 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="161" parent="32" name="id_osrodka">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;osrodki_id_osrodka_seq&apos;::regclass)</default-expression>
       </column>
       <column id="162" parent="32" name="nazwa">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
       <column id="163" parent="32" name="ulica">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="164" parent="32" name="nr_budynku">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="165" parent="32" name="kod_pocztowy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="166" parent="32" name="id_miejscowosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <index id="167" parent="32" name="osrodki_pkey">
-        <object-id>25047</object-id>
+        <object-id>26541</object-id>
         <columns>id_osrodka</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -820,49 +820,49 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="170" parent="33" name="id_pojazdu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;pojazdy_id_pojazdu_seq&apos;::regclass)</default-expression>
       </column>
       <column id="171" parent="33" name="nr_rejestracyjny">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>char(7)</data-type>
       </column>
       <column id="172" parent="33" name="numer_vin">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>char(17)</data-type>
       </column>
       <column id="173" parent="33" name="data_rejestracji">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
       <column id="174" parent="33" name="id_model">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="175" parent="33" name="typ">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="176" parent="33" name="kraj_produkcji">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="177" parent="33" name="waga_samochodu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>numeric</data-type>
       </column>
       <index id="178" parent="33" name="pojazdy_pkey">
-        <object-id>24898</object-id>
+        <object-id>26392</object-id>
         <columns>id_pojazdu</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
       <index id="179" parent="33" name="pojazdy_nr_rejestracyjny_key">
-        <object-id>24900</object-id>
+        <object-id>26394</object-id>
         <columns>nr_rejestracyjny</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -883,11 +883,11 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="183" parent="34" name="id_kierowcy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <column id="184" parent="34" name="id_pojazdu">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <foreign-key id="185" parent="34" name="pojazdy_kierowcy_id_kierowcy_fkey">
@@ -903,26 +903,26 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="187" parent="35" name="numer_prawa_jazdy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
       <column id="188" parent="35" name="id_wlasciciela">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>integer</data-type>
       </column>
       <column id="189" parent="35" name="data_wydania">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
       <column id="190" parent="35" name="miedzynarodowe">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>boolean</data-type>
       </column>
       <index id="191" parent="35" name="prawa_jazdy_pkey">
-        <object-id>24998</object-id>
+        <object-id>26492</object-id>
         <columns>numer_prawa_jazdy</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -939,17 +939,17 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="194" parent="36" name="id_kategoria">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;prawa_jazdy_kategorie_id_kategoria_seq&apos;::regclass)</default-expression>
       </column>
       <column id="195" parent="36" name="kategoria">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <index id="196" parent="36" name="prawa_jazdy_kategorie_pkey">
-        <object-id>24990</object-id>
+        <object-id>26484</object-id>
         <columns>id_kategoria</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -960,17 +960,17 @@
         <primary>1</primary>
       </key>
       <column id="198" parent="37" name="id_prawa_jazdy">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
       <column id="199" parent="37" name="id_kategoria">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
       </column>
       <column id="200" parent="37" name="data_wygasniecia">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>timestamp</data-type>
       </column>
       <foreign-key id="201" parent="37" name="prawa_jazdy_kategorie_praw_jazdy_id_prawa_jazdy_fkey">
@@ -986,17 +986,17 @@
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
       <column id="203" parent="38" name="id_sposob">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;sposob_zasilania_id_sposob_seq&apos;::regclass)</default-expression>
       </column>
       <column id="204" parent="38" name="nazwa">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <index id="205" parent="38" name="sposob_zasilania_pkey">
-        <object-id>24841</object-id>
+        <object-id>26336</object-id>
         <columns>id_sposob</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -1007,26 +1007,26 @@
         <primary>1</primary>
       </key>
       <column id="207" parent="39" name="id_wykroczenia">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>integer</data-type>
         <default-expression>nextval(&apos;wykroczenia_id_wykroczenia_seq&apos;::regclass)</default-expression>
       </column>
       <column id="208" parent="39" name="opis">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="209" parent="39" name="wysokosc_grzywny">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>numeric(7,2)</data-type>
       </column>
       <column id="210" parent="39" name="punkty_karne">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <mandatory>1</mandatory>
         <data-type>numeric(2)</data-type>
       </column>
       <index id="211" parent="39" name="wykroczenia_pkey">
-        <object-id>25106</object-id>
+        <object-id>26600</object-id>
         <columns>id_wykroczenia</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
@@ -1037,127 +1037,127 @@
         <primary>1</primary>
       </key>
       <column id="213" parent="40" name="imie">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="214" parent="40" name="nazwisko">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="215" parent="40" name="suma_grzywn">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>numeric</data-type>
       </column>
       <column id="216" parent="41" name="opis">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="217" parent="41" name="ilosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="218" parent="42" name="imie">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="219" parent="42" name="nazwisko">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="220" parent="42" name="ilu_zdalo">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="221" parent="43" name="rok">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>double precision</data-type>
       </column>
       <column id="222" parent="43" name="ilosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="223" parent="44" name="nazwa">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="224" parent="44" name="adres">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="225" parent="44" name="zdalo">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="226" parent="44" name="zdawalo">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="227" parent="44" name="efektywnosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>double precision</data-type>
       </column>
       <column id="228" parent="45" name="imie">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="229" parent="45" name="nazwisko">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>varchar(50)</data-type>
       </column>
       <column id="230" parent="45" name="ilosc_mandatow">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="231" parent="45" name="suma_punktow_karnych">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>numeric</data-type>
       </column>
       <column id="232" parent="46" name="marka">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="233" parent="46" name="model">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="234" parent="46" name="count">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="235" parent="47" name="rok">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>double precision</data-type>
       </column>
       <column id="236" parent="47" name="ilosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="237" parent="48" name="typ">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="238" parent="48" name="count">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="239" parent="49" name="kategoria">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>text</data-type>
       </column>
       <column id="240" parent="49" name="ilosc">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <column id="241" parent="50" name="wynik">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>wynik_egzaminu</data-type>
       </column>
       <column id="242" parent="50" name="typ">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>typ_egzaminu</data-type>
       </column>
       <column id="243" parent="50" name="count">
-        <state-number>56756</state-number>
+        <state-number>56860</state-number>
         <data-type>bigint</data-type>
       </column>
       <argument id="244" parent="51">

@@ -3,28 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1f045022-2726-4e20-9621-016b0062f21e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversMoreInfoController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/DriversMoreInfoController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsCategoriesStatisticsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsCategoriesStatisticsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsStatisticsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/ExamsStatisticsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/FirmsController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/FirmsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/controllers/VehiclesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" afterPath="$PROJECT_DIR$/out/production/projekt-id/database/Database.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FXML/examsMainWindow.fxml" afterPath="$PROJECT_DIR$/src/FXML/examsMainWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/DriversController.java" afterPath="$PROJECT_DIR$/src/controllers/DriversController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" afterPath="$PROJECT_DIR$/src/controllers/DriversMoreInfoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java" afterPath="$PROJECT_DIR$/src/controllers/ExamsStatisticsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/FirmsController.java" afterPath="$PROJECT_DIR$/src/controllers/FirmsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/VehiclesController.java" afterPath="$PROJECT_DIR$/src/controllers/VehiclesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/VehiclesMoreInfoController.java" afterPath="$PROJECT_DIR$/src/controllers/VehiclesMoreInfoController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/datatypes/Exam.java" afterPath="$PROJECT_DIR$/src/database/datatypes/Exam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/datatypes/Examiner.java" afterPath="$PROJECT_DIR$/src/database/datatypes/Examiner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/datatypes/LicenseCategory.java" afterPath="$PROJECT_DIR$/src/database/datatypes/LicenseCategory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/database/datatypes/VehicleType.java" afterPath="$PROJECT_DIR$/src/database/datatypes/VehicleType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create.sql" afterPath="$PROJECT_DIR$/create.sql" />
     </list>
     <ignored path="Projekt ID.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,78 +32,6 @@
       <PATH_ELEMENT>
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="historia_wlascicieli" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="historia_przegladow_technicznych" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="PostgreSQL - kierowcy@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="egzaminy" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
   </component>
@@ -156,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="examsMainWindow.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="examsMainWindow.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FXML/examsMainWindow.fxml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -171,36 +80,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kierowcy.public.mandaty_wystawiajĄcy" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/2c851a3a/dfe5b7df-913c-4a7f-80a6-f7e881152cc5/kierowcy.public.mandaty_wystawiajĄcy">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="clear.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clear.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+            <state relative-caret-position="296">
+              <caret line="34" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create.sql" pinned="false" current-in-tab="false">
+      <file leaf-file-name="create.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/create.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="440" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="601" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="282" column="37" selection-start-line="282" selection-start-column="37" selection-end-line="282" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -471,7 +365,6 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/controllers/LicencesChoiceController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesMoreInfoController.java" />
-        <option value="$PROJECT_DIR$/create.sql" />
         <option value="$PROJECT_DIR$/src/FXML/firmsWindow.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/FirmsMoreInfoController.java" />
         <option value="$PROJECT_DIR$/src/controllers/OffencesController.java" />
@@ -503,6 +396,7 @@
         <option value="$PROJECT_DIR$/src/database/Database.java" />
         <option value="$PROJECT_DIR$/clear.sql" />
         <option value="$PROJECT_DIR$/src/FXML/examsMainWindow.fxml" />
+        <option value="$PROJECT_DIR$/create.sql" />
       </list>
     </option>
   </component>
@@ -1135,7 +1029,7 @@
       <workItem from="1465929468256" duration="4278000" />
       <workItem from="1466002200066" duration="137000" />
       <workItem from="1466010016819" duration="3803000" />
-      <workItem from="1466015006273" duration="5652000" />
+      <workItem from="1466015006273" duration="6389000" />
     </task>
     <task id="LOCAL-00001" summary="drobne zmiany w create.sql">
       <created>1465648610842</created>
@@ -1221,11 +1115,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466020046822</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="button deleted">
+      <created>1466020677491</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1466020677491</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47049000" />
+    <option name="totallyTimeSpent" value="47786000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1238,7 +1139,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1248,14 +1149,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51794875" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32307693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02948718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32307693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02948718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32564104" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32435897" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1779718" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09603761" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30355942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1320,7 +1221,8 @@
     <MESSAGE value="Statystyki kategorie poprawione" />
     <MESSAGE value="Examiners fixed" />
     <MESSAGE value="clear fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="clear fixed" />
+    <MESSAGE value="button deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="button deleted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1779,35 +1681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/2c851a3a/dfe5b7df-913c-4a7f-80a6-f7e881152cc5/kierowcy.public.mandaty_wystawiajĄcy">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clear.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="440" column="55" selection-start-line="0" selection-start-column="0" selection-end-line="601" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/dfe5b7df-913c-4a7f-80a6-f7e881152cc5.SCHEMA:kierowcy.public">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1983,6 +1856,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/2c851a3a/dfe5b7df-913c-4a7f-80a6-f7e881152cc5/kierowcy.public.mandaty_wystawiajĄcy">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/FXML/examsMainWindow.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1994,6 +1880,22 @@
       </provider>
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clear.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="34" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="282" column="37" selection-start-line="282" selection-start-column="37" selection-end-line="282" selection-end-column="37" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
