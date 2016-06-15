@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ExamsController {
-    //TODO: add fields
     @FXML
     private TableView<?> tableView;
     @FXML
@@ -30,7 +29,7 @@ public class ExamsController {
 
     @FXML
     public void initialize() {
-        Database.instance.getExamsTable((TableView<Exam>) tableView);
+        //Database.instance.getExamsTable((TableView<Exam>) tableView);
     }
 
     @FXML

@@ -8,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class ExamsStatisticsController {
-    // TODO: add fields in controller, add more/change fields in window?
     @FXML
     private AnchorPane anchorPane;
 
