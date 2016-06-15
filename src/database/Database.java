@@ -143,9 +143,9 @@ final public class Database {
         final Collection<Exam> data = new LinkedList<>();
 
         try (Statement statement = connection.createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT id_egzaminu,data_przeprowadzenia,typ,nazwa,O.adres,E.imie,E.nazwisko,K.imie,K.nazwisko,wynik FROM egzaminy NATURAL JOIN egzaminatorzy E NATURAL JOIN ośrodki O JOIN kierowcy K USING(id_kierowcy);")) {
+             ResultSet resultSet = statement.executeQuery("SELECT id_egzaminu,data_przeprowadzenia,typ,O.nazwa,O.ulica,O.nr_budynku,O.kod_pocztowy,M.nazwa,E.imie,E.nazwisko,K.imie,K.nazwisko,wynik FROM egzaminy NATURAL JOIN egzaminatorzy E NATURAL JOIN osrodki O JOIN kierowcy K USING(id_kierowcy) JOIN miejscowosc M ON O.id_miejscowosc = M.id_miejscowosc;")) {
             while (resultSet.next()) {
-                data.add(new Exam(resultSet.getInt(1), resultSet.getDate(2).toLocalDate(), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6), resultSet.getString(7), resultSet.getString(8), resultSet.getString(9), resultSet.getString(10)));
+                data.add(new Exam(resultSet.getInt(1), resultSet.getDate(2).toLocalDate(), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6), resultSet.getString(7), resultSet.getString(8), resultSet.getString(9), resultSet.getString(10),resultSet.getString(11),resultSet.getString(12),resultSet.getString(13)));
             }
         } catch (final SQLException e) {
             throw new DatabaseException(e);
