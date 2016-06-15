@@ -266,7 +266,7 @@ CREATE OR REPLACE FUNCTION pj_kategorie()
 BEGIN
   IF NOT EXISTS(SELECT *
                 FROM prawa_jazdy
-                WHERE numer_prawa_jazdy = NEW.numer_prawa_jazdy)
+                WHERE numer_prawa_jazdy = NEW.id_prawa_jazdy)
   THEN
     RAISE EXCEPTION 'Brak tego prawa jazdy w tabeli prawa jazdy';
   END IF;
@@ -274,9 +274,9 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie;
+DROP TRIGGER IF EXISTS pj_kategorie ON prawa_jazdy_kategorie_praw_jazdy;
 
-CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie
+CREATE TRIGGER pj_kategorie BEFORE INSERT OR UPDATE ON prawa_jazdy_kategorie_praw_jazdy
 FOR EACH ROW EXECUTE PROCEDURE pj_kategorie();
 
 --sprawdzenie czy jak dodajemy kogos do tabeli prawa jazdy to czy on wczesniej zdal egzamin wogole
