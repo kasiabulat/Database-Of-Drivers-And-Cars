@@ -1,8 +1,13 @@
 package controllers;
 
+import database.Database;
+import database.datatypes.Vehicle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class VehiclesController {
     @FXML
@@ -32,12 +37,27 @@ public class VehiclesController {
 
     @FXML
     public void addVehicle(final ActionEvent event) {
-        // TODO: adding vehicle to database using text fields
+        String query =
+                "INSERT INTO pojazdy VALUES(" +
+                        id_pojazduTextField.getText() + ", '" +
+                        nr_rejestracjiTextField.getText() +  "', '" +
+                        nr_VINTextField.getText() + "', '" +
+                        data_rejestracjiPicker.getValue() + "', " +
+                        id_markiTextField.getText() + ", '" +
+                        typTextField.getText() + "', '" +
+                        id_krajuTextField.getText() + "', " +
+                        waga_samochoduTextField.getText() + ")";
+        try {
+            Statement stmt = Database.instance.connection.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initialize() {
 		data_rejestracjiPicker.setTooltip(new Tooltip("Data rejestracji pojazdu"));
-	//	Database.instance.getVehiclesTable((TableView<Vehicle>) tableView);
+	    Database.instance.getVehiclesTable((TableView<Vehicle>) tableView);
 
     }
 
