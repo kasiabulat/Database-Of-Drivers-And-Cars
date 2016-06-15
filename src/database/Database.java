@@ -342,10 +342,10 @@ final public class Database
 		{
 			while(resultSet.next())
 			{
-				data.add(new Firma(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3),resultSet
-						.getString(4),resultSet.getString(5),
-						resultSet.getString(6),resultSet.getString(7),resultSet.getString(8),resultSet
-						.getString(9),resultSet.getString(10),resultSet.getString(11)));
+				data.add(new Firma(resultSet.getInt(1),resultSet.getString(3),resultSet.getString(4),resultSet
+						.getString(5),resultSet.getString(6),
+						resultSet.getString(7),resultSet.getString(8),resultSet.getString(9),resultSet
+						.getString(10),resultSet.getString(11),resultSet.getString(12)));
 			}
 		}catch(final SQLException e)
 		{
@@ -356,16 +356,16 @@ final public class Database
 
 	public void getFirmsTable(final TableView<Firma> getFirmsTable)
 	{
-		insertColumn(getFirmsTable,"id");
+		insertColumn(getFirmsTable,"id_firmy");
 		insertColumn(getFirmsTable,"nip");
 		insertColumn(getFirmsTable,"regon");
-		insertColumn(getFirmsTable,"numer krs");
-		insertColumn(getFirmsTable,"nazwa firmy");
+		insertColumn(getFirmsTable,"numerkrs");
+		insertColumn(getFirmsTable,"nazwa_firmy");
 		insertColumn(getFirmsTable,"email");
-		insertColumn(getFirmsTable,"nr telefonu");
+		insertColumn(getFirmsTable,"nr_telefonu");
 		insertColumn(getFirmsTable,"ulica");
-		insertColumn(getFirmsTable,"nr budynku");
-		insertColumn(getFirmsTable,"kod pocztowy");
+		insertColumn(getFirmsTable,"nr_budynku");
+		insertColumn(getFirmsTable,"kod_pocztowy");
 		insertColumn(getFirmsTable,"miejscowosc");
 		getFirmsTable.setItems(getFirmsList());
 	}
