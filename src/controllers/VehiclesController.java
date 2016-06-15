@@ -4,8 +4,13 @@ import database.Database;
 import database.datatypes.Vehicle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -16,6 +21,8 @@ public class VehiclesController {
     private Button addButton;
     @FXML
     private Button moreInfoButton;
+    @FXML
+    private Button statisticsButton;
 
     @FXML
     private TextField id_pojazduTextField;
@@ -36,7 +43,7 @@ public class VehiclesController {
 
     @FXML
     public void addVehicle(final ActionEvent event) {
-        String query =
+      String query =
                 "INSERT INTO pojazdy VALUES(" +
                         id_pojazduTextField.getText() + ", '" +
                         nr_rejestracjiTextField.getText() +  "', '" +
@@ -61,7 +68,30 @@ public class VehiclesController {
     }
 
     @FXML
+    public void showStatistics(final ActionEvent event) {
+        try {
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/vehiclesStatisticsWindow.fxml"));
+            final Stage stage = new Stage();
+            stage.setTitle("Pojazdy - statystyki");
+            stage.setScene(new Scene(root, 370, 400));
+            stage.show();
+
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
     public void showMoreInfo(final ActionEvent event) {
-        // TODO: show more info about vehicles - some statistic, how many cars in each type, itp.
+        try {
+            final Parent root = FXMLLoader.load(getClass().getResource("../FXML/vehiclesMoreInfoWindow.fxml"));
+            final Stage stage = new Stage();
+            stage.setTitle("Pojazdy - szczegółowe informacje");
+            stage.setScene(new Scene(root, 510, 480));
+            stage.show();
+
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

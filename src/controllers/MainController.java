@@ -31,7 +31,7 @@ public class MainController {
             final Parent root = FXMLLoader.load(getClass().getResource("../FXML/vehiclesWindow.fxml"));
             final Stage stage = new Stage();
             stage.setTitle("Pojazdy");
-            stage.setScene(new Scene(root, 490, 500));
+            stage.setScene(new Scene(root, 620, 500));
             stage.show();
 
         } catch (final IOException e) {
@@ -45,7 +45,7 @@ public class MainController {
             final Parent root = FXMLLoader.load(getClass().getResource("../FXML/offencesWindow.fxml"));
             final Stage stage = new Stage();
             stage.setTitle("Wyroczenia");
-            stage.setScene(new Scene(root, 490, 500));
+            stage.setScene(new Scene(root, 620, 500));
             stage.show();
 
         } catch (final IOException e) {
@@ -59,7 +59,7 @@ public class MainController {
             final Parent root = FXMLLoader.load(getClass().getResource("../FXML/examsMainWindow.fxml"));
             final Stage stage = new Stage();
             stage.setTitle("Egzaminy");
-            stage.setScene(new Scene(root, 610, 500));
+            stage.setScene(new Scene(root, 620, 500));
             stage.show();
 
         } catch (final IOException e) {

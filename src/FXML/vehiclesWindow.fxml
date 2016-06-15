@@ -10,7 +10,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VehiclesController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VehiclesController">
    <children>
       <GridPane layoutX="37.0" layoutY="78.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
         <columnConstraints>
@@ -96,15 +96,17 @@
                   </GridPane>
                   <GridPane GridPane.rowIndex="1">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="175.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="175.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="248.0" minWidth="10.0" prefWidth="234.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addVehicle" text="dodaj pojazd" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
-                        <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#showMoreInfo" text="wyświetl statystyki pojazdów" />
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addVehicle" text="dodaj pojazd" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
+                        <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#showStatistics" text="wyświetl statystyki pojazdów" GridPane.columnIndex="1" />
+                        <Button fx:id="moreInfoButton" mnemonicParsing="false" onAction="#showMoreInfo" text="więcej informacji o pojeździe" />
                      </children>
                   </GridPane>
                </children>
