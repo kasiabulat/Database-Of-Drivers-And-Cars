@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DriversController {
     @FXML
@@ -21,7 +23,6 @@ public class DriversController {
     private Button addButton;
     @FXML
     private Button moreInfoButton;
-
     @FXML
     private TextField id_kierowcyTextField;
     @FXML
@@ -47,7 +48,19 @@ public class DriversController {
 
     @FXML
     public void addDriver(final ActionEvent event) {
-        // TODO: adding driver to database using text fields
+        String query =
+                "INSERT INTO kierowcy VALUES(" +
+                        id_kierowcyTextField.getText() + ", '" + peselTextField.getText() + "', '" + imieTextField.getText() + "', '" +
+                        nazwiskoTextField.getText() + "', '" + plecTextField.getText() + "', '" + emailTextField.getText() + "', '" +
+                        nr_telefonuTextField.getText() + "', '" + nr_ulicyTextField.getText() + "', '" + nr_budynkuTextField.getText() + "', '" +
+                        kod_pocztowyTextField.getText() + "', " + nr_miejscowosciTextField.getText() + ")";
+
+        try {
+            Statement stmt = Database.instance.connection.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
