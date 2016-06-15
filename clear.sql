@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS prawa_jazdy_kategorie_praw_jazdy CASCADE;
 DROP TYPE IF EXISTS typ_egzaminu CASCADE;
 DROP TYPE IF EXISTS typ_wlasciciela CASCADE;
 DROP TYPE IF EXISTS typ_kierownicy CASCADE;
+DROP TYPE IF EXISTS wynik_egzaminu CASCADE;
 
 DROP TRIGGER IF EXISTS pesel_check ON kierowcy;
 DROP TRIGGER IF EXISTS wykroczenia_check ON wykroczenia;
