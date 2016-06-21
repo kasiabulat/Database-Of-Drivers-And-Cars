@@ -1,9 +1,5 @@
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.Charset;
-import java.nio.file.*;
 
 /**
  * Created by Michal Stobierski on 2016-06-03.
@@ -11,78 +7,71 @@ import java.nio.file.*;
 
 class Main {
 
+    private static final int MODELI = 512;
     private static final int EGZAMINATOROW = 32;
     private static final int OSRODKOW = 16;
     private static final int WYST_WYKROCZENIA = 16;
     private static final int WYKROCZEN = 32;
     private static final int KIEROWCOW = 100;
 
-    private static void wczytaj_dane(final BufferedReader reader) throws IOException {
+    private static void wczytaj_dane() {
 
         // Wczytaj imiona damskie
-        Dane.dodaj(reader, Dane.imionaDamskie);
-        //System.out.println(Dane.imionaDamskie);
+        Dane.wczytaj_z_pliku("imiona_damskie.txt", Dane.imionaDamskie);
 
         // Wczytaj imiona meskie
-        Dane.dodaj(reader, Dane.imionaMeskie);
-        //System.out.println(Dane.imionaMeskie);
+        Dane.wczytaj_z_pliku("imiona_meskie.txt", Dane.imionaMeskie);
 
         // Wczytaj nazwiska damskie
-        Dane.dodaj(reader, Dane.nazwiskaDamskie);
-        //System.out.println(Dane.nazwiskaDamskie);
+        Dane.wczytaj_z_pliku("nazwiska_damskie.txt", Dane.nazwiskaDamskie);
 
         // Wczytaj nazwiska meskie
-        Dane.dodaj(reader, Dane.nazwiskaMeskie);
-        //System.out.println(Dane.nazwiskaMeskie);
+        Dane.wczytaj_z_pliku("nazwiska_meskie.txt", Dane.nazwiskaMeskie);
 
         // Wczytaj adresy
-        Dane.dodaj(reader, Dane.adresy);
-        //System.out.println(Dane.adresy);
+        Dane.wczytaj_z_pliku("ulice.txt", Dane.adresy);
 
         // Wczytaj domeny mailowe
-        Dane.dodaj(reader, Dane.domenyMailowe);
-        //System.out.println(Dane.domenyMailowe);
+        Dane.wczytaj_z_pliku("domeny_mailowe.txt", Dane.domenyMailowe);
 
         // Wczytaj marki i modele samochodow
-        Dane.dodaj(reader, Dane.samochody);
-        //System.out.println(Dane.samochody);
+        Dane.wczytaj_z_pliku("pojazdyv2.txt", Dane.samochody);
 
         // Wczytaj polskie tablice samochodowe
-        Dane.dodaj(reader, Dane.kodyTablic);
-        //System.out.println(Dane.kodyTablic);
+        Dane.wczytaj_z_pliku("kody_tablic.txt", Dane.kodyTablic);
 
         // Wczytaj adresy polskich WORDOW
-        Dane.dodaj(reader, Dane.adresyOsrodkow);
-        //System.out.println(Dane.adresyOsrodkow);
+        Dane.wczytaj_z_pliku("wordy.txt", Dane.adresyOsrodkow);
 
         // Wczytaj taryfikator mandatow
-        Dane.dodaj(reader, Dane.taryfikator);
-        //System.out.println(Dane.taryfikator);
+        Dane.wczytaj_z_pliku("taryfikator.txt", Dane.taryfikator);
 
         // Wczytaj nazwy miast
-        Dane.dodaj(reader, Dane.nazwyMiast);
-        //System.out.println(Dane.nazwyMiast);
+        Dane.wczytaj_z_pliku("miejscowosci.txt", Dane.nazwyMiast);
+
+        // Wczytaj kategorie prawa jazdy
+        Dane.wczytaj_z_pliku("kategorie_prawa_jazdy.txt", Dane.kategoriePJ);
+
+        // Wczytaj dane o firmach
+        Dane.wczytaj_z_pliku("firmy.txt", Dane.firmyTransportowe);
+
+        // Wczytaj dane o zasilaniu pojazdow
+        Dane.wczytaj_z_pliku("sposoby_zasilania.txt", Dane.sposobyZasilania);
     }
 
 
     public static void main(final String[] args) throws FileNotFoundException {
 
-        final Path file = Paths.get("files/gen_in_data.in");
-        final Charset charset = Charset.forName("UTF-8");
-        try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
-            wczytaj_dane(reader);
-        } catch (final IOException x) {
-            System.err.format("Nie znaleziono pliku z danymi - IOException: %s%n", x);
+        wczytaj_dane();
+
+        // Tworzenie miejscowosci (380)
+        for (String i : Dane.nazwyMiast) {
+            Dane.miejscowosci.add(new Miejscowosc(i));
         }
 
-        // Tworzenie egzaminatorow
-        for (int i = 0; i < EGZAMINATOROW; ++i) {
-            Dane.egzaminatorzy.add(new Egzaminatorzy());
-        }
-
-        // Tworzenie osrodkow
-        for (int i = 0; i < OSRODKOW; ++i) {
-            Dane.osrodki.add(new Osrodki());
+        // Tworzenie kategorii PJ (14?)
+        for (String i : Dane.kategoriePJ) {
+            Dane.prawa_jazdy_kategorie.add(new KategoriaPJ(i));
         }
 
         // Tworzenie wystwiajacych wykroczenia
@@ -92,8 +81,39 @@ class Main {
 
         // Tworzenie wykroczen
         for (int i = 0; i < WYKROCZEN; ++i) {
-            Dane.wykroczenia.add(new Wykroczenia());
+            Dane.wykroczenia.add(new Wykroczenie());
         }
+
+        // Tworzenie egzaminatorow
+        for (int i = 0; i < EGZAMINATOROW; ++i) {
+            Dane.egzaminatorzy.add(new Egzaminator());
+        }
+
+        // Tworzenie firm
+        for (String i : Dane.firmyTransportowe) {
+            Dane.firmy.add(new Firma(i));
+        }
+
+        // Tworzenie osrodkow
+        for (int i = 0; i < OSRODKOW; ++i) {
+            Dane.osrodki.add(new Osrodek());
+        }
+
+        // Tworzenie sposobow zasilania
+        for (String i : Dane.sposobyZasilania) {
+            Dane.sposob_zasilania.add(new SposobZasilania(i));
+        }
+
+        // Tworzenie marek
+        for (String i : Dane.samochody) {
+            if (!Marka.listId.containsKey(i.split("[|]")[0])) Dane.marka.add(new Marka(i));
+        }
+
+        // Tworzenie modeli
+        for (int i = 0; i < MODELI; ++i) {
+            Dane.model.add(new Model());
+        }
+
 
         // Tworzenie wlasciwej czesci, tj kierowcow
         for (int i = 0; i < KIEROWCOW; ++i) {
@@ -101,72 +121,98 @@ class Main {
             Dane.kierowcy.add(nowyKierowca);
         }
 
-        // Wypis testowy
+        // Generowanie pliku .sql z zapytaniami
         try (PrintWriter fout = new PrintWriter("myNewQuery.sql")) {
 
+            for (final Miejscowosc X : Dane.miejscowosci) {
+                fout.print("INSERT INTO miejscowosc VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final KategoriaPJ X : Dane.prawa_jazdy_kategorie) {
+                fout.print("INSERT INTO prawa_jazdy_kategorie VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final MandatyWystawiajacy X : Dane.mandatyWystawiajacy) {
+                fout.print("INSERT INTO mandaty_wystawiajacy VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Wykroczenie X : Dane.wykroczenia) {
+                fout.print("INSERT INTO wykroczenia VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Egzaminator X : Dane.egzaminatorzy) {
+                fout.print("INSERT INTO egzaminatorzy VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Firma X : Dane.firmy) {
+                fout.print("INSERT INTO firma VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Osrodek X : Dane.osrodki) {
+                fout.print("INSERT INTO osrodki VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final SposobZasilania X : Dane.sposob_zasilania) {
+                fout.print("INSERT INTO sposob_zasilania VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Marka X : Dane.marka) {
+                fout.print("INSERT INTO marka VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Model X : Dane.model) {
+                fout.print("INSERT INTO model VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
             for (final Kierowca X : Dane.kierowcy) {
                 fout.print("INSERT INTO kierowcy VALUES ");
                 fout.print(X);
                 fout.println(";");
             }
-            for (final Egzaminatorzy X : Dane.egzaminatorzy) {
-                fout.print("INSERT INTO egzaminatorzy VALUES ");
-                fout.print(X);
-                fout.println(";");
-            }
-            for (final Osrodki X : Dane.osrodki) {
-                fout.print("INSERT INTO ośrodki VALUES ");
-                fout.print(X);
-                fout.println(";");
-            }
-            for (final MandatyWystawiajacy X : Dane.mandatyWystawiajacy) {
-                fout.print("INSERT INTO mandaty_wystawiający VALUES ");
-                fout.print(X);
-                fout.println(";");
-            }
-            for (final Wykroczenia X : Dane.wykroczenia) {
-                fout.print("INSERT INTO wykroczenia VALUES ");
-                fout.print(X);
-                fout.println(";");
-            }
-            for (final Mandaty X : Dane.mandaty) {
-                fout.print("INSERT INTO mandaty VALUES ");
-                fout.print(X);
-                fout.println(";");
-            }
-            for (final Egzaminy X : Dane.egzaminy) {
+            for (final Egzamin X : Dane.egzaminy) {
                 fout.print("INSERT INTO egzaminy VALUES ");
                 fout.print(X);
                 fout.println(";");
             }
-            for (final WynikiEgzaminow X : Dane.wynikiEgzaminow) {
-                fout.print("INSERT INTO wyniki_egzaminów VALUES ");
-                fout.print(X);
-                fout.println(";");
-            }
-            for (final PrawaJazdy X : Dane.prawaJazdy) {
+            for (final PrawoJazdy X : Dane.prawaJazdy) {
                 fout.print("INSERT INTO prawa_jazdy VALUES ");
                 fout.print(X);
                 fout.println(";");
             }
-            for (final PrawaJazdyKategorie X : Dane.prawaJazdyKategorie) {
-                fout.print("INSERT INTO prawa_jazdy_kategorie VALUES ");
+            for (final PrawaJazdyKategorie X : Dane.prawa_jazdy_kategorie_praw_jazdy) {
+                fout.print("INSERT INTO prawa_jazdy_kategorie_praw_jazdy VALUES ");
                 fout.print(X);
                 fout.println(";");
             }
-            for (final Pojazdy X : Dane.pojazdy) {
+            for (final Pojazd X : Dane.pojazdy) {
                 fout.print("INSERT INTO pojazdy VALUES ");
                 fout.print(X);
                 fout.println(";");
             }
             for (final KierowcyPojazdy X : Dane.kierowcyPojazdy) {
-                fout.print("INSERT INTO kierowcy_pojazdy VALUES ");
+                fout.print("INSERT INTO pojazdy_kierowcy VALUES ");
+                fout.print(X);
+                fout.println(";");
+            }
+            for (final Mandat X : Dane.mandaty) {
+                fout.print("INSERT INTO mandaty VALUES ");
                 fout.print(X);
                 fout.println(";");
             }
 
             fout.close();
         }
+
     }
 
 }

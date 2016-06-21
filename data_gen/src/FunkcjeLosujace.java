@@ -145,4 +145,32 @@ class FunkcjeLosujace {
         return start.plusDays(rNum.nextInt(days + 365 * years + 30 * months)).toString();
     }
 
+    static String generuj_kod_pocztowy() {
+        String kod_pocztowy = "";
+        for (int i = 0; i < 2; ++i) {
+            kod_pocztowy += (char) (rNum.nextInt(10) + '0');    // dowolna cyfra
+        }
+        kod_pocztowy += "-";
+        for (int i = 0; i < 3; ++i) {
+            kod_pocztowy += (char) (rNum.nextInt(10) + '0');    // dowolna cyfra
+        }
+        return kod_pocztowy;
+    }
+
+    static String generuj_numer_budynku() {
+        String adres = "";
+        adres += " ";
+        for (int i = 0; i < rNum.nextInt(2) + 1; ++i) {
+            adres += (char) (rNum.nextInt(10) + '0');    // dowolna cyfra
+        }
+        if (rNum.nextInt(100) > 70) {
+            adres += "/";
+            adres += (char) (rNum.nextInt(9) + '1');
+            for (int i = 0; i < rNum.nextInt(3); ++i) {
+                adres += (char) (rNum.nextInt(10) + '0');    // dowolna cyfra
+            }
+        }
+        return adres;
+    }
+
 }

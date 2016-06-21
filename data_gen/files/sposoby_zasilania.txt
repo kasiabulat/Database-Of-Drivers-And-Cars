@@ -1,0 +1,5 @@
+﻿P - Benzyna
+D - Diesel
+LPG - gaz LPG
+EE - pojazd napędzany elektrycznie
+CNG - gaz ziemny

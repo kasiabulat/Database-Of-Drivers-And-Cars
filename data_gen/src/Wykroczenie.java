@@ -6,7 +6,7 @@ import java.util.Random;
  * Created by Michal Stobierski on 2016-06-04.
  */
 
-class Wykroczenia {
+class Wykroczenie {
 
     private static final Random rNum = new Random();
     private static final Map<String, Boolean> wytworzoneWykroczenia = new HashMap<>();
@@ -16,7 +16,7 @@ class Wykroczenia {
     private final double wysokosc_grzywny;
     private final int punkty_karne;
 
-    public Wykroczenia() {
+    public Wykroczenie() {
         id_wykroczenia = ++objects;
 
         String[] wykroczenie = Dane.taryfikator.get(rNum.nextInt(Dane.taryfikator.size())).split(";");

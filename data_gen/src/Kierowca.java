@@ -1,5 +1,8 @@
 import java.time.LocalDate;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * Created by Michal Stobierski on 2016-06-03.
@@ -16,98 +19,116 @@ class Kierowca {
     private final long pesel;
     private final String imie;
     private final String nazwisko;
+    private final char plec;
     private final String email;
     private final String nr_telefonu;
-    private final String adres;
+    private final String ulica;
+    private final String nr_budynku;
+    private final String kod_pocztowy;
+    private final int nr_miejscowosci;
+
 
     public Kierowca() {
 
-        final int plec = rNum.nextInt(2);    // 0 - K, 1 - M
+        final int losPlec = rNum.nextInt(2);    // 0 - K, 1 - M
 
         id_kierowcy = ++objects;
 
         final String data_urodzenia = FunkcjeLosujace.generuj_date(URODZENI_OD, URODZENI_DO);
         //System.out.println(data_urodzenia);
-        pesel = FunkcjeLosujace.generujPesel(plec, data_urodzenia);
+        pesel = FunkcjeLosujace.generujPesel(losPlec, data_urodzenia);
 
-        final List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(plec);
+        final List<String> personalia = FunkcjeLosujace.generuj_imie_nazwisko(losPlec);
         imie = personalia.get(0);
         nazwisko = personalia.get(1);
 
+        if (losPlec == 0) plec = 'K';
+        else plec = 'M';
+
         email = FunkcjeLosujace.generuj_mail(imie, nazwisko);
         nr_telefonu = FunkcjeLosujace.generuj_numer_telefonu();
-        adres = FunkcjeLosujace.generuj_adres();
+        ulica = Dane.adresy.get(rNum.nextInt(Dane.adresy.size()));
+        nr_budynku = FunkcjeLosujace.generuj_numer_budynku();
+        kod_pocztowy = FunkcjeLosujace.generuj_kod_pocztowy();
+        nr_miejscowosci = Dane.miejscowosci.get(rNum.nextInt(Dane.miejscowosci.size())).getId_miejscowosci();
 
+        // ------- SKONCZYLEM GENEROWAC PODSTAWOWE DANE KROTKI ---------
 
         // Generuj w miare sensowne dane dotyczace kierowcy
 
-        final List<String> posiadaneKat = new ArrayList<>();
-        posiadaneKat.add("B");
-        posiadaneKat.add("A");
-        posiadaneKat.add("C");
-        posiadaneKat.add("D");
-
         int ilePrawJazdy = rNum.nextInt(100) + 1;
-        if (ilePrawJazdy <= 60) ilePrawJazdy = 1;
-        else if (ilePrawJazdy <= 80) ilePrawJazdy = 2;
-        else if (ilePrawJazdy <= 90) ilePrawJazdy = 3;
+        if (ilePrawJazdy <= 75) ilePrawJazdy = 1;
+        else if (ilePrawJazdy <= 85) ilePrawJazdy = 2;
+        else if (ilePrawJazdy <= 95) ilePrawJazdy = 3;
         else ilePrawJazdy = 4;
+
+        Map<Integer, Boolean> posiadaneJuz = new HashMap<>();
 
         for (int i = 0; i < ilePrawJazdy; ++i) {
             final int ileTeorii = rNum.nextInt(2);
             final int ilePraktyk = rNum.nextInt(3);
 
             // Jakiej kategorii bedzie to prawko
-            final String kategoria = posiadaneKat.get(i);
+
+            int kategoria;
+            if (i == 0) {
+                kategoria = 4;  //niech kazdy ma B ;p
+                posiadaneJuz.put(4, true);
+            } else {
+                kategoria = rNum.nextInt(8) + 1;
+                while (posiadaneJuz.containsKey(kategoria)) {
+                    kategoria = rNum.nextInt(8) + 1;
+                }
+            }
 
             // Wszystkie podejscia do teorii
-
             LocalDate orientacyjnaData = LocalDate.parse(data_urodzenia);
             orientacyjnaData = orientacyjnaData.plusYears(18).plusDays(21 * (i + 4));
             String wynikEgzV;
-            WynikiEgzaminow nowyEgz;
+            Egzamin nowyEgz;
+
             for (int j = 0; j < ileTeorii; ++j) {
                 final int wynikEgz = rNum.nextInt(4);
-                wynikEgzV = wynikEgz < 1 ? "nie stawił się" : "nie zdał";
+                wynikEgzV = wynikEgz < 1 ? "nie stawil sie" : "nie zdal";
 
-                nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "teoria");
-                Dane.wynikiEgzaminow.add(nowyEgz);
+                nowyEgz = new Egzamin(orientacyjnaData, "teoria", kategoria, id_kierowcy, wynikEgzV);
+                Dane.egzaminy.add(nowyEgz);
 
-                orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE);
+                orientacyjnaData = nowyEgz.getData_przeprowadzenia().plusDays(OCZEKIWANIE);
             }
-            wynikEgzV = "zdał";
-            nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "teoria");
-            Dane.wynikiEgzaminow.add(nowyEgz);
-            orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE / 3);
+            wynikEgzV = "zdal";
+            nowyEgz = new Egzamin(orientacyjnaData, "teoria", kategoria, id_kierowcy, wynikEgzV);
+            Dane.egzaminy.add(nowyEgz);
+            orientacyjnaData = nowyEgz.getData_przeprowadzenia().plusDays(OCZEKIWANIE / 3);
 
             // Wszystkie podejscia do praktyki
             for (int j = 0; j < ilePraktyk; ++j) {
                 final int wynikEgz = rNum.nextInt(4);
-                wynikEgzV = wynikEgz < 1 ? "nie stawił się" : "nie zdał";
+                wynikEgzV = wynikEgz < 1 ? "nie stawil sie" : "nie zdal";
 
-                nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "praktyka");
-                Dane.wynikiEgzaminow.add(nowyEgz);
+                nowyEgz = new Egzamin(orientacyjnaData, "praktyka", kategoria, id_kierowcy, wynikEgzV);
+                Dane.egzaminy.add(nowyEgz);
 
-                orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE);
+                orientacyjnaData = nowyEgz.getData_przeprowadzenia().plusDays(OCZEKIWANIE);
             }
-            wynikEgzV = "zdał";
-            nowyEgz = new WynikiEgzaminow(id_kierowcy, wynikEgzV, orientacyjnaData, "praktyka");
-            Dane.wynikiEgzaminow.add(nowyEgz);
-            orientacyjnaData = nowyEgz.getData().plusDays(OCZEKIWANIE / 2 * 3);
+            wynikEgzV = "zdal";
+            nowyEgz = new Egzamin(orientacyjnaData, "praktyka", kategoria, id_kierowcy, wynikEgzV);
+            Dane.egzaminy.add(nowyEgz);
+            orientacyjnaData = nowyEgz.getData_przeprowadzenia().plusDays(OCZEKIWANIE / 2 * 3);
 
             // Wygeneruj prawko tej kategorii
-            final PrawaJazdy nowePJ = new PrawaJazdy(id_kierowcy, orientacyjnaData.toString());
+            final PrawoJazdy nowePJ = new PrawoJazdy(id_kierowcy, orientacyjnaData.toString());
             Dane.prawaJazdy.add(nowePJ);
 
             // Wygeneruj PJkategorie
-            final PrawaJazdyKategorie nowePJK = new PrawaJazdyKategorie(nowePJ.getNumer_prawa_jazdy(), kategoria);
-            Dane.prawaJazdyKategorie.add(nowePJK);
+            final PrawaJazdyKategorie nowePJK = new PrawaJazdyKategorie(nowePJ.getNumer_prawa_jazdy(), kategoria, nowePJ.getData_wydania());
+            Dane.prawa_jazdy_kategorie_praw_jazdy.add(nowePJK);
         }
 
         // Generowanie pojazdow
         final int ilePojazdow = rNum.nextInt(2) + 1;
         for (int i = 0; i < ilePojazdow; ++i) {
-            final Pojazdy nowyPojazd = new Pojazdy(LocalDate.parse(data_urodzenia).plusYears(18).plusDays(1));
+            final Pojazd nowyPojazd = new Pojazd(LocalDate.parse(data_urodzenia).plusYears(18).plusDays(1));
             Dane.pojazdy.add(nowyPojazd);
 
             final KierowcyPojazdy nowyKP = new KierowcyPojazdy(id_kierowcy, nowyPojazd.getId_pojazdu());
@@ -115,22 +136,23 @@ class Kierowca {
         }
 
         // Generowanie otrzymanych mandatow
-        final int ileMandatow = rNum.nextInt(4);
-        for (int i = 0; i < ileMandatow; ++i) {
-            final Mandaty nowyMandat = new Mandaty(id_kierowcy);
-            Dane.mandaty.add(nowyMandat);
-        }
+        Mandat.generuj_mandaty(rNum.nextInt(4), id_kierowcy);
     }
 
     @Override
     public String toString() {
-        return "(\'" + id_kierowcy +
-                "', '" + pesel +
-                "', '" + imie +
-                "', '" + nazwisko +
-                "', '" + email +
-                "', '" + nr_telefonu +
-                "', '" + adres + '\'' +
+        return "(" +
+                id_kierowcy +
+                ", " + pesel +
+                ", '" + imie + '\'' +
+                ", '" + nazwisko + '\'' +
+                ", '" + plec + '\'' +
+                ", '" + email + '\'' +
+                ", '" + nr_telefonu + '\'' +
+                ", '" + ulica + '\'' +
+                ", '" + nr_budynku + '\'' +
+                ", '" + kod_pocztowy + '\'' +
+                ", " + nr_miejscowosci +
                 ')';
     }
 }

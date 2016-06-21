@@ -25,7 +25,7 @@ Nieodpowiednie ustawienie pojazdu na jezdni przed skręceniem;0;150
 Nieustąpienie pierwszeństwa przez kierującego pojazdem zmieniającego zajmowany pas ruchu;5;250
 Omijanie pojazdu, który jechał w tym samym kierunku, lecz zatrzymał się w celu ustąpienia pierwszeństwa pieszemu;10;500
 Omijanie pojazdu oczekującego na otwarcie ruchu przez przejazd kolejowy w sytuacji, w której wymagało to wjechania na część jezdni przeznaczoną dla przeciwnego kierunku ruchu;0;250
-Utrudnianie ruchu podczas cofania;4;do 50 do 200
+Utrudnianie ruchu podczas cofania;4;100
 Naruszenie zakazów cofania w tunelach, na mostach i wiaduktach;2;200
 Wyprzedzanie na przejściach dla pieszych lub bezpośrednio przed nimi;10;200
 Wyprzedzanie na przejazdach dla rowerzystów lub bezpośrednio przed nimi;10;200

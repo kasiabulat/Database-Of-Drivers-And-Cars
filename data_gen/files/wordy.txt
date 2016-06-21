@@ -1,0 +1,32 @@
+Wojewódzki Ośrodek Ruchu Drogowego we Wrocławiu|ul. Łagiewnicka|12|50-512|Wrocław
+Wojewódzki Ośrodek Ruchu Drogowego w Jeleniej Górze|ul. Rataja|9|58-560|Jelenia Góra
+Wojewódzki Ośrodek Ruchu Drogowego w Bydgoszczy|ul. Stefana Kardynała Wyszyńskiego|54|85-620|Bydgoszcz
+Wojewódzki Ośrodek Ruchu Drogowego w Toruniu|ul. Polna|109/111|87-100|Toruń
+Wojewódzki Ośrodek Ruchu Drogowego w Lublinie|ul. Hutnicza|3|20-218|Lublin
+Wojewódzki Ośrodek Ruchu Drogowego w Białej Podlaskiej|ul. Orzechowa|60|21-500|Biała Podlaska
+Wojewódzki Ośrodek Ruchu Drogowego w Zamościu|ul. Droga Męczenników Rotundy|2|22-400|Zamość
+Wojewódzki Ośrodek Ruchu Drogowego w Chełmie|ul. Bieławin|2a|22-100|Chełm
+Wojewódzki Ośrodek Ruchu Drogowego w Zielonej Górze|ul. Nowa|4b|65-339|Zielona Góra
+Wojewódzki Ośrodek Ruchu Drogowego w Gorzowie Wielkopolskim|ul. Podmiejska|18|66-400|Gorzów Wielkopolski
+Wojewódzki Ośrodek Ruchu Drogowego w Łodzi|ul. Smutna|28|91-729|Łódź
+Wojewódzki Ośrodek Ruchu Drogowego w Piotrkowie Trybunalskim|ul. Gliniana|17|97-300|Piotrków Trybunalski
+Małopolski Ośrodek Ruchu Drogowego w Krakowie|ul. Nowohucka|33a|30-728|Kraków
+Małopolski Ośrodek Ruchu Drogowego w Tarnowie|ul. Okrężna|2F|33-104|Tarnów
+Wojewódzki Ośrodek Ruchu Drogowego w Ostrołęce|ul. Rolna|30|07-410|Ostrołęka
+Wojewódzki Ośrodek Ruchu Drogowego w Radomiu|ul. Sucha|13|26-600|Radom
+Wojewódzki Ośrodek Ruchu Drogowego w Opolu|ul. Oleska|127|45-233|Opole
+Wojewódzki Ośrodek Ruchu Drogowego w Tarnobrzegu|ul. Sikorskiego|86A|39-400|Tarnobrzeg
+Wojewódzki Ośrodek Ruchu Drogowego w Rzeszowie|Al. Wyzwolenia|4|35-501|Rzeszów
+Wojewódzki Ośrodek Ruchu Drogowego w Białymstoku| ul. Wiewiórcza|64|15-532|Białystok
+Wojewódzki Ośrodek Ruchu Drogowego w Suwałkach|ul. Waryńskiego|24|16-400|Suwałki
+Pomorski Ośrodek Ruchu Drogowego w Gdańsku|ul. Równa|19/21|80-067|Gdańsk
+Wojewódzki Ośrodek Ruchu Drogowego w Słupsku|ul. Mierosławskiego|10|76-200|Słupsk
+Wojewódzki Ośrodek Ruchu Drogowego w Katowicach|ul. Francuska|78|40-507|Katowice
+Wojewódzki Ośrodek Ruchu Drogowego w Częstochowie|ul. Hallera|1|42-200|Częstochowa
+Wojewódzki Ośrodek Ruchu Drogowego w Kielcach| ul. Domaszowska|141B|25-420|Kielce
+Wojewódzki Ośrodek Ruchu Drogowego w Elblągu|ul. Skrzydlata|1|82-300|Elbląg
+Wojewódzki Ośrodek Ruchu Drogowego - Regionalne Centrum Bezpieczeństwa Ruchu Drogowego w Olsztynie|ul. Towarowa|17|10-416|Olsztyn
+Wojewódzki Ośrodek Ruchu Drogowego w Poznaniu|ul. Wilczak|53|61-623|Poznań
+Wojewódzki Ośrodek Ruchu Drogowego w Pile|ul. Lotnicza|6|64-920|Piła
+Wojewódzki Ośrodek Ruchu Drogowego w Szczecinie|ul. Maksymiliana Golisza|10B|71-682|Szczecin
+Zachodniopomorski Ośrodek Ruchu Drogowego w Koszalinie|ul. Mieszka I|39|75-124|Koszalin

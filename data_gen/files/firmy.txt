@@ -1,0 +1,19 @@
+892272|Huber Polska Spółka z o.o. Usługi Transportowe|Jaworzno|43-603|Grunwaldzka|264|327452208||6321981559|241404080|
+923828|Elmar Transport Spółka z o.o. Spółka Komandytowa|Jędrzejów|28-300|Dygasińskiego|126|413861487|elmar@elmar.com.pl|6562303631|260357456|0000347139
+334791|Trans Kar Spółka z o.o.|Kraków|32-050|Piłsudskiego|23|122565830||9442117910|120047721|0000237761
+431250|Budmat Transport Spółka z o.o.|Płock|09-407|Otolińska|25|242680253||7742862232|140163854|0000239493
+421568|El Trans Spółka z o.o.|Wołomin|05-250|Weteranów|100|227867061|biuro@el-trans.com|1251335632|015655749|0000159974
+974633|Trans Truck Sp. Komandytowo-Akcyjna Dawid Kalinowski|Leszno|64-100|Energetyków|3|672146251||6972096367|411499582|0000126704
+550994|Euro Trans Spółka z o.o. P.H.U.|Warszawa|02-677|Taśmowa|3|228522592|recepcja@eurotrans.waw.pl|9521914279|015432972|0000155014
+656369|Waldrom Spółka Jawna Usługi Transportowe Roman Rzeszutek Waldemar Groele|Mielec|39-300|Krakowska|273|175843575|waldrom@waldrom.pl|8170008329|690254186|0000002372
+240750|Arb Trans Spółka z o.o.|Lublin|20-867|Świętokrzyska|5/.12|817429118||7120154376|430067600|0000204663
+518419|Zakład Transportu Grupa Kapitałowa Polimex Spółka z o.o.|Siedlce|08-110|Terespolska|12|256439703||8211698303|710457810|0000010619
+974775|Zarząd Transportu Miejskiego|Poznań|60-766|Matejki|59|618346146|ztm@ztm.poznan.pl|7792346900|300973510|
+623470|Franciszek Raczyński Transport Towarowy|Nysa|48-385|Rynek|41 l. 2|774354276|ttraczynski@interia.pl|7530012813|530789508|
+1014868|Al-Trans P.H.U. Mariusz Szarek|Czarnków|64-980|Grunwaldzka|13|672165789|info@altrans.com.pl|7631002503|570177837|
+118152|Daw-Trans F.H.U. Dawid Kujawski|Toruń|87-122|Kopernika|114B|566742146||8792595058|871229099|
+195419|Bud-Trans P.P.H.U.|Opoczno|26-300|Rolna|6|447553946|budtrans@alpha.net.pl|7680007280|590310309|
+873093|Eko-Trans Spółka Jawna P.H.U. Henryk Orłowski Grażyna Orłowska|Tarnowskie Góry|42-672|Wolności|21|322737057|eko_trans@interia.pl|6260011110|271692864|0000095976
+581225|Go-Trans Gmbh Spółka z o.o.|Warszawa|02-795|Kazury|2 l. 28|226487600|gotrans@gotrans.pl|9511644111|012341134|0000181577
+655919|Iglotrans P.P.H.U. Krzysztof Zima|Dębica|39-204|Rzeszowska|194a|146779117||8721066430|850393487|
+1113535|RT trans Tadeusz Rybiński|Szczecin|70-887|Borsucza|6|914647327|rttrans@rt-trans.pl|9550002345|810582162|

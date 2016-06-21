@@ -1,10 +1,13 @@
-import java.util.*;
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * Created by Michal Stobierski on 2016-06-04.
  */
 
-class PrawaJazdy {
+class PrawoJazdy {
 
     private static final Random rNum = new Random();
     private static final Map<Integer, Boolean> posiadaMiedzynarodowe = new HashMap<>();
@@ -13,7 +16,7 @@ class PrawaJazdy {
     private String numer_prawa_jazdy;
     private boolean miedzynarodowe;
 
-    public PrawaJazdy(final int id_wlasciciela, final String data_wydania) {
+    public PrawoJazdy(final int id_wlasciciela, final String data_wydania) {
         this.id_wlasciciela = id_wlasciciela;
         this.data_wydania = data_wydania;
 
@@ -38,6 +41,15 @@ class PrawaJazdy {
 
     public String getNumer_prawa_jazdy() {
         return numer_prawa_jazdy;
+    }
+
+    public LocalDate getData_wydania() {
+        LocalDate ret = LocalDate.parse(data_wydania);
+        return ret;
+    }
+
+    public int getId_wlasciciela() {
+        return id_wlasciciela;
     }
 
     @Override
